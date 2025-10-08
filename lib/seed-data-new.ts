@@ -1,4 +1,4 @@
-import { Question } from './types';
+import { Question } from '@/types';
 import { v4 as uuidv4 } from 'uuid';
 
 // Raw questions from the external file
