@@ -9,6 +9,8 @@ const path = require('path')
 process.env.NEXT_TELEMETRY_DISABLED = "1";
 process.env.DISABLE_NEXT_TELEMETRY = "1";
 
+console.log("=== Azure Oryx Build Configuration Active ===");
+
 // Force production mode on Azure
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production';
