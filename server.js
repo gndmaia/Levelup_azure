@@ -10,6 +10,7 @@ process.env.NEXT_TELEMETRY_DISABLED = "1";
 process.env.DISABLE_NEXT_TELEMETRY = "1";
 
 console.log("=== Azure Oryx Build Configuration Active ===");
+console.log("Build Service: App Service Build Service (Oryx)");
 
 // Force production mode on Azure
 if (!process.env.NODE_ENV) {
