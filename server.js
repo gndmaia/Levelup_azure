@@ -1,10 +1,29 @@
 ﻿const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
+const fs = require('fs')
+const path = require('path')
 
-// Set environment variables to disable telemetry
+// Set environment variables to disable telemetry BEFORE Next.js initialization
 process.env.NEXT_TELEMETRY_DISABLED = "1";
 process.env.DISABLE_NEXT_TELEMETRY = "1";
+process.env.NEXT_TELEMETRY_DEBUG = "0";
+
+// Ensure .next directory exists and create trace file if needed
+const nextDir = path.join(process.cwd(), '.next');
+if (!fs.existsSync(nextDir)) {
+  fs.mkdirSync(nextDir, { recursive: true });
+}
+
+// Create empty trace file to prevent ENOENT errors
+const traceFile = path.join(nextDir, 'trace');
+if (!fs.existsSync(traceFile)) {
+  try {
+    fs.writeFileSync(traceFile, '', 'utf8');
+  } catch (err) {
+    console.warn('Could not create trace file:', err.message);
+  }
+}
 
 console.log("Starting Next.js server with telemetry disabled...");
 

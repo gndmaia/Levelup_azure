@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     unoptimized: true
   },
   // Disable telemetry and tracing to prevent Azure errors
+  telemetry: false,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production'
   }
