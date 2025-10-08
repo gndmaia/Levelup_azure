@@ -52,9 +52,9 @@ async function downloadImage(imageUrl: string, imageBuffer?: Buffer): Promise<st
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
-    const file = formData.get('file') as File;
+    const file = formData.get('file');
 
-    if (!file) {
+    if (!file || typeof file === 'string') {
       return NextResponse.json({ success: false, error: 'No file uploaded' });
     }
 
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
     // Get all uploaded image files (if any)
     const imageFiles = new Map<string, Buffer>();
     for (const [key, value] of formData.entries()) {
-      if (key.startsWith('image-') && value instanceof File) {
+      if (key.startsWith('image-') && typeof value !== 'string') {
         const imageName = key.substring(6); // Remove 'image-' prefix
         const buffer = Buffer.from(await value.arrayBuffer());
         imageFiles.set(imageName, buffer);
