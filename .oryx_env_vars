@@ -1,0 +1,2 @@
+PRE_BUILD_COMMAND=npm install
+POST_BUILD_COMMAND=npm run build

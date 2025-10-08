@@ -1,6 +1,9 @@
 ﻿const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
+const { execSync } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 
 // Set environment variables to disable telemetry
 process.env.NEXT_TELEMETRY_DISABLED = "1";
@@ -15,6 +18,24 @@ if (!process.env.NODE_ENV) {
 console.log("Starting Next.js server with telemetry disabled...");
 console.log("NODE_ENV:", process.env.NODE_ENV);
 console.log("PORT:", process.env.PORT);
+
+// Check if .next directory exists, if not build it
+const nextDir = path.join(__dirname, '.next');
+if (!fs.existsSync(nextDir)) {
+  console.log(".next directory not found. Building application...");
+  try {
+    execSync('npm run build', { 
+      stdio: 'inherit',
+      env: { ...process.env, NODE_ENV: 'production' }
+    });
+    console.log("Build completed successfully!");
+  } catch (error) {
+    console.error("Build failed:", error);
+    process.exit(1);
+  }
+} else {
+  console.log(".next directory found, skipping build");
+}
 
 // Always use production mode on Azure
 const dev = false;
