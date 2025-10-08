@@ -38,28 +38,37 @@ if (needsBuild) {
   }
   
   try {
-    console.log("Running npm run build...");
+    console.log("Running build...");
     
-    // Ensure PATH includes node_modules/.bin for Azure's symlinked modules
     const env = {
       ...process.env,
-      NODE_ENV: 'production',
-      PATH: `/node_modules/.bin:${process.env.PATH || '/usr/local/bin:/usr/bin:/bin'}`
+      NODE_ENV: 'production'
     };
     
-    console.log("PATH:", env.PATH);
-    console.log("Checking for next binary...");
-    try {
-      execSync('which next', { stdio: 'inherit', env });
-    } catch (e) {
-      console.log("next not found in PATH, trying direct path...");
+    // Try multiple approaches to run next build
+    let buildSuccess = false;
+    const buildCommands = [
+      'npx next build',
+      '/node_modules/.bin/next build',
+      './node_modules/.bin/next build',
+      'node ./node_modules/next/dist/bin/next build'
+    ];
+    
+    for (const cmd of buildCommands) {
+      try {
+        console.log(`Trying: ${cmd}`);
+        execSync(cmd, { stdio: 'inherit', env });
+        buildSuccess = true;
+        console.log(`Build completed successfully with: ${cmd}`);
+        break;
+      } catch (e) {
+        console.log(`Failed with ${cmd}, trying next option...`);
+      }
     }
     
-    execSync('npm run build', { 
-      stdio: 'inherit',
-      env
-    });
-    console.log("Build completed successfully!");
+    if (!buildSuccess) {
+      throw new Error('All build commands failed');
+    }
     
     // Verify build
     if (fs.existsSync(buildIdPath)) {
