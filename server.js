@@ -19,22 +19,47 @@ console.log("Starting Next.js server with telemetry disabled...");
 console.log("NODE_ENV:", process.env.NODE_ENV);
 console.log("PORT:", process.env.PORT);
 
-// Check if .next directory exists, if not build it
+// Check if a valid production build exists
 const nextDir = path.join(__dirname, '.next');
-if (!fs.existsSync(nextDir)) {
-  console.log(".next directory not found. Building application...");
+const buildIdPath = path.join(nextDir, 'BUILD_ID');
+const needsBuild = !fs.existsSync(nextDir) || !fs.existsSync(buildIdPath);
+
+if (needsBuild) {
+  if (!fs.existsSync(nextDir)) {
+    console.log(".next directory not found. Building application...");
+  } else {
+    console.log(".next directory found but BUILD_ID missing. Rebuilding...");
+    // Remove incomplete build
+    try {
+      execSync('rm -rf .next', { stdio: 'inherit' });
+    } catch (e) {
+      console.log("Could not remove .next directory, continuing anyway...");
+    }
+  }
+  
   try {
+    console.log("Running npm run build...");
     execSync('npm run build', { 
       stdio: 'inherit',
       env: { ...process.env, NODE_ENV: 'production' }
     });
     console.log("Build completed successfully!");
+    
+    // Verify build
+    if (fs.existsSync(buildIdPath)) {
+      const buildId = fs.readFileSync(buildIdPath, 'utf8').trim();
+      console.log("Build ID:", buildId);
+    } else {
+      console.error("BUILD_ID not found after build!");
+      process.exit(1);
+    }
   } catch (error) {
     console.error("Build failed:", error);
     process.exit(1);
   }
 } else {
-  console.log(".next directory found, skipping build");
+  const buildId = fs.readFileSync(buildIdPath, 'utf8').trim();
+  console.log(".next directory found with BUILD_ID:", buildId);
 }
 
 // Always use production mode on Azure
