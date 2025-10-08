@@ -1,87 +1,213 @@
-# LevelUp Azure - AI-900 Practice PlatformThis is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LevelUp Azure - AI-900 Practice Platform
 
+A comprehensive web application for practicing Azure AI-900 certification exam with interactive Practice and Exam modes.
 
+![Azure AI-900 Practice Platform](public/logo.jpg)
 
-A comprehensive web application for practicing Azure AI-900 certification exam with interactive Practice and Exam modes.## Getting Started
+## 🚀 Features
 
+### Practice Mode
+- **Untimed practice** with instant feedback
+- **737 unique questions** covering all AI-900 topics
+- **Detailed explanations** and reference links
+- **Topic-based filtering** for focused study
+- **Immediate feedback** after each question
 
+### Exam Mode
+- **Realistic exam simulation** with 60-minute timer
+- **45 questions** balanced by topic and difficulty
+- **Flag questions** for review
+- **Comprehensive summary** with score breakdown
 
-## FeaturesFirst, run the development server:
+### Admin Features
+- **Question import** from HTML files
+- **Duplicate detection** and cleanup
+- **Coverage analysis** by topic
+- **Question management** interface
 
+## 🎯 Current Statistics
 
+- **737** Deduplicated practice questions
+- **10+** Topic areas covered
+- **100%** Free to use
+- **Responsive** design for all devices
 
-### Practice Mode```bash
+## 🛠️ Technology Stack
 
-- Untimed practice with instant feedbacknpm run dev
+- **Next.js 15** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **React Hooks** for state management
+- **Cookie-based authentication** (MVP)
+- **In-memory data store** with full CRUD operations
 
-- Choose specific topics or mixed questions# or
+## 🏗️ Project Structure
 
-- Detailed explanations and reference linksyarn dev
+```
+levelup-azure/
+├── app/
+│   ├── api/              # API routes
+│   ├── practice/         # Practice mode
+│   ├── exam/             # Exam mode  
+│   ├── sessions/         # Session history
+│   ├── about/            # About pages
+│   ├── auth/             # Authentication
+│   └── admin/            # Admin pages
+├── components/           # React components
+├── lib/                  # Business logic
+│   ├── data-store.ts    # In-memory database
+│   ├── question-selector.ts
+│   ├── scoring.ts
+│   ├── auth.ts
+│   └── seed-data.ts
+└── types/               # TypeScript definitions
+```
 
-- Bookmark questions for later review# or
+## 🚦 Getting Started
 
-pnpm dev
+### Prerequisites
 
-### Exam Mode# or
+- Node.js 18+ 
+- npm or yarn
 
-- Realistic exam simulation with 60-minute timerbun dev
+### Installation
 
-- 45 questions balanced by topic and difficulty```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/levelup-azure-ai900.git
+   cd levelup-azure-ai900
+   ```
 
-- Flag questions for review
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- Comprehensive summary with score breakdownOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
+## 🎮 Usage
 
-## Getting StartedYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### For Students
 
+1. **Visit the home page** and select "Azure AI-900"
+2. **Choose Practice Mode** for learning with instant feedback
+3. **Select topics** you want to focus on (optional)
+4. **Answer questions** and review explanations
+5. **Track your progress** through the session summary
 
+### For Exam Simulation
 
-```bashThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Select Exam Mode** for timed practice
+2. **Complete 45 questions** in 60 minutes
+3. **Review flagged questions** before submitting
+4. **Analyze results** by topic and difficulty
 
-# Install dependencies
+### For Administrators
 
-npm install## Learn More
+1. **Access `/admin`** for question management
+2. **Import questions** from HTML files
+3. **Review and validate** parsed questions
+4. **Monitor coverage** across topic areas
 
+## 📊 Question Quality
 
+All questions have been:
+- ✅ **Deduplicated** - Removed 138+ duplicate entries
+- ✅ **Validated** - Proper format and structure
+- ✅ **Categorized** - Auto-assigned to topic areas
+- ✅ **Explained** - Detailed explanations with references
 
-# Run development serverTo learn more about Next.js, take a look at the following resources:
+## 🎨 Design System
 
-npm run dev
+- **Primary**: #0078D4 (Azure Blue)
+- **Success**: #10B981
+- **Warning**: #F59E0B  
+- **Error**: #EF4444
+- **Neutrals**: Full grayscale palette
 
-```- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+## 🧪 Key Features Implemented
 
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Complete Practice Workflow** - Start to finish learning experience
+2. **Question Selection Algorithms** - Smart question distribution
+3. **Scoring System** - Detailed performance analytics
+4. **Session Management** - Track progress across sessions
+5. **Responsive UI** - Works on desktop, tablet, and mobile
+6. **Accessibility** - WCAG AA compliant with keyboard navigation
 
-Open [http://localhost:3000](http://localhost:3000)
+## 📝 API Endpoints
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Public Endpoints
+- `GET /api/questions/count` - Get total question count
+- `POST /api/sessions` - Create practice/exam session
+- `GET /api/sessions/[id]/next` - Get next question
+- `POST /api/sessions/[id]/answer` - Submit answer
 
-### Demo Credentials
+### Admin Endpoints
+- `GET /api/admin/all-questions` - List all questions
+- `POST /api/admin/parse-questions` - Parse HTML files
+- `GET /api/admin/coverage` - Coverage analysis
+- `GET /api/admin/find-duplicates` - Duplicate detection
 
-- Email: admin@levelup.azure## Deploy on Vercel
+## 🔧 Configuration
 
-- Password: admin123
+The app uses environment-based configuration. Key settings:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Question Pool**: Managed in `lib/seed-data.ts`
+- **Exam Settings**: Configurable in `lib/question-selector.ts`
+- **Styling**: Customizable via `tailwind.config.ts`
 
-## Tech Stack
+## 🚀 Deployment
 
-- Next.js 14 + TypeScriptCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Vercel (Recommended)
 
-- Tailwind CSS
-- Headless UI
-- In-memory data store (MVP)
+1. **Push to GitHub**
+2. **Connect to Vercel**
+3. **Deploy automatically**
 
-## Project Structure
-- `/app` - Pages and API routes
-- `/components` - React components
-- `/lib` - Core business logic
-- `/types` - TypeScript definitions
+### Other Platforms
 
-## Adding More Exams
-The platform supports multiple certifications. Add questions with new `examId` values.
+The app is a standard Next.js application and can be deployed to:
+- Netlify
+- Railway
+- Azure Static Web Apps
+- AWS Amplify
 
-## License
-MIT
+## 🤝 Contributing
+
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Commit your changes** (`git commit -m 'Add amazing feature'`)
+4. **Push to the branch** (`git push origin feature/amazing-feature`)
+5. **Open a Pull Request**
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Microsoft Azure** for the AI-900 certification program
+- **Next.js team** for the excellent framework
+- **Tailwind CSS** for the utility-first CSS framework
+- **Community contributors** for question validation and feedback
+
+## 📞 Support
+
+For support and questions:
+- 📧 Email: your-email@domain.com
+- 🐛 Issues: [GitHub Issues](https://github.com/your-username/levelup-azure-ai900/issues)
+- 📖 Documentation: [Project Wiki](https://github.com/your-username/levelup-azure-ai900/wiki)
+
+---
+
+**Made with ❤️ for the Azure certification community**
