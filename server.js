@@ -22,70 +22,17 @@ console.log("PORT:", process.env.PORT);
 // Check if a valid production build exists
 const nextDir = path.join(__dirname, '.next');
 const buildIdPath = path.join(nextDir, 'BUILD_ID');
-const needsBuild = !fs.existsSync(nextDir) || !fs.existsSync(buildIdPath);
 
-if (needsBuild) {
-  if (!fs.existsSync(nextDir)) {
-    console.log(".next directory not found. Building application...");
-  } else {
-    console.log(".next directory found but BUILD_ID missing. Rebuilding...");
-    // Remove incomplete build
-    try {
-      execSync('rm -rf .next', { stdio: 'inherit' });
-    } catch (e) {
-      console.log("Could not remove .next directory, continuing anyway...");
-    }
-  }
-  
-  try {
-    console.log("Running build...");
-    
-    const env = {
-      ...process.env,
-      NODE_ENV: 'production'
-    };
-    
-    // Try multiple approaches to run next build
-    let buildSuccess = false;
-    const buildCommands = [
-      'npx next build',
-      '/node_modules/.bin/next build',
-      './node_modules/.bin/next build',
-      'node ./node_modules/next/dist/bin/next build'
-    ];
-    
-    for (const cmd of buildCommands) {
-      try {
-        console.log(`Trying: ${cmd}`);
-        execSync(cmd, { stdio: 'inherit', env });
-        buildSuccess = true;
-        console.log(`Build completed successfully with: ${cmd}`);
-        break;
-      } catch (e) {
-        console.log(`Failed with ${cmd}, trying next option...`);
-      }
-    }
-    
-    if (!buildSuccess) {
-      throw new Error('All build commands failed');
-    }
-    
-    // Verify build
-    if (fs.existsSync(buildIdPath)) {
-      const buildId = fs.readFileSync(buildIdPath, 'utf8').trim();
-      console.log("Build ID:", buildId);
-    } else {
-      console.error("BUILD_ID not found after build!");
-      process.exit(1);
-    }
-  } catch (error) {
-    console.error("Build failed:", error);
-    process.exit(1);
-  }
-} else {
-  const buildId = fs.readFileSync(buildIdPath, 'utf8').trim();
-  console.log(".next directory found with BUILD_ID:", buildId);
+if (!fs.existsSync(nextDir) || !fs.existsSync(buildIdPath)) {
+  console.error("ERROR: .next build directory not found!");
+  console.error("The application must be built before starting.");
+  console.error("Please ensure the build runs during deployment.");
+  console.error("Check Azure App Service logs for build errors.");
+  process.exit(1);
 }
+
+const buildId = fs.readFileSync(buildIdPath, 'utf8').trim();
+console.log("✓ Production build found, BUILD_ID:", buildId);
 
 // Always use production mode on Azure
 const dev = false;
