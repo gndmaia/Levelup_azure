@@ -1,33 +1,24 @@
 ﻿const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
-const fs = require('fs')
-const path = require('path')
 
-// Set environment variables to disable telemetry BEFORE Next.js initialization
+// Set environment variables to disable telemetry
 process.env.NEXT_TELEMETRY_DISABLED = "1";
 process.env.DISABLE_NEXT_TELEMETRY = "1";
-process.env.NEXT_TELEMETRY_DEBUG = "0";
 
-// Ensure .next directory exists and create trace file if needed
-const nextDir = path.join(process.cwd(), '.next');
-if (!fs.existsSync(nextDir)) {
-  fs.mkdirSync(nextDir, { recursive: true });
-}
-
-// Create empty trace file to prevent ENOENT errors
-const traceFile = path.join(nextDir, 'trace');
-if (!fs.existsSync(traceFile)) {
-  try {
-    fs.writeFileSync(traceFile, '', 'utf8');
-  } catch (err) {
-    console.warn('Could not create trace file:', err.message);
-  }
+// Force production mode on Azure
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'production';
+  console.log("NODE_ENV was not set, forcing to production");
 }
 
 console.log("Starting Next.js server with telemetry disabled...");
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("PORT:", process.env.PORT);
 
-const dev = process.env.NODE_ENV !== 'production'
+// Always use production mode on Azure
+const dev = false;
+console.log("Development mode:", dev);
 const hostname = process.env.WEBSITE_HOSTNAME || 'localhost'
 const port = process.env.PORT || 3000
 
