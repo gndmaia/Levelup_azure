@@ -39,9 +39,25 @@ if (needsBuild) {
   
   try {
     console.log("Running npm run build...");
+    
+    // Ensure PATH includes node_modules/.bin for Azure's symlinked modules
+    const env = {
+      ...process.env,
+      NODE_ENV: 'production',
+      PATH: `/node_modules/.bin:${process.env.PATH || '/usr/local/bin:/usr/bin:/bin'}`
+    };
+    
+    console.log("PATH:", env.PATH);
+    console.log("Checking for next binary...");
+    try {
+      execSync('which next', { stdio: 'inherit', env });
+    } catch (e) {
+      console.log("next not found in PATH, trying direct path...");
+    }
+    
     execSync('npm run build', { 
       stdio: 'inherit',
-      env: { ...process.env, NODE_ENV: 'production' }
+      env
     });
     console.log("Build completed successfully!");
     
