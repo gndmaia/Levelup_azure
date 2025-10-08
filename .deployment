@@ -1,5 +1,2 @@
 [config]
-SCM_DO_BUILD_DURING_DEPLOYMENT=true
-WEBSITE_NODEJS_DEFAULT_VERSION=~20
-NODE_ENV=production
-command = bash deploy.sh
+command = deploy.cmd
