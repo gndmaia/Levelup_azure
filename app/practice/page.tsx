@@ -105,7 +105,21 @@ export default function PracticePage() {
   };
 
   const checkAnswer = async () => {
-    if (!sessionId || !currentQuestion || feedback || selectedAnswer.length === 0) return;
+    // Add immediate visual feedback
+    const button = document.querySelector('.check-answer-btn') as HTMLButtonElement;
+    if (button) {
+      button.textContent = 'Checking...';
+      button.disabled = true;
+    }
+
+    if (!sessionId || !currentQuestion || feedback || selectedAnswer.length === 0) {
+      alert('Cannot check answer - missing data');
+      if (button) {
+        button.textContent = 'Check Answer';
+        button.disabled = selectedAnswer.length === 0;
+      }
+      return;
+    }
 
     try {
       const response = await fetch(`/api/sessions/${sessionId}/answer`, {
@@ -117,12 +131,24 @@ export default function PracticePage() {
         }),
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
       const data = await response.json();
-      if (data.feedback) {
+      if (data.success && data.feedback) {
         setFeedback(data.feedback);
+      } else {
+        alert('No feedback received from server');
       }
     } catch (error) {
-      alert('Failed to submit answer');
+      console.error('Answer submission error:', error);
+      alert(`Failed to submit answer: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      if (button) {
+        button.textContent = 'Check Answer';
+        button.disabled = selectedAnswer.length === 0;
+      }
     }
   };
 
@@ -229,7 +255,7 @@ export default function PracticePage() {
             <button
               onClick={checkAnswer}
               disabled={selectedAnswer.length === 0}
-              className="px-8 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="check-answer-btn px-8 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Check Answer
             </button>
