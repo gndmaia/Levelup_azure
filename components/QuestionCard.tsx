@@ -130,8 +130,19 @@ export default function QuestionCard({
     if (!match) {
       match = questionText.match(/\[IMAGE: ([^\]]+)\]/i);
     }
+    if (!match) {
+      // Match [Image: filename] format
+      match = questionText.match(/\[Image: ([^\]]+)\]/i);
+    }
     if (match) {
-      return match[1].split(', ').map(path => path.trim());
+      return match[1].split(', ').map(path => {
+        const trimmedPath = path.trim();
+        // If path doesn't start with /, prepend /question-images/
+        if (!trimmedPath.startsWith('/')) {
+          return `/question-images/${trimmedPath}`;
+        }
+        return trimmedPath;
+      });
     }
     return [];
   };
@@ -141,6 +152,7 @@ export default function QuestionCard({
     .replace(/\[📊 Image\/Diagram: [^\]]+\]/g, '')
     .replace(/\[.*?Image\/Diagram: [^\]]+\]/gi, '')
     .replace(/\[IMAGE: [^\]]+\]/gi, '')
+    .replace(/\[Image: [^\]]+\]/gi, '')
     .trim();
 
   return (
