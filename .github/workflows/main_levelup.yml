@@ -31,7 +31,7 @@ jobs:
           NODE_ENV: production
 
       - name: Zip artifacts for deployment
-        run: zip -r node-app.zip .next node_modules package.json server.js next.config.ts public app components lib types
+        run: zip -r node-app.zip .next node_modules package.json server.js next.config.ts .deployment .skipbuild
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4

@@ -1,0 +1,2 @@
+# This file tells Azure App Service to skip the Oryx build process
+# The app is already built in GitHub Actions CI/CD pipeline
