@@ -15,7 +15,7 @@ export default function ExamPage() {
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [summary, setSummary] = useState<SessionSummary | null>(null);
   const [loading, setLoading] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(3600); // 60 minutes in seconds
+  const [timeRemaining, setTimeRemaining] = useState(2700); // 45 minutes in seconds
   const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set());
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -28,8 +28,8 @@ export default function ExamPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           mode: 'exam',
-          questionCount: 45,
-          timeLimitSec: 3600, // 60 minutes
+          questionCount: 60,
+          timeLimitSec: 2700, // 45 minutes
         }),
       });
 
@@ -291,7 +291,7 @@ export default function ExamPage() {
               </svg>
             </div>
             <div className="ml-3">
-              <h3 className="text-lg font-semibold text-neutral-900">45 Questions</h3>
+              <h3 className="text-lg font-semibold text-neutral-900">60 Questions</h3>
               <p className="text-neutral-600">
                 Balanced across all AI-900 topic areas with realistic difficulty distribution
               </p>
@@ -309,7 +309,7 @@ export default function ExamPage() {
               </svg>
             </div>
             <div className="ml-3">
-              <h3 className="text-lg font-semibold text-neutral-900">60 Minutes</h3>
+              <h3 className="text-lg font-semibold text-neutral-900">45 Minutes</h3>
               <p className="text-neutral-600">
                 Same time limit as the actual Azure AI-900 certification exam
               </p>
