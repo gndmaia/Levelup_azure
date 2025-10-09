@@ -62,6 +62,9 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A522D44745CF4D3A865EA93620F5E98D }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_802679A6905E4A8E9F7CCFE85D407413 }}
 
+      - name: Disable build during deployment
+        run: az webapp config appsettings set --name Levelup --resource-group levelup_group --settings SCM_DO_BUILD_DURING_DEPLOYMENT=false ENABLE_ORYX_BUILD=false
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
