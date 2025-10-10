@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LevelUp Azure - AI-900 Practice Platform",
+  title: "LevelUp Azure",
   description: "Practice for Azure certifications with interactive exam and practice modes",
   icons: [
     {
