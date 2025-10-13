@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
 import Timer from '@/components/Timer';
@@ -8,7 +8,7 @@ import SummaryPanel from '@/components/SummaryPanel';
 import QuestionNavigator from '@/components/QuestionNavigator';
 import { Question, SessionSummary } from '@/types';
 
-export default function ExamPage() {
+function ExamPageContent() {
   const searchParams = useSearchParams();
   const examId = searchParams.get('exam') || 'AI-900';
   
@@ -383,5 +383,20 @@ export default function ExamPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ExamPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+          <p className="mt-4 text-neutral-600">Loading exam...</p>
+        </div>
+      </div>
+    }>
+      <ExamPageContent />
+    </Suspense>
   );
 }

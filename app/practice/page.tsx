@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ObjectiveSelector from '@/components/ObjectiveSelector';
 import QuestionCard from '@/components/QuestionCard';
 import SummaryPanel from '@/components/SummaryPanel';
 import { Question, SessionSummary } from '@/types';
 
-export default function PracticePage() {
+function PracticePageContent() {
   const searchParams = useSearchParams();
   const examId = searchParams.get('exam') || 'AI-900';
   
@@ -311,5 +311,20 @@ export default function PracticePage() {
         <p className="mt-4 text-neutral-600">Loading...</p>
       </div>
     </div>
+  );
+}
+
+export default function PracticePage() {
+  return (
+    <Suspense fallback={
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500 mx-auto"></div>
+          <p className="mt-4 text-neutral-600">Loading practice session...</p>
+        </div>
+      </div>
+    }>
+      <PracticePageContent />
+    </Suspense>
   );
 }
