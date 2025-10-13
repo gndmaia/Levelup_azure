@@ -1,0 +1,22 @@
+Question 1 of 50
+
+What are two basic services provided by all cloud providers? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+application development
+
+
+colocation
+
+
+compute
+
+This answer is correct.
+
+storage
+
+This answer is correct.
+All cloud providers provide compute and storage services. Colocation is when a business rents space in a shared physical datacenter. Application development is the responsibility of the customer and is typically done either in-house or through a third party.
+
+Describe cloud computing - Training | Microsoft Learn

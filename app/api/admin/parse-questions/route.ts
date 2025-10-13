@@ -119,7 +119,7 @@ export async function POST(request: Request) {
 
       // Extract options
       const options: string[] = [];
-      let correctAnswerIndex = -1;
+      const correctAnswerIndices: number[] = [];
 
       $item.find('.wpProQuiz_questionListItem').each((optIndex, optElement) => {
         const $opt = $(optElement);
@@ -129,19 +129,28 @@ export async function POST(request: Request) {
           options.push(optionText);
         }
 
-        // Check if this is the correct answer
+        // Check if this is a correct answer (can be multiple)
         if ($opt.hasClass('wpProQuiz_answerCorrect')) {
-          correctAnswerIndex = optIndex;
+          correctAnswerIndices.push(optIndex);
         }
       });
+      
+      // Use the first correct answer for single-choice, or keep all for multi-choice
+      const correctAnswerIndex = correctAnswerIndices.length > 0 ? correctAnswerIndices[0] : -1;
 
       // Extract explanation and reference
       let explanation = '';
       let reference = '';
 
-      const $response = $item.find('.wpProQuiz_correct p').first();
-      if ($response.length) {
-        explanation = $response.text().trim();
+      // Get ALL paragraphs from the correct section, not just the first one
+      const $responseParagraphs = $item.find('.wpProQuiz_correct p');
+      if ($responseParagraphs.length) {
+        const paragraphs: string[] = [];
+        $responseParagraphs.each((i, el) => {
+          const text = $(el).text().trim();
+          if (text) paragraphs.push(text);
+        });
+        explanation = paragraphs.join('\n\n');
         
         // Extract reference URL
         const $refLink = $item.find('.wpProQuiz_correct a').first();
@@ -152,9 +161,14 @@ export async function POST(request: Request) {
 
       // If no explanation in correct section, try unattempted section
       if (!explanation) {
-        const $unattempted = $item.find('.wpProQuiz_unattempted p').first();
-        if ($unattempted.length) {
-          explanation = $unattempted.text().trim();
+        const $unattemptedParagraphs = $item.find('.wpProQuiz_unattempted p');
+        if ($unattemptedParagraphs.length) {
+          const paragraphs: string[] = [];
+          $unattemptedParagraphs.each((i, el) => {
+            const text = $(el).text().trim();
+            if (text) paragraphs.push(text);
+          });
+          explanation = paragraphs.join('\n\n');
           
           const $refLink = $item.find('.wpProQuiz_unattempted a').first();
           if ($refLink.length) {
@@ -194,6 +208,8 @@ export async function POST(request: Request) {
         question: questionText,
         options,
         correctAnswer: correctAnswerIndex,
+        correctAnswers: correctAnswerIndices, // All correct answers for multi-choice
+        isMultipleChoice: correctAnswerIndices.length > 1,
         explanation,
         reference,
         category,

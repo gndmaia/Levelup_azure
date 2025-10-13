@@ -1,6 +1,6 @@
 // Data models for LevelUp Azure
 
-export type ExamId = "AI-900" | "DP-900" | "AZ-104"; // Extensible for future exams
+export type ExamId = "AI-900" | "AZ-900" | "DP-900" | "AZ-104"; // Extensible for future exams
 
 export type Difficulty = "easy" | "medium" | "hard";
 

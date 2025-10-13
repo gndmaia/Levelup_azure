@@ -14,26 +14,33 @@ interface RawQuestion {
 
 export async function POST(request: Request) {
   try {
-    const { questions } = await request.json();
+    const { questions, examId } = await request.json();
 
     if (!questions || questions.length === 0) {
       return NextResponse.json({ success: false, error: 'No questions provided' });
     }
 
-    // Read the current seed-data.ts file
-    const seedDataPath = path.join(process.cwd(), 'lib', 'seed-data.ts');
+    // Determine which file to update based on examId
+    const isAZ900 = examId === 'AZ-900';
+    const fileName = isAZ900 ? 'seed-data-az900.ts' : 'seed-data.ts';
+    const exportName = isAZ900 ? 'seedQuestionsAZ900' : 'seedQuestions';
+    const idPrefix = isAZ900 ? 'az900' : 'ai900';
+    
+    // Read the current seed data file
+    const seedDataPath = path.join(process.cwd(), 'lib', fileName);
     const seedDataContent = await fs.readFile(seedDataPath, 'utf-8');
 
     // Find the rawQuestions array section
-    const rawQuestionsMatch = seedDataContent.match(/const rawQuestions: RawQuestion\[\] = \[([\s\S]*?)\];[\s\S]*export const seedQuestions/);
+    const rawQuestionsMatch = seedDataContent.match(/const rawQuestions: RawQuestion\[\] = \[([\s\S]*?)\];[\s\S]*export const/);
     
     if (!rawQuestionsMatch) {
-      return NextResponse.json({ success: false, error: 'Could not find rawQuestions array in seed-data.ts' });
+      return NextResponse.json({ success: false, error: `Could not find rawQuestions array in ${fileName}` });
     }
 
     // Extract existing question IDs to find max ID
-    const idMatches = Array.from(seedDataContent.matchAll(/id:\s*['"]ai900-(\d+)['"]/g));
-    let maxId = 246; // Start after existing questions
+    const idPattern = new RegExp(`id:\\s*['"]${idPrefix}-(\\d+)['"]`, 'g');
+    const idMatches = Array.from(seedDataContent.matchAll(idPattern));
+    let maxId = isAZ900 ? 0 : 246; // Start from 0 for AZ-900, 246 for AI-900
     
     for (const match of idMatches) {
       const idNum = parseInt(match[1]);
@@ -41,26 +48,50 @@ export async function POST(request: Request) {
     }
 
     // Convert parsed questions to RawQuestion format
-    const newRawQuestions: RawQuestion[] = questions.map((q: any, index: number) => ({
-      id: `ai900-${maxId + index + 1}`,
-      question: q.question,
-      options: q.options,
-      correctAnswer: String.fromCharCode(65 + q.correctAnswer), // Convert 0 -> 'A', 1 -> 'B', etc.
-      type: 'single', // All SkillCertPro questions are single-choice
-      explanation: q.explanation || '',
-      documentationUrl: q.reference || '',
-    }));
+    const newRawQuestions: RawQuestion[] = questions.map((q: any, index: number) => {
+      // Handle multiple-choice questions
+      let correctAnswer: string | string[];
+      let type: string;
+      
+      if (q.isMultipleChoice && q.correctAnswers && q.correctAnswers.length > 1) {
+        // Multiple correct answers - convert array of indices to array of letters
+        correctAnswer = q.correctAnswers.map((idx: number) => String.fromCharCode(65 + idx));
+        type = 'multiple';
+      } else {
+        // Single correct answer - convert index to letter
+        const answerIndex = q.correctAnswers?.[0] ?? q.correctAnswer;
+        correctAnswer = String.fromCharCode(65 + answerIndex);
+        type = 'single';
+      }
+      
+      return {
+        id: `${idPrefix}-${maxId + index + 1}`,
+        question: q.question,
+        options: q.options,
+        correctAnswer,
+        type,
+        explanation: q.explanation || '',
+        documentationUrl: q.reference || '',
+      };
+    });
 
     // Format the new questions as TypeScript code
-    const newQuestionsCode = newRawQuestions.map(q => `  {
+    const newQuestionsCode = newRawQuestions.map(q => {
+      // Format correctAnswer - either single string or array
+      const correctAnswerStr = Array.isArray(q.correctAnswer) 
+        ? `[${q.correctAnswer.map(a => `'${a}'`).join(', ')}]`
+        : `'${q.correctAnswer}'`;
+      
+      return `  {
     id: '${q.id}',
     question: ${JSON.stringify(q.question)},
     options: ${JSON.stringify(q.options)},
-    correctAnswer: '${q.correctAnswer}',
+    correctAnswer: ${correctAnswerStr},
     type: '${q.type}',
     explanation: ${JSON.stringify(q.explanation || '')},
     documentationUrl: ${JSON.stringify(q.documentationUrl || '')},
-  }`).join(',\n');
+  }`;
+    }).join(',\n');
 
     // Find where to insert (before the closing bracket of rawQuestions array)
     const insertPosition = seedDataContent.lastIndexOf('];', seedDataContent.indexOf('export const seedQuestions'));

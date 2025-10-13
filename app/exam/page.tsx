@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
 import Timer from '@/components/Timer';
 import SummaryPanel from '@/components/SummaryPanel';
@@ -8,6 +9,9 @@ import QuestionNavigator from '@/components/QuestionNavigator';
 import { Question, SessionSummary } from '@/types';
 
 export default function ExamPage() {
+  const searchParams = useSearchParams();
+  const examId = searchParams.get('exam') || 'AI-900';
+  
   const [stage, setStage] = useState<'config' | 'exam' | 'summary'>('config');
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
@@ -15,7 +19,7 @@ export default function ExamPage() {
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [summary, setSummary] = useState<SessionSummary | null>(null);
   const [loading, setLoading] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(2700); // 45 minutes in seconds
+  const [timeRemaining, setTimeRemaining] = useState(examId === 'AZ-900' ? 2700 : 2700); // 45 minutes default
   const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set());
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -28,6 +32,7 @@ export default function ExamPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           mode: 'exam',
+          examId: examId,
           questionCount: 60,
           timeLimitSec: 2700, // 45 minutes
         }),

@@ -1,12 +1,19 @@
 import { NextResponse } from 'next/server';
 import { seedQuestions } from '@/lib/seed-data';
+import { seedQuestionsAZ900 } from '@/lib/seed-data-az900';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    console.log('Admin endpoint - seedQuestions.length:', seedQuestions.length);
+    const { searchParams } = new URL(request.url);
+    const exam = searchParams.get('exam') || 'AI-900';
+    
+    // Select the appropriate question set
+    const sourceQuestions = exam === 'AZ-900' ? seedQuestionsAZ900 : seedQuestions;
+    
+    console.log(`Admin endpoint - ${exam} questions:`, sourceQuestions.length);
     
     // Return all questions from seed data
-    const questions = seedQuestions.map(q => ({
+    const questions = sourceQuestions.map(q => ({
       id: q.id,
       stem: q.stem,
       options: q.options,
@@ -16,12 +23,11 @@ export async function GET() {
       objectiveId: q.objectiveId,
     }));
 
-    console.log('Admin endpoint - mapped questions.length:', questions.length);
-
     return NextResponse.json({
       success: true,
       questions,
       count: questions.length,
+      exam: exam,
     });
   } catch (error: any) {
     console.error('Error fetching questions:', error);

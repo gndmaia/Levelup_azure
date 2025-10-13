@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     // Allow guest access - use a guest user ID if not authenticated
     const userId = user?.id || 'guest';
 
-    const { mode, objectiveIds, questionCount, timeLimitSec } = await request.json();
+    const { mode, objectiveIds, questionCount, timeLimitSec, examId } = await request.json();
 
     if (!mode || !['practice', 'exam'].includes(mode)) {
       return NextResponse.json(
@@ -23,11 +23,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Default to AI-900 if not specified
+    const selectedExam = examId || 'AI-900';
+
     // Select questions based on mode
     let questions;
     if (mode === 'exam') {
-      questions = selectExamQuestions('AI-900', {
-        totalQuestions: questionCount || 45,
+      questions = selectExamQuestions(selectedExam, {
+        totalQuestions: questionCount || (selectedExam === 'AZ-900' ? 60 : 45),
         easyPercentage: 0.4,
         mediumPercentage: 0.4,
         hardPercentage: 0.2,
@@ -37,7 +40,7 @@ export async function POST(request: NextRequest) {
         userId,
         objectiveIds,
         questionCount || 10,
-        'AI-900'
+        selectedExam
       );
     }
 

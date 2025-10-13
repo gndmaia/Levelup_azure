@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { seedQuestions } from '@/lib/seed-data';
+import { seedQuestionsAZ900 } from '@/lib/seed-data-az900';
 
 interface DuplicateGroup {
   questions: any[];
@@ -54,35 +55,41 @@ function hasMatchingSequence(str1: string, str2: string): boolean {
   return false;
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const exam = searchParams.get('exam') || 'AI-900';
+    
+    // Select the appropriate question set
+    const questions = exam === 'AZ-900' ? seedQuestionsAZ900 : seedQuestions;
+    
     const duplicates: DuplicateGroup[] = [];
     const processedQuestions = new Set<string>();
 
     // Compare each question with every other question
-    for (let i = 0; i < seedQuestions.length; i++) {
-      if (processedQuestions.has(seedQuestions[i].id)) continue;
+    for (let i = 0; i < questions.length; i++) {
+      if (processedQuestions.has(questions[i].id)) continue;
 
-      const currentGroup: any[] = [seedQuestions[i]];
+      const currentGroup: any[] = [questions[i]];
 
-      for (let j = i + 1; j < seedQuestions.length; j++) {
-        if (processedQuestions.has(seedQuestions[j].id)) continue;
+      for (let j = i + 1; j < questions.length; j++) {
+        if (processedQuestions.has(questions[j].id)) continue;
 
         // Check if questions share any 10 consecutive words
         const isMatch = hasMatchingSequence(
-          seedQuestions[i].stem,
-          seedQuestions[j].stem
+          questions[i].stem,
+          questions[j].stem
         );
 
         if (isMatch) {
-          currentGroup.push(seedQuestions[j]);
-          processedQuestions.add(seedQuestions[j].id);
+          currentGroup.push(questions[j]);
+          processedQuestions.add(questions[j].id);
         }
       }
 
       // If we found duplicates, add to results
       if (currentGroup.length > 1) {
-        processedQuestions.add(seedQuestions[i].id);
+        processedQuestions.add(questions[i].id);
         duplicates.push({
           questions: currentGroup.map(q => ({
             id: q.id,

@@ -1,12 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ObjectiveSelector from '@/components/ObjectiveSelector';
 import QuestionCard from '@/components/QuestionCard';
 import SummaryPanel from '@/components/SummaryPanel';
 import { Question, SessionSummary } from '@/types';
 
 export default function PracticePage() {
+  const searchParams = useSearchParams();
+  const examId = searchParams.get('exam') || 'AI-900';
+  
   const [stage, setStage] = useState<'config' | 'practice' | 'summary'>('config');
   const [objectives, setObjectives] = useState<string[]>([]);
   const [selectedObjectives, setSelectedObjectives] = useState<string[]>([]);
@@ -39,7 +43,7 @@ export default function PracticePage() {
     setObjectives(mockObjectives);
     
     // Fetch available question count
-    fetch('/api/questions/count')
+    fetch(`/api/questions/count?exam=${examId}`)
       .then(res => res.json())
       .then(data => {
         if (data.success) {
@@ -60,6 +64,7 @@ export default function PracticePage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           mode: 'practice',
+          examId: examId,
           objectiveIds: selectedObjectives.length > 0 ? selectedObjectives : undefined,
           questionCount: questionCount,
         }),

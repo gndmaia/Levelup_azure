@@ -1,0 +1,13 @@
+Question 1 of 2
+What is Azure?
+☐ A programming language
+☑ A cloud computing platform
+☐ A database system
+☐ An operating system
+
+Question 2 of 2
+Which service provides virtual machines?
+☑ Azure Virtual Machines
+☐ Azure Storage
+☐ Azure Functions
+☐ Azure Logic Apps
