@@ -1,0 +1,6 @@
+What advantage does an Application Gateway have over a load balancer?
+It can handle SSL termination
+It can route based on URL paths
+It provides basic load balancing only
+Correct
+Application Gateway is a Layer 7 load balancer that can route based on URL paths, while a basic load balancer operates at Layer 4. This makes Application Gateway more intelligent for web application routing.

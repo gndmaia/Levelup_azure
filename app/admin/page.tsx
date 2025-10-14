@@ -238,12 +238,15 @@ export default function AdminPage() {
       for (let i = 1; i < correctIndex; i++) {
         const line = lines[i].trim();
         if (line && line.length > 2) {
+          console.log(`New format - adding option ${options.length + 1}:`, line.substring(0, 60));
           options.push(line);
         }
       }
       
       // The last option before "Correct" is the correct answer
       correctOptionIndex = options.length - 1;
+      
+      console.log(`New format - Total options: ${options.length}, Correct index: ${correctOptionIndex}`);
       
       // Explanation is everything after "Correct" marker
       let explanation = customExplanation;
@@ -252,7 +255,8 @@ export default function AdminPage() {
       }
       
       if (options.length < 2) {
-        console.log('Not enough options found in new format');
+        console.log('New format - Not enough options found:', options.length);
+        console.log('Lines analyzed:', lines.slice(0, correctIndex + 2));
         return questions;
       }
       
@@ -292,8 +296,10 @@ export default function AdminPage() {
   const parseManualQuestions = (text: string, customReference: string = '', customExplanation: string = ''): ParsedQuestion[] => {
     const questions: ParsedQuestion[] = [];
     
-    // Check if this is the new format (no "Question X of Y", has "Correct" marker)
-    const isNewFormat = !text.match(/Question\s+\d+\s+of\s+\d+/i) && text.includes('Correct');
+    // Check if this is the new format (no "Question X of Y", has "Correct" marker on its own line)
+    const hasQuestionNumbers = text.match(/Question\s+\d+\s+of\s+\d+/i);
+    const hasCorrectMarker = /^Correct$/im.test(text);
+    const isNewFormat = !hasQuestionNumbers && hasCorrectMarker;
     
     if (isNewFormat) {
       console.log('Detected new format (no question numbers, Correct marker)');
