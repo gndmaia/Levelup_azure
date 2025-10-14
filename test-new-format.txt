@@ -1,0 +1,7 @@
+Which of the following would be an example of an Internet of Things (IoT) device?
+A video game, installed on Windows clients around the world, that keep user scores in the cloud.
+A refrigerator that monitors how much milk you have left and sends you a text message when you are running low
+A web application that people use to perform their banking tasks
+A mobile application that is used to watch online video courses
+Correct
+An IoT device is not a standard computing device but connects to a network to report data on a regular basis. A web server, a personal computer, or a mobile app is not an IoT device

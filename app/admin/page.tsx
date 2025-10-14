@@ -206,10 +206,101 @@ export default function AdminPage() {
     }
   };
 
+  const parseNewFormatQuestion = (text: string, customReference: string = '', customExplanation: string = ''): ParsedQuestion[] => {
+    const questions: ParsedQuestion[] = [];
+    
+    try {
+      const lines = text.split('\n').map(l => l.trim()).filter(l => l);
+      
+      if (lines.length === 0) return questions;
+      
+      // First line is the question
+      const questionText = lines[0];
+      
+      // Find where "Correct" marker appears
+      let correctIndex = -1;
+      for (let i = 0; i < lines.length; i++) {
+        if (lines[i] === 'Correct' || lines[i].toLowerCase() === 'correct') {
+          correctIndex = i;
+          break;
+        }
+      }
+      
+      if (correctIndex === -1) {
+        console.log('No "Correct" marker found in new format');
+        return questions;
+      }
+      
+      // Options are between question and "Correct" marker (excluding the question itself)
+      const options: string[] = [];
+      let correctOptionIndex = -1;
+      
+      for (let i = 1; i < correctIndex; i++) {
+        const line = lines[i].trim();
+        if (line && line.length > 2) {
+          options.push(line);
+        }
+      }
+      
+      // The last option before "Correct" is the correct answer
+      correctOptionIndex = options.length - 1;
+      
+      // Explanation is everything after "Correct" marker
+      let explanation = customExplanation;
+      if (!customExplanation && correctIndex + 1 < lines.length) {
+        explanation = lines.slice(correctIndex + 1).join(' ').trim();
+      }
+      
+      if (options.length < 2) {
+        console.log('Not enough options found in new format');
+        return questions;
+      }
+      
+      // Determine category
+      const category = determineQuestionCategory(questionText);
+      
+      // Generate ID
+      const nextId = `${selectedExam.toLowerCase().replace('-', '')}-manual-${Date.now()}`;
+      const tempId = crypto.randomUUID();
+      
+      questions.push({
+        id: nextId,
+        question: questionText,
+        options: options,
+        correctAnswer: correctOptionIndex,
+        isMultipleChoice: false,
+        explanation: explanation || 'No explanation provided',
+        reference: customReference || '',
+        category: category,
+        tempId: tempId
+      });
+      
+      console.log('Parsed new format question:', {
+        question: questionText.substring(0, 50),
+        optionCount: options.length,
+        correctIndex: correctOptionIndex,
+        category: category
+      });
+      
+    } catch (err) {
+      console.error('Error parsing new format:', err);
+    }
+    
+    return questions;
+  };
+
   const parseManualQuestions = (text: string, customReference: string = '', customExplanation: string = ''): ParsedQuestion[] => {
     const questions: ParsedQuestion[] = [];
     
-    // Split by "Question X of Y" pattern
+    // Check if this is the new format (no "Question X of Y", has "Correct" marker)
+    const isNewFormat = !text.match(/Question\s+\d+\s+of\s+\d+/i) && text.includes('Correct');
+    
+    if (isNewFormat) {
+      console.log('Detected new format (no question numbers, Correct marker)');
+      return parseNewFormatQuestion(text, customReference, customExplanation);
+    }
+    
+    // Split by "Question X of Y" pattern (old format)
     const questionBlocks = text.split(/Question\s+\d+\s+of\s+\d+/i);
     
     console.log('Question blocks found:', questionBlocks.length);
