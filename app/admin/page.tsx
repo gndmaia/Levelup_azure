@@ -52,6 +52,7 @@ export default function AdminPage() {
   const [manualOptionsText, setManualOptionsText] = useState<string>('');
   const [manualExplanation, setManualExplanation] = useState<string>('');
   const [manualReference, setManualReference] = useState<string>('');
+  const [manualCorrectAnswer, setManualCorrectAnswer] = useState<string>('');
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -179,11 +180,9 @@ export default function AdminPage() {
       let questions;
       
       if (usingSeparateInputs) {
-        console.log('Using separate inputs');
-        // Combine only question and options (NOT explanation - we'll pass it separately)
-        const combinedText = `Question 1 of 1\n\n${manualQuestionText}\n\n${manualOptionsText}`;
-        console.log('Combined text:', combinedText);
-        questions = parseManualQuestions(combinedText, manualReference, manualExplanation);
+        console.log('Using separate inputs (Method 2)');
+        // Use dedicated Method 2 parser
+        questions = parseSimpleQuestion(manualQuestionText, manualOptionsText, manualReference, manualExplanation, manualCorrectAnswer);
       } else {
         console.log('Using full text input');
         console.log('Text length:', manualText.length);
@@ -288,6 +287,110 @@ export default function AdminPage() {
       
     } catch (err) {
       console.error('Error parsing new format:', err);
+    }
+    
+    return questions;
+  };
+
+  const parseSimpleQuestion = (questionText: string, optionsText: string, customReference: string, customExplanation: string, correctAnswerSpec: string = ''): ParsedQuestion[] => {
+    const questions: ParsedQuestion[] = [];
+    
+    try {
+      const lines = optionsText.split('\n').map(l => l.trim()).filter(l => l);
+      
+      if (lines.length < 2) {
+        console.log('Method 2: Not enough option lines:', lines.length);
+        return questions;
+      }
+      
+      const options: string[] = [];
+      const correctIndices: number[] = [];
+      
+      // Each non-empty line is an option
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        
+        // Skip markers and empty lines
+        if (!line || line === 'Correct' || line === 'This answer is correct.' || line === 'This answer is incorrect.') {
+          continue;
+        }
+        
+        // Check if this option is marked as correct
+        const isCorrect = line.includes('☑') || line.includes('✓') || 
+                         (i + 1 < lines.length && lines[i + 1] === 'This answer is correct.');
+        
+        // Clean the option text
+        let optionText = line
+          .replace(/[☐☑✓]/g, '')
+          .replace(/This answer is correct\.?/gi, '')
+          .replace(/This answer is incorrect\.?/gi, '')
+          .trim();
+        
+        if (optionText) {
+          console.log(`Method 2 - Option ${options.length + 1}:`, optionText.substring(0, 60), isCorrect ? '(correct)' : '');
+          options.push(optionText);
+          if (isCorrect) {
+            correctIndices.push(options.length - 1);
+          }
+        }
+      }
+      
+      console.log(`Method 2 - Total options: ${options.length}, Correct indices:`, correctIndices);
+      
+      if (options.length < 2) {
+        console.log('Method 2: Not enough valid options after parsing');
+        return questions;
+      }
+      
+      // If correctAnswerSpec is provided, use it to determine correct answers
+      if (correctAnswerSpec && correctIndices.length === 0) {
+        // Parse correctAnswerSpec: can be "1", "A", "1,3", "A,C", etc.
+        const specs = correctAnswerSpec.split(',').map(s => s.trim().toUpperCase());
+        
+        for (const spec of specs) {
+          // Check if it's a number (1-based) or a letter (A, B, C, etc.)
+          if (/^\d+$/.test(spec)) {
+            const index = parseInt(spec) - 1; // Convert to 0-based index
+            if (index >= 0 && index < options.length) {
+              correctIndices.push(index);
+            }
+          } else if (/^[A-Z]$/.test(spec)) {
+            const index = spec.charCodeAt(0) - 'A'.charCodeAt(0);
+            if (index >= 0 && index < options.length) {
+              correctIndices.push(index);
+            }
+          }
+        }
+        console.log(`Method 2 - Using specified correct answer(s): ${correctAnswerSpec} -> indices:`, correctIndices);
+      }
+      
+      // If no correct answer marked or specified, assume first option
+      if (correctIndices.length === 0) {
+        console.log('Method 2 - No correct answer specified, defaulting to first option');
+        correctIndices.push(0);
+      }
+      
+      const category = determineQuestionCategory(questionText);
+      const tempId = crypto.randomUUID();
+      const nextId = `${selectedExam.toLowerCase().replace('-', '')}-manual-${Date.now()}`;
+      
+      questions.push({
+        id: nextId,
+        question: questionText,
+        options: options,
+        correctAnswer: correctIndices[0],
+        correctAnswers: correctIndices.length > 1 ? correctIndices : undefined,
+        isMultipleChoice: correctIndices.length > 1,
+        explanation: customExplanation || 'No explanation provided',
+        reference: customReference || '',
+        category: category,
+        tempId: tempId
+      });
+      
+      console.log('Method 2 - Successfully parsed question');
+      
+    } catch (err) {
+      console.error('Method 2 parsing error:', err);
     }
     
     return questions;
@@ -1118,7 +1221,23 @@ export default function AdminPage() {
                 className="w-full h-48 px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent font-mono text-sm"
               />
               <p className="mt-1 text-xs text-neutral-500">
-                Include the options and "This answer is correct/incorrect" markers
+                Include the options and "This answer is correct/incorrect" markers, OR specify correct answer below
+              </p>
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-neutral-700 mb-2">
+                Method 2: Correct Answer (Optional)
+              </label>
+              <input
+                type="text"
+                value={manualCorrectAnswer}
+                onChange={(e) => setManualCorrectAnswer(e.target.value)}
+                placeholder="Examples: 2 or B or 1,3 or A,C (for multiple correct answers)"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
+              />
+              <p className="mt-1 text-xs text-neutral-500">
+                Specify which option is correct: use numbers (1, 2, 3...) or letters (A, B, C...). For multiple answers, separate with commas (e.g., "1,3" or "A,C")
               </p>
             </div>
 
@@ -1168,6 +1287,7 @@ export default function AdminPage() {
                   setManualOptionsText('');
                   setManualExplanation('');
                   setManualReference('');
+                  setManualCorrectAnswer('');
                   setParsedQuestions([]);
                   setError('');
                   setSuccess('');
