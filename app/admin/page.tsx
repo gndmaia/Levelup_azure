@@ -304,7 +304,7 @@ export default function AdminPage() {
       }
       
       const options: string[] = [];
-      const correctIndices: number[] = [];
+      let correctIndices: number[] = [];
       
       // Each non-empty line is an option
       for (let i = 0; i < lines.length; i++) {
@@ -335,15 +335,17 @@ export default function AdminPage() {
         }
       }
       
-      console.log(`Method 2 - Total options: ${options.length}, Correct indices:`, correctIndices);
+      console.log(`Method 2 - Total options: ${options.length}, Correct indices from markers:`, correctIndices);
       
       if (options.length < 2) {
         console.log('Method 2: Not enough valid options after parsing');
         return questions;
       }
       
-      // If correctAnswerSpec is provided, use it to determine correct answers
-      if (correctAnswerSpec && correctIndices.length === 0) {
+      // If correctAnswerSpec is provided, use it INSTEAD of markers (it takes priority)
+      if (correctAnswerSpec && correctAnswerSpec.trim()) {
+        correctIndices = []; // Clear any indices from markers
+        
         // Parse correctAnswerSpec: can be "1", "A", "1,3", "A,C", etc.
         const specs = correctAnswerSpec.split(',').map(s => s.trim().toUpperCase());
         
@@ -361,7 +363,11 @@ export default function AdminPage() {
             }
           }
         }
-        console.log(`Method 2 - Using specified correct answer(s): ${correctAnswerSpec} -> indices:`, correctIndices);
+        console.log(`Method 2 - Using specified correct answer(s): "${correctAnswerSpec}" -> indices:`, correctIndices);
+        
+        if (correctIndices.length === 0) {
+          console.log(`Method 2 - WARNING: Could not parse correct answer spec "${correctAnswerSpec}". Use numbers (1,2,3) or letters (A,B,C)`);
+        }
       }
       
       // If no correct answer marked or specified, assume first option
