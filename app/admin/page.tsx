@@ -366,7 +366,9 @@ export default function AdminPage() {
         console.log(`Method 2 - Using specified correct answer(s): "${correctAnswerSpec}" -> indices:`, correctIndices);
         
         if (correctIndices.length === 0) {
-          console.log(`Method 2 - WARNING: Could not parse correct answer spec "${correctAnswerSpec}". Use numbers (1,2,3) or letters (A,B,C)`);
+          const errorMsg = `Invalid correct answer format: "${correctAnswerSpec}". Please use numbers (1, 2, 3, 4) or letters (A, B, C, D). For example, if option 3 is correct, enter "3" or "C".`;
+          console.error('Method 2 - ' + errorMsg);
+          throw new Error(errorMsg);
         }
       }
       
@@ -1239,11 +1241,14 @@ export default function AdminPage() {
                 type="text"
                 value={manualCorrectAnswer}
                 onChange={(e) => setManualCorrectAnswer(e.target.value)}
-                placeholder="Examples: 2 or B or 1,3 or A,C (for multiple correct answers)"
+                placeholder="Enter: 3 or C (if option 3 is correct)"
                 className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
               />
+              <p className="mt-1 text-xs text-red-600 font-medium">
+                ⚠️ Use NUMBERS (1, 2, 3, 4) or LETTERS (A, B, C, D) only - NOT the option text!
+              </p>
               <p className="mt-1 text-xs text-neutral-500">
-                Specify which option is correct: use numbers (1, 2, 3...) or letters (A, B, C...). For multiple answers, separate with commas (e.g., "1,3" or "A,C")
+                For multiple correct answers, separate with commas: "1,3" or "A,C"
               </p>
             </div>
 
