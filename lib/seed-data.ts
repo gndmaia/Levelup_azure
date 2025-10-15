@@ -7572,7 +7572,7 @@ const rawQuestions: RawQuestion[] = [
   },
   {
     id: 'ai900-911',
-    question: "When training a model, why should you randomly split the rows into separate subsets?Select the correct option.",
+    question: "When training a model, why should you randomly split the rows into separate subsets. Select the correct option.",
     options: ["to train multiple models simultaneously to attain better performance","to test the model by using data that was not used to train the model","to train the model twice to attain better accuracy"],
     correctAnswer: 'B',
     type: 'single',
