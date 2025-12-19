@@ -27,20 +27,30 @@ function PracticePageContent() {
 
   // Load objectives and available question count
   useEffect(() => {
-    const mockObjectives = [
-      'AI-Workloads',
-      'Computer-Vision',
-      'NLP',
-      'Conversational-AI',
-      'Speech',
-      'Document-Intelligence',
-      'Responsible-AI',
-      'ML-Fundamentals',
-      'Azure-ML',
-      'Custom-Vision',
-      'Anomaly-Detection',
-    ];
-    setObjectives(mockObjectives);
+    // Define objectives based on exam
+    const examObjectives: Record<string, string[]> = {
+      'AI-900': [
+        'AI-Workloads',
+        'Computer-Vision',
+        'NLP',
+        'Conversational-AI',
+        'Speech',
+        'Document-Intelligence',
+        'Responsible-AI',
+        'ML-Fundamentals',
+        'Azure-ML',
+        'Custom-Vision',
+        'Anomaly-Detection',
+      ],
+      'AZ-900': [
+        'Cloud-Concepts',
+        'Azure-Architecture-Services',
+        'Management-Governance',
+        'Security-Compliance-Trust',
+      ],
+    };
+    
+    setObjectives(examObjectives[examId] || examObjectives['AI-900']);
     
     // Fetch available question count
     fetch(`/api/questions/count?exam=${examId}`)
@@ -54,7 +64,7 @@ function PracticePageContent() {
         // Default to 20 if API fails
         setAvailableQuestionCount(20);
       });
-  }, []);
+  }, [examId]);
 
   const startPractice = async () => {
     setLoading(true);
