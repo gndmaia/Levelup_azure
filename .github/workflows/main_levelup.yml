@@ -71,4 +71,9 @@ jobs:
           slot-name: 'Production'
           package: .
           startup-command: 'npm start'
-          
+      
+      - name: Delete artifact to save storage
+        if: always()
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: node-app
