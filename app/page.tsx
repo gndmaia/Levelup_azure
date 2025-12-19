@@ -23,22 +23,50 @@ export default function HomePage() {
     fetchQuestionCount();
   }, []);
   return (
-    <div className="min-h-[calc(100vh-8rem)]">
+    <div className="min-h-[calc(100vh-8rem)] relative overflow-hidden">
+      {/* Christmas Snowflakes */}
+      <div className="fixed inset-0 pointer-events-none z-50">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-white opacity-70 animate-snowfall"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `-${Math.random() * 20}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${5 + Math.random() * 10}s`,
+              fontSize: `${10 + Math.random() * 20}px`,
+            }}
+          >
+            ❄
+          </div>
+        ))}
+      </div>
+
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-primary-500 to-accent-teal text-white">
+      <div className="bg-gradient-to-br from-red-600 via-green-600 to-red-500 text-white relative">
+        {/* Christmas Lights Border */}
+        <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-red-500 animate-pulse"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
+            {/* Christmas Greeting */}
+            <div className="mb-4 flex justify-center items-center gap-3">
+              <span className="text-3xl animate-bounce">🎄</span>
+              <p className="text-2xl font-bold text-yellow-300">Happy Holidays!</p>
+              <span className="text-3xl animate-bounce" style={{ animationDelay: '0.2s' }}>🎅</span>
+            </div>
+            
             <div className="flex justify-center mb-6">
               <img
                 src="/logo.jpg"
                 alt="LevelUp Azure"
-                className="h-24 md:h-32"
+                className="h-24 md:h-32 rounded-lg shadow-xl border-4 border-yellow-300"
               />
             </div>
-            <p className="text-xl md:text-2xl mb-4 text-primary-50">
-              Master Azure Certifications with Confidence
+            <p className="text-xl md:text-2xl mb-4 text-yellow-100">
+              Master Azure Certifications with Confidence 🌟
             </p>
-            <p className="text-lg text-primary-100 max-w-2xl mx-auto">
+            <p className="text-lg text-yellow-50 max-w-2xl mx-auto">
               Choose your certification path and start practicing with real exam questions
             </p>
           </div>
@@ -46,20 +74,26 @@ export default function HomePage() {
       </div>
 
       {/* Certification Selection */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-white to-red-50">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Select Your Certification
-          </h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              🎁 Select Your Certification 🎁
+            </h2>
+            <p className="text-red-600 font-semibold">Special Holiday Season - Level Up Your Skills! ⭐</p>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* AI-900 Card - Available */}
             <Link href="/ai-900" className="group">
-              <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-success hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer h-full">
+              <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-green-600 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer h-full relative overflow-hidden">
+                {/* Christmas decoration corner */}
+                <div className="absolute top-2 right-2 text-2xl">🎄</div>
+                
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">Azure AI-900</h3>
-                  <span className="bg-success text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Available Now
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Available Now ✨
                   </span>
                 </div>
                 
@@ -94,8 +128,8 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="flex items-center text-primary-600 font-semibold group-hover:text-primary-700">
-                  Start Learning &rarr;
+                <div className="flex items-center text-green-600 font-semibold group-hover:text-green-700">
+                  Start Learning 🎯 &rarr;
                 </div>
               </div>
             </Link>
