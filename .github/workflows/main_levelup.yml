@@ -10,9 +10,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
+      id-token: write #This is required for requesting the JWT
       contents: read #This is required for actions/checkout
 
     steps:
@@ -29,32 +30,6 @@ jobs:
           npm run build
         env:
           NODE_ENV: production
-
-      - name: Zip artifacts for deployment
-        run: zip -r node-app.zip .next node_modules package.json server.js next.config.ts .deployment .skipbuild
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
-        with:
-          name: node-app
-          path: node-app.zip
-          retention-days: 1
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: node-app
-
-      - name: Unzip artifact for deployment
-        run: unzip node-app.zip
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -71,9 +46,3 @@ jobs:
           slot-name: 'Production'
           package: .
           startup-command: 'npm start'
-      
-      - name: Delete artifact to save storage
-        if: always()
-        uses: geekyeggo/delete-artifact@v5
-        with:
-          name: node-app
