@@ -23,42 +23,53 @@ export default function HomePage() {
     fetchQuestionCount();
   }, []);
   return (
-    <div className="min-h-[calc(100vh-8rem)]">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-primary-500 to-accent-teal text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <img
-                src="/logo.jpg"
-                alt="LevelUp Azure"
-                className="h-24 md:h-32"
-              />
-            </div>
-            <p className="text-xl md:text-2xl mb-4 text-primary-50">
-              Master Azure Certifications with Confidence
-            </p>
-            <p className="text-lg text-primary-100 max-w-2xl mx-auto">
-              Choose your certification path and start practicing with real exam questions
-            </p>
-          </div>
-        </div>
+    <>
+      {/* Rain Effect */}
+      <div className="rain-container" aria-hidden="true">
+        {[...Array(50)].map((_, i) => (
+          <div key={i} className="rain" />
+        ))}
       </div>
 
-      {/* Certification Selection */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Select Your Certification
-          </h2>
+      <div className="content-wrapper min-h-[calc(100vh-8rem)]">
+        {/* Hero Section - Winter Theme */}
+        <div className="bg-gradient-to-br from-slate-700 via-blue-900 to-slate-600 text-white relative overflow-hidden">
+          {/* Winter overlay effect */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-slate-800/40" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <img
+                  src="/logo.jpg"
+                  alt="LevelUp Azure"
+                  className="h-24 md:h-32 drop-shadow-2xl"
+                />
+              </div>
+              <p className="text-xl md:text-2xl mb-4 text-blue-100 drop-shadow-lg">
+                ❄️ Master Azure Certifications with Confidence ❄️
+              </p>
+              <p className="text-lg text-blue-200 max-w-2xl mx-auto drop-shadow-md">
+                Choose your certification path and start practicing with real exam questions
+              </p>
+              <p className="text-sm text-blue-300 mt-2 italic">Winter Edition - Stay warm while you learn</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Certification Selection */}
+        <section className="py-16 bg-gradient-to-b from-slate-50/95 to-blue-50/90 backdrop-blur-sm">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center text-slate-800 mb-12 drop-shadow-sm">
+              ❄️ Select Your Certification ❄️
+            </h2>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* AI-900 Card - Available */}
             <Link href="/ai-900" className="group">
-              <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-success hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer h-full">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-8 border-t-4 border-cyan-600 hover:shadow-2xl hover:bg-white transition-all duration-300 transform hover:-translate-y-1 cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">Azure AI-900</h3>
-                  <span className="bg-success text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <h3 className="text-2xl font-bold text-slate-900">Azure AI-900</h3>
+                  <span className="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
                     Available Now
                   </span>
                 </div>
@@ -102,7 +113,7 @@ export default function HomePage() {
 
             {/* AI-102 Card - Coming Soon */}
             <div className="opacity-75">
-              <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-warning h-full relative">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-8 border-t-4 border-amber-500 h-full relative">
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">Azure AI-102</h3>
                   <span className="bg-warning text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -152,7 +163,7 @@ export default function HomePage() {
 
             {/* AZ-900 Card - Available */}
             <Link href="/az-900" className="group">
-              <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-600 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer h-full">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-8 border-t-4 border-blue-700 hover:shadow-2xl hover:bg-white transition-all duration-300 transform hover:-translate-y-1 cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">Azure AZ-900</h3>
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -201,15 +212,15 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-blue-50/90 to-slate-100/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Why Choose LevelUp Azure?
+          <h2 className="text-3xl font-bold text-center text-slate-800 mb-12 drop-shadow-sm">
+            ❄️ Why Choose LevelUp Azure? ❄️
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-blue-100/80 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -221,7 +232,7 @@ export default function HomePage() {
             </div>
 
             <div className="text-center">
-              <div className="bg-success/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-cyan-100/80 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <svg className="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -233,7 +244,7 @@ export default function HomePage() {
             </div>
 
             <div className="text-center">
-              <div className="bg-warning/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-amber-100/80 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <svg className="w-8 h-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                 </svg>
@@ -246,6 +257,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
