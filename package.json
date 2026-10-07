@@ -9,7 +9,7 @@
     "test:ab730": "node --test tests/ab730-question-bank.test.mjs",
     "test:forms": "node --test tests/ab730-question-bank.test.mjs tests/ab731-question-bank.test.mjs",
     "test:gh300": "node --test tests/gh300-question-bank.test.mjs",
-    "test:practice": "node --test tests/ab730-question-bank.test.mjs tests/ab731-question-bank.test.mjs tests/gh300-question-bank.test.mjs",
+    "test:practice": "node --test tests/ab730-question-bank.test.mjs tests/ab731-question-bank.test.mjs tests/gh300-question-bank.test.mjs tests/certification-mode-layout.test.mjs",
     "start": "node server.js",
     "heroku-postbuild": "npm run build"
   },

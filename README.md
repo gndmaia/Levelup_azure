@@ -34,14 +34,14 @@ A comprehensive web application for practicing Azure certifications with interac
 
 ### AB-731 AI Transformation Leader
 - **140 imported training questions** from four MSS AI First Forms quizzes: 58, 51, 15, and 16 questions.
-- **Four selectable practice sets**, mixed practice, and a 60-question, 45-minute timed practice mode.
+- **Practice Mode and Exam Mode**, matching the AI-900 landing layout, with one combined bank and a question-count selector after choosing a mode. Exam mode defaults to 60 questions in 45 minutes.
 - **11 multiple-select questions** with exact-match scoring and no partial credit.
 - Correct answers come from the source Forms' normal **View results** answer markers. Random trial responses, respondent information, and submission scores are not included.
 - Source wording, paragraph breaks, question numbers, and links are retained. Feedback identifies the source's correct options; it does not invent authored explanations.
 - These are training questions, not live certification-exam content. Practice percentages do not reproduce Microsoft's scaled exam scores or the Forms' individual point weights.
 - Imported question content remains subject to its source owners' permissions; the application's code license does not grant additional rights to third-party question content.
 
-Open `/ab-731`, or use `/practice?exam=AB-731`. A source set can be selected with, for example, `/practice?exam=AB-731&set=Practice-Exam-1`.
+Open `/ab-731`, or use `/practice?exam=AB-731`. Choose 10, 30, 60, or all 140 questions. Historical `set` query parameters no longer restrict the bank. Original source information is retained in answer feedback, not exposed as separate homework or test menus.
 
 To regenerate the imported bank from authorized source extracts and revealed reviews:
 
@@ -54,10 +54,10 @@ The source directory must contain `ab731-trial-responses.json`, `ab731-visible-s
 
 ### AB-730 AI Business Professional
 - **160 imported training questions** from four Forms quizzes: 50, 50, 30, and 30 questions, including **10 two-answer multiple-select questions**.
-- Open `/ab-730` for source-set selection, `/practice?exam=AB-730` for mixed practice, or `/exam?exam=AB-730` for a 60-question, 45-minute timed practice attempt.
+- Open `/ab-730` to choose Practice or Exam, then select 10, 30, 60, or all 160 questions from the combined bank. Exam mode retains its 45-minute timer and defaults to 60 questions.
 - Source answer keys were collected through normal Forms results review. Trial selections, respondent details, and trial scores are not published. Question wording and source-set provenance are retained.
 - The 160 count is source-set items, not unique stems: questions repeated across source quizzes are retained so each original set stays complete.
-- The shared Forms landing, import validation, seed conversion, and practice flow also serve AB-731 without changing its question bank.
+- The shared certification landing, import validation, seed conversion, and practice flow also serve AB-731 without changing its question bank.
 - Source mistakes are not silently rewritten: Practice exam 2, question 10 repeats an incorrect distractor. Both options are retained under distinct IDs; the correct answer is unambiguous.
 - These are unofficial training questions, not live exam content. Microsoft's AB-730 certification page lists an English syllabus update for **October 20, 2026**; review the latest official study guide rather than assuming these source quizzes cover the updated syllabus.
 - Imported content remains subject to its source owners' permissions, not the application's code license.
@@ -73,11 +73,11 @@ Both wrappers use `scripts/import-forms-bank.mjs`, which validates source IDs, c
 
 ### GH-300 GitHub Copilot
 - **255 detailed practice questions** imported from ten supplied Markdown files from [ElmentorProgram/gh-300](https://github.com/ElmentorProgram/gh-300), with user-confirmed reproduction permission.
-- Open `/gh-300`, `/practice?exam=GH-300`, or `/exam?exam=GH-300`. Select an individual detailed test with, for example, `/practice?exam=GH-300&set=Detailed-Test-01`.
+- Open `/gh-300` to choose Practice or Exam, then select 10, 30, 60, or all 255 questions. Questions are drawn from the combined certification bank; the original detailed files are attribution, not separate test menus.
 - **13 multiple-select questions**, including keys with more than two answers; scoring requires exactly the source's correct choices.
 - Original explanations, tips, important callouts, correct/wrong discussions where present, and official documentation references are retained.
 - Correct-choice bolding is stripped from displayed options. A safe text-only Markdown subset renders emphasis, inline code, paragraphs, headings, lists, and callouts through React nodes; raw HTML is never injected.
-- Timed practice samples **60 questions in 100 minutes**, matching the assessment duration listed on the official [GH-300 certification page](https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/). The sampled question count and practice percentage are not official exam scoring.
+- Timed practice defaults to **60 questions in 100 minutes**, with an adjustable question count. The duration matches the official [GH-300 certification page](https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/); the selected question count and practice percentage are not official exam scoring.
 - The detailed files contain **255**, not the source README's advertised 300 items: tests 07 and 08 have only **10 and 5** questions. Missing questions are not fabricated, and the raw files in the same folder are excluded to avoid duplicate imports.
 - Source commit, per-file SHA-256, original question numbering, and pinned source links are retained. The local source directory is never written to, and its absolute path is not published.
 - The source repository has no published license. Permission to import was confirmed by the user; this does not grant additional reuse rights or apply the application's code license to the question content.
@@ -89,7 +89,7 @@ node scripts/import-gh300.mjs <detailed-directory> YYYY-MM-DD <full-source-git-c
 npm run test:practice
 ```
 
-The importer strictly validates question sections, sequential option IDs, explicit answer mappings, authored explanations, reference URLs, source counts, and duplicate question IDs before writing the generated bank. The legacy admin import endpoint rejects GH-300 writes. Shared imported-exam metadata, landing, seed conversion, and source-set filtering retain the existing AB-730 and AB-731 behavior.
+The importer strictly validates question sections, sequential option IDs, explicit answer mappings, authored explanations, reference URLs, source counts, and duplicate question IDs before writing the generated bank. The legacy admin import endpoint rejects GH-300 writes. Shared imported-exam metadata, landing, seed conversion, and full-bank mode flow serve AB-730, AB-731, and GH-300. Source references remain in answer feedback; source-group badges and summary breakdowns are hidden in these modes. Mode navigation and retry links retain the selected certification.
 
 ## 🎯 Current Statistics
 

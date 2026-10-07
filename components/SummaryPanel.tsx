@@ -7,9 +7,10 @@ import Link from 'next/link';
 interface SummaryPanelProps {
   summary: SessionSummary;
   showDetails?: boolean;
+  examId?: string;
 }
 
-export default function SummaryPanel({ summary, showDetails = true }: SummaryPanelProps) {
+export default function SummaryPanel({ summary, showDetails = true, examId }: SummaryPanelProps) {
   const scoreColor = 
     summary.score >= 70 ? 'text-success' :
     summary.score >= 50 ? 'text-warning' :
@@ -99,7 +100,7 @@ export default function SummaryPanel({ summary, showDetails = true }: SummaryPan
       {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-neutral-200">
         <Link
-          href={summary.mode === 'exam' ? '/exam' : '/practice'}
+          href={`${summary.mode === 'exam' ? '/exam' : '/practice'}${examId ? `?exam=${encodeURIComponent(examId)}` : ''}`}
           className="flex-1 bg-primary-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition-colors text-center"
         >
           Try Again

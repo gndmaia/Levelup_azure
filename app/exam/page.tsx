@@ -8,13 +8,18 @@ import SummaryPanel from '@/components/SummaryPanel';
 import QuestionNavigator from '@/components/QuestionNavigator';
 import { Question, SessionSummary } from '@/types';
 import { getImportedPracticeExam } from '@/lib/imported-practice';
+import QuestionCountSelector from '@/components/QuestionCountSelector';
 
 function ExamPageContent() {
   const searchParams = useSearchParams();
   const examId = searchParams.get('exam') || 'AI-900';
   const importedExam = getImportedPracticeExam(examId);
   const practiceTimeLimit = importedExam?.timeLimitSec ?? 2700;
-  const practiceQuestionCount = importedExam?.timedQuestionCount ?? 60;
+  const [practiceQuestionCount, setPracticeQuestionCount] = useState(importedExam?.timedQuestionCount ?? 60);
+
+  useEffect(() => {
+    setPracticeQuestionCount(importedExam?.timedQuestionCount ?? 60);
+  }, [importedExam]);
   
   const [stage, setStage] = useState<'config' | 'exam' | 'summary'>('config');
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -204,7 +209,7 @@ function ExamPageContent() {
   if (stage === 'summary' && summary) {
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <SummaryPanel summary={summary} />
+        <SummaryPanel summary={summary} examId={examId} showDetails={!importedExam} />
         <div className="mt-6 text-center">
           <button
             onClick={handleRestart}
@@ -304,13 +309,19 @@ function ExamPageContent() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="bg-white rounded-lg shadow-md p-8">
         <h1 className="text-3xl font-bold text-neutral-900 mb-4">
-          {importedExam ? `${importedExam.id} Timed Practice Exam` : 'Exam Mode'}
+          {importedExam ? `${importedExam.id} Exam Mode` : 'Exam Mode'}
         </h1>
         <p className="text-neutral-600 mb-8">
           {importedExam
             ? `Practice with ${practiceQuestionCount} sampled training questions in ${practiceTimeLimit / 60} minutes. This is not an official certification exam.`
             : 'Simulate the real Azure AI-900 certification exam with a timed session and realistic exam conditions.'}
         </p>
+
+        {importedExam && (
+          <div className="mb-8">
+            <QuestionCountSelector availableCount={importedExam.questionCount} selectedCount={practiceQuestionCount} onSelect={setPracticeQuestionCount} />
+          </div>
+        )}
 
         <div className="space-y-6 mb-8">
           <div className="flex items-start">
@@ -327,7 +338,7 @@ function ExamPageContent() {
               <h3 className="text-lg font-semibold text-neutral-900">{practiceQuestionCount} Questions</h3>
               <p className="text-neutral-600">
                 {importedExam
-                  ? `Sampled from ${importedExam.sources.length} imported ${importedExam.id} training sets, including multiple-select questions`
+                  ? `Mixed questions from the full ${importedExam.id} question bank, including multiple-select questions`
                   : 'Balanced across all AI-900 topic areas with realistic difficulty distribution'}
               </p>
             </div>
@@ -387,7 +398,7 @@ function ExamPageContent() {
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-neutral-900">Detailed Results</h3>
               <p className="text-neutral-600">
-                Get your score and per-category breakdown at the end of the exam
+                {importedExam ? 'Get your score, correct answer count, and time taken at the end of the exam' : 'Get your score and per-category breakdown at the end of the exam'}
               </p>
             </div>
           </div>

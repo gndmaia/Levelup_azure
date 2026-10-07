@@ -177,7 +177,8 @@ export default function QuestionCard({
               {question.difficulty.toUpperCase()}
             </span>
             <span className="px-3 py-1 text-xs font-semibold bg-neutral-100 text-neutral-700 rounded-full">
-              {question.objectiveId}
+              {question.examId === 'AB-730' || question.examId === 'AB-731' || question.examId === 'GH-300'
+                ? question.examId : question.objectiveId}
             </span>
           </div>
         </div>

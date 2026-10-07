@@ -7,18 +7,17 @@ import QuestionCard from '@/components/QuestionCard';
 import SummaryPanel from '@/components/SummaryPanel';
 import { Question, SessionSummary } from '@/types';
 import { getImportedPracticeExam } from '@/lib/imported-practice';
+import QuestionCountSelector from '@/components/QuestionCountSelector';
 
 function PracticePageContent() {
   const searchParams = useSearchParams();
   const examId = searchParams.get('exam') || 'AI-900';
-  const sourceSetId = searchParams.get('set');
   const importedExam = getImportedPracticeExam(examId);
-  const sourceSet = importedExam?.sources.find((source) => source.id === sourceSetId);
   
   const [stage, setStage] = useState<'config' | 'practice' | 'summary'>('config');
   const [objectives, setObjectives] = useState<string[]>([]);
-  const [selectedObjectives, setSelectedObjectives] = useState<string[]>(sourceSet ? [sourceSet.id] : []);
-  const [questionCount, setQuestionCount] = useState<number>(sourceSet?.questionCount ?? 10);
+  const [selectedObjectives, setSelectedObjectives] = useState<string[]>([]);
+  const [questionCount, setQuestionCount] = useState<number>(10);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -54,7 +53,7 @@ function PracticePageContent() {
       ],
     };
     
-    setObjectives(importedExam?.sources.map((source) => source.id) ?? examObjectives[examId] ?? examObjectives['AI-900']);
+    setObjectives(importedExam ? [] : examObjectives[examId] ?? examObjectives['AI-900']);
     
     // Fetch available question count
     fetch(`/api/questions/count?exam=${examId}`)
@@ -71,25 +70,11 @@ function PracticePageContent() {
   }, [examId, importedExam]);
 
   useEffect(() => {
-    if (importedExam) {
-      setSelectedObjectives(sourceSet ? [sourceSet.id] : []);
-      setQuestionCount(sourceSet?.questionCount ?? 10);
-    }
-  }, [importedExam, sourceSet]);
+    setSelectedObjectives([]);
+    setQuestionCount(10);
+  }, [examId]);
 
-  const availableCount = importedExam
-    ? importedExam.sources.filter((source) => selectedObjectives.length === 0 || selectedObjectives.includes(source.id))
-      .reduce((total, source) => total + source.questionCount, 0)
-    : availableQuestionCount;
-
-  const selectObjectives = (next: string[]) => {
-    setSelectedObjectives(next);
-    if (importedExam) {
-      const count = importedExam.sources.filter((source) => next.length === 0 || next.includes(source.id))
-        .reduce((total, source) => total + source.questionCount, 0);
-      setQuestionCount((current) => Math.min(current, count));
-    }
-  };
+  const availableCount = importedExam?.questionCount ?? availableQuestionCount;
 
   const startPractice = async () => {
     setLoading(true);
@@ -100,7 +85,7 @@ function PracticePageContent() {
         body: JSON.stringify({
           mode: 'practice',
           examId: examId,
-          objectiveIds: selectedObjectives.length > 0 ? selectedObjectives : undefined,
+          objectiveIds: !importedExam && selectedObjectives.length > 0 ? selectedObjectives : undefined,
           questionCount: questionCount,
         }),
       });
@@ -225,21 +210,18 @@ function PracticePageContent() {
           </h1>
           <p className="text-neutral-600 mb-8">
             {importedExam
-              ? importedExam.sourceKind === 'markdown'
-                ? 'Choose your detailed practice sets and learn with the original explanations, tips, and documentation references.'
-                : 'Choose your question sets and practice with feedback from the original Forms answer keys.'
+              ? 'Choose how many questions to practice from the full certification bank, with instant answer feedback.'
               : 'Choose your topics and practice at your own pace with instant feedback.'}
           </p>
 
-          <ObjectiveSelector
+          {!importedExam && <ObjectiveSelector
             objectives={objectives}
-            onSelect={selectObjectives}
+            onSelect={setSelectedObjectives}
             selectedObjectives={selectedObjectives}
-            selectionName={importedExam ? 'question set' : 'topic'}
-          />
+          />}
 
           {/* Question Count Selector */}
-          <div className="mt-8 border-t border-neutral-200 pt-6">
+          {importedExam ? <QuestionCountSelector availableCount={availableCount} selectedCount={questionCount} onSelect={setQuestionCount} /> : <div className="mt-8 border-t border-neutral-200 pt-6">
             <h3 className="text-lg font-semibold text-neutral-900 mb-4">
               Number of Questions
             </h3>
@@ -261,7 +243,7 @@ function PracticePageContent() {
                 </button>
               ))}
             </div>
-          </div>
+          </div>}
 
           <div className="mt-8 flex justify-end space-x-4">
             <button
@@ -333,7 +315,7 @@ function PracticePageContent() {
   if (stage === 'summary' && summary) {
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <SummaryPanel summary={summary} />
+        <SummaryPanel summary={summary} examId={examId} showDetails={!importedExam} />
         <div className="mt-6 text-center">
           <button
             onClick={handleRestart}

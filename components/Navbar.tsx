@@ -1,11 +1,21 @@
 ﻿'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
+import { getImportedPracticeExam } from '@/lib/imported-practice';
 
-export default function Navbar() {
+function NavbarContent() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const isAI103 = pathname.startsWith('/ai-103');
+  const pageExam = pathname.split('/')[1]?.toUpperCase();
+  const importedExam = getImportedPracticeExam(
+    pathname.startsWith('/practice') || pathname.startsWith('/exam')
+      ? searchParams.get('exam') ?? ''
+      : pageExam ?? ''
+  );
+  const examQuery = importedExam ? `?exam=${importedExam.id}` : '';
 
   const isActive = (path: string) => {
     return pathname === path ? 'text-primary-500 border-b-2 border-primary-500' : 'text-neutral-600 hover:text-primary-500';
@@ -40,14 +50,14 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <Link href="/practice" className={`px-3 py-2 text-sm font-medium transition-colors ${isActive('/practice')}`}>
+                  <Link href={`/practice${examQuery}`} className={`px-3 py-2 text-sm font-medium transition-colors ${isActive('/practice')}`}>
                     Practice
                   </Link>
-                  <Link href="/exam" className={`px-3 py-2 text-sm font-medium transition-colors ${isActive('/exam')}`}>
+                  <Link href={`/exam${examQuery}`} className={`px-3 py-2 text-sm font-medium transition-colors ${isActive('/exam')}`}>
                     Exam
                   </Link>
-                  <Link href="/about/ai-900" className={`px-3 py-2 text-sm font-medium transition-colors ${isActive('/about/ai-900')}`}>
-                    About AI-900
+                  <Link href={importedExam ? `/${importedExam.id.toLowerCase()}` : '/about/ai-900'} className={`px-3 py-2 text-sm font-medium transition-colors ${isActive(importedExam ? `/${importedExam.id.toLowerCase()}` : '/about/ai-900')}`}>
+                    {importedExam ? `About ${importedExam.id}` : 'About AI-900'}
                   </Link>
                 </>
               )}
@@ -56,5 +66,13 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+  );
+}
+
+export default function Navbar() {
+  return (
+    <Suspense fallback={<nav className="h-16 bg-white border-b border-neutral-200" aria-label="Loading navigation" />}>
+      <NavbarContent />
+    </Suspense>
   );
 }
