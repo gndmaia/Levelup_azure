@@ -18,7 +18,7 @@ First, let's add a production configuration:
 2. **Create a resource** > **Web App**
 3. **Configure**:
    - **Name**: levelup-azure-ai900
-   - **Runtime**: Node 18 LTS
+   - **Runtime**: Node 20
    - **Operating System**: Linux
    - **Region**: Choose your preferred region
    - **Pricing**: B1 Basic (or F1 Free for testing)
@@ -26,9 +26,11 @@ First, let's add a production configuration:
 ## Step 3: Deployment Options
 
 ### Option A: GitHub Actions (Recommended)
-- Connect to your GitHub repository
-- Azure will create a workflow automatically
-- Automatic deployments on push to main
+- The checked-in `.github/workflows/main_levelup.yml` deploys `Levelup` on pushes to `main` or a manual workflow dispatch.
+- Configure the repository secret `AZUREAPPSERVICE_PUBLISHPROFILE_78789C0D50994F9C8A2B0A4A71E3E96D` with the App Service publish profile. Never commit the profile.
+- The build job runs `npm ci --include=dev` and `npm run build`, then archives the production `.next` output, dependencies, public assets, and runtime configuration.
+- The deploy job extracts that archive and deploys it with the publish profile. Archiving preserves the hidden `.next` directory across the artifact upload/download steps.
+- This workflow does not use Azure OIDC login. If switching back to OIDC, the Azure federated credential's subject must exactly match GitHub's emitted subject, including immutable owner/repository IDs when enabled.
 
 ### Option B: Azure CLI
 ```bash
@@ -49,15 +51,12 @@ In Azure Portal > Your App Service > Configuration:
 ### Application Settings:
 ```
 NODE_ENV=production
-WEBSITES_NODE_DEFAULT_VERSION=~18
-SCM_DO_BUILD_DURING_DEPLOYMENT=true
+WEBSITES_NODE_DEFAULT_VERSION=~20
+SCM_DO_BUILD_DURING_DEPLOYMENT=false
 ```
 
 ### Build Configuration:
-Azure will automatically:
-- Run `npm install`
-- Run `npm run build`
-- Start with `npm start`
+GitHub Actions installs dependencies and builds the application before deployment. The checked-in `.deployment` file disables a second server-side build. Configure the App Service startup command as `npm start`, which runs `server.js` against the deployed `.next` build.
 
 ## Expected Behavior
 
@@ -66,3 +65,7 @@ Your app will be available at: `https://levelup-azure-ai900.azurewebsites.net`
 ## Troubleshooting
 
 Check logs in Azure Portal > Your App Service > Log stream
+
+If deployment reports success but new pages return 404, confirm the build job ran and the deployment package contains `.next/BUILD_ID` and the new routes. Uploading only source files is insufficient when server-side builds are disabled.
+
+For `AADSTS700213` in an older OIDC workflow, compare the assertion subject in the failed login log with the Azure federated identity credential. Rerunning an old workflow uses its original commit; use the updated workflow on `main` instead.
