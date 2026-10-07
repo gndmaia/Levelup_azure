@@ -1,6 +1,6 @@
-# LevelUp Azure - AI-900 Practice Platform
+# LevelUp Azure Certification Practice Platform
 
-A comprehensive web application for practicing Azure AI-900 certification exam with interactive Practice and Exam modes.
+A comprehensive web application for practicing Azure certifications with interactive Practice and Exam modes.
 
 ![Azure AI-900 Practice Platform](public/logo.jpg)
 
@@ -18,6 +18,13 @@ A comprehensive web application for practicing Azure AI-900 certification exam w
 - **45 questions** balanced by topic and difficulty
 - **Flag questions** for review
 - **Comprehensive summary** with score breakdown
+
+### AI-103 Simulator
+- **226 original questions** aligned to the April 2026 AI-103 skills outline
+- **51-question attempts** with timed and study modes
+- **Case studies, code completion, ordering, matching, matrix, and decision items**
+- **Immediate correct-answer feedback in study mode**
+- Bundled from the MIT-licensed [AI-103 Practice Exam](https://github.com/sefstratiou-ai/ai-103-practice-exam) project
 
 ### Admin Features
 - **Question import** from HTML files
@@ -49,11 +56,14 @@ levelup-azure/
 │   ├── api/              # API routes
 │   ├── practice/         # Practice mode
 │   ├── exam/             # Exam mode  
+│   ├── ai-103/           # Embedded full-fidelity AI-103 simulator
 │   ├── sessions/         # Session history
 │   ├── about/            # About pages
 │   ├── auth/             # Authentication
 │   └── admin/            # Admin pages
 ├── components/           # React components
+├── public/
+│   └── ai-103-simulator/ # Static AI-103 application bundle
 ├── lib/                  # Business logic
 │   ├── data-store.ts    # In-memory database
 │   ├── question-selector.ts
