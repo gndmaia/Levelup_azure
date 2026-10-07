@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { seedQuestions } from '@/lib/seed-data';
 import { seedQuestionsAZ900 } from '@/lib/seed-data-az900';
+import { seedQuestionsAB731 } from '@/lib/seed-data-ab731';
 
 export async function GET(request: Request) {
   try {
@@ -11,6 +12,8 @@ export async function GET(request: Request) {
     let questions;
     if (exam === 'AZ-900') {
       questions = seedQuestionsAZ900;
+    } else if (exam === 'AB-731') {
+      questions = seedQuestionsAB731;
     } else {
       questions = seedQuestions; // AI-900
     }

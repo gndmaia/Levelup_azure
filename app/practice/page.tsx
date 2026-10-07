@@ -6,15 +6,18 @@ import ObjectiveSelector from '@/components/ObjectiveSelector';
 import QuestionCard from '@/components/QuestionCard';
 import SummaryPanel from '@/components/SummaryPanel';
 import { Question, SessionSummary } from '@/types';
+import { AB731_SETS } from '@/lib/ab731-metadata';
 
 function PracticePageContent() {
   const searchParams = useSearchParams();
   const examId = searchParams.get('exam') || 'AI-900';
+  const sourceSetId = searchParams.get('set');
+  const sourceSet = examId === 'AB-731' ? AB731_SETS.find((source) => source.id === sourceSetId) : undefined;
   
   const [stage, setStage] = useState<'config' | 'practice' | 'summary'>('config');
   const [objectives, setObjectives] = useState<string[]>([]);
-  const [selectedObjectives, setSelectedObjectives] = useState<string[]>([]);
-  const [questionCount, setQuestionCount] = useState<number>(10);
+  const [selectedObjectives, setSelectedObjectives] = useState<string[]>(sourceSet ? [sourceSet.id] : []);
+  const [questionCount, setQuestionCount] = useState<number>(sourceSet?.questionCount ?? 10);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -48,6 +51,7 @@ function PracticePageContent() {
         'Management-Governance',
         'Security-Compliance-Trust',
       ],
+      'AB-731': AB731_SETS.map((source) => source.id),
     };
     
     setObjectives(examObjectives[examId] || examObjectives['AI-900']);
@@ -65,6 +69,27 @@ function PracticePageContent() {
         setAvailableQuestionCount(20);
       });
   }, [examId]);
+
+  useEffect(() => {
+    if (examId === 'AB-731') {
+      setSelectedObjectives(sourceSet ? [sourceSet.id] : []);
+      setQuestionCount(sourceSet?.questionCount ?? 10);
+    }
+  }, [examId, sourceSet]);
+
+  const availableCount = examId === 'AB-731'
+    ? AB731_SETS.filter((source) => selectedObjectives.length === 0 || selectedObjectives.includes(source.id))
+      .reduce((total, source) => total + source.questionCount, 0)
+    : availableQuestionCount;
+
+  const selectObjectives = (next: string[]) => {
+    setSelectedObjectives(next);
+    if (examId === 'AB-731') {
+      const count = AB731_SETS.filter((source) => next.length === 0 || next.includes(source.id))
+        .reduce((total, source) => total + source.questionCount, 0);
+      setQuestionCount((current) => Math.min(current, count));
+    }
+  };
 
   const startPractice = async () => {
     setLoading(true);
@@ -190,20 +215,25 @@ function PracticePageContent() {
   };
 
   if (stage === 'config') {
-    const questionOptions = [10, 30, 60, availableQuestionCount].filter((n, i, arr) => n <= availableQuestionCount && arr.indexOf(n) === i).sort((a, b) => a - b);
+    const questionOptions = [10, 30, 60, availableCount].filter((n, i, arr) => n > 0 && n <= availableCount && arr.indexOf(n) === i).sort((a, b) => a - b);
     
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-md p-8">
-          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Practice Mode</h1>
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">
+            {examId === 'AB-731' ? 'AB-731 Practice Mode' : 'Practice Mode'}
+          </h1>
           <p className="text-neutral-600 mb-8">
-            Choose your topics and practice at your own pace with instant feedback.
+            {examId === 'AB-731'
+              ? 'Choose your question sets and practice with feedback from the original Forms answer keys.'
+              : 'Choose your topics and practice at your own pace with instant feedback.'}
           </p>
 
           <ObjectiveSelector
             objectives={objectives}
-            onSelect={setSelectedObjectives}
+            onSelect={selectObjectives}
             selectedObjectives={selectedObjectives}
+            selectionName={examId === 'AB-731' ? 'question set' : 'topic'}
           />
 
           {/* Question Count Selector */}
@@ -212,7 +242,7 @@ function PracticePageContent() {
               Number of Questions
             </h3>
             <p className="text-sm text-neutral-600 mb-4">
-              Available questions: {availableQuestionCount}
+              Available questions: {availableCount}
             </p>
             <div className="grid grid-cols-4 gap-3">
               {questionOptions.map((count) => (

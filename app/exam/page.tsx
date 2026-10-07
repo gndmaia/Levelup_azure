@@ -19,7 +19,7 @@ function ExamPageContent() {
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [summary, setSummary] = useState<SessionSummary | null>(null);
   const [loading, setLoading] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(examId === 'AZ-900' ? 2700 : 2700); // 45 minutes default
+  const [timeRemaining, setTimeRemaining] = useState(2700); // 45 minutes
   const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set());
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -40,6 +40,9 @@ function ExamPageContent() {
 
       const data = await response.json();
       if (data.success) {
+        setAnsweredQuestions(new Set());
+        setSelectedAnswer([]);
+        setTimeRemaining(2700);
         setSessionId(data.session.id);
         setTotalQuestions(data.session.questionIds.length);
         setStage('exam');
@@ -90,8 +93,11 @@ function ExamPageContent() {
     setSelectedAnswer(selectedOptions);
   };
 
-  const submitAnswer = async () => {
-    if (!sessionId || !currentQuestion || selectedAnswer.length === 0) return;
+  const saveAnswer = async (): Promise<boolean> => {
+    if (!sessionId || !currentQuestion || selectedAnswer.length === 0) {
+      alert('Choose an answer before saving.');
+      return false;
+    }
 
     try {
       const response = await fetch(`/api/sessions/${sessionId}/answer`, {
@@ -106,13 +112,20 @@ function ExamPageContent() {
       if (response.ok) {
         // Mark question as answered
         setAnsweredQuestions(prev => new Set(prev).add(questionNumber));
-        // Move to next question
-        await loadNextQuestion(sessionId);
+        return true;
       } else {
         alert('Failed to submit answer');
+        return false;
       }
     } catch (error) {
       alert('Failed to submit answer');
+      return false;
+    }
+  };
+
+  const submitAnswer = async () => {
+    if (sessionId && await saveAnswer()) {
+      await loadNextQuestion(sessionId);
     }
   };
 
@@ -130,8 +143,11 @@ function ExamPageContent() {
 
   const handleFinishExam = async () => {
     if (!sessionId) return;
+
+    const savesUnansweredQuestion = selectedAnswer.length > 0 && !answeredQuestions.has(questionNumber);
+    if (selectedAnswer.length > 0 && !await saveAnswer()) return;
     
-    const unansweredCount = totalQuestions - answeredQuestions.size;
+    const unansweredCount = totalQuestions - answeredQuestions.size - (savesUnansweredQuestion ? 1 : 0);
     if (unansweredCount > 0) {
       const confirmed = confirm(
         `You have ${unansweredCount} unanswered question${unansweredCount > 1 ? 's' : ''}. Are you sure you want to finish the exam?`
@@ -160,10 +176,11 @@ function ExamPageContent() {
     }
   };
 
-  const handleTimeUp = () => {
+  const handleTimeUp = async () => {
     if (sessionId) {
       alert('Time is up! Submitting your exam...');
-      submitSession(sessionId);
+      if (selectedAnswer.length > 0 && !await saveAnswer()) return;
+      await submitSession(sessionId);
     }
   };
 
@@ -174,7 +191,10 @@ function ExamPageContent() {
     setQuestionNumber(0);
     setTotalQuestions(0);
     setSummary(null);
-    setTimeRemaining(3600);
+    setTimeRemaining(2700);
+    setAnsweredQuestions(new Set());
+    setSelectedAnswer([]);
+    setCurrentQuestionIndex(0);
   };
 
   if (stage === 'summary' && summary) {
@@ -279,9 +299,13 @@ function ExamPageContent() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="bg-white rounded-lg shadow-md p-8">
-        <h1 className="text-3xl font-bold text-neutral-900 mb-4">Exam Mode</h1>
+        <h1 className="text-3xl font-bold text-neutral-900 mb-4">
+          {examId === 'AB-731' ? 'AB-731 Timed Practice Exam' : 'Exam Mode'}
+        </h1>
         <p className="text-neutral-600 mb-8">
-          Simulate the real Azure AI-900 certification exam with a timed session and realistic exam conditions.
+          {examId === 'AB-731'
+            ? 'Practice with 60 sampled training questions in 45 minutes. This is not an official certification exam.'
+            : 'Simulate the real Azure AI-900 certification exam with a timed session and realistic exam conditions.'}
         </p>
 
         <div className="space-y-6 mb-8">
@@ -298,7 +322,9 @@ function ExamPageContent() {
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-neutral-900">60 Questions</h3>
               <p className="text-neutral-600">
-                Balanced across all AI-900 topic areas with realistic difficulty distribution
+                {examId === 'AB-731'
+                  ? 'Sampled from the four imported AB-731 training sets, including multiple-select questions'
+                  : 'Balanced across all AI-900 topic areas with realistic difficulty distribution'}
               </p>
             </div>
           </div>
@@ -316,7 +342,9 @@ function ExamPageContent() {
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-neutral-900">45 Minutes</h3>
               <p className="text-neutral-600">
-                Same time limit as the actual Azure AI-900 certification exam
+                {examId === 'AB-731'
+                  ? 'The AB-731 certification page lists a 45-minute assessment'
+                  : 'Same time limit as the actual Azure AI-900 certification exam'}
               </p>
             </div>
           </div>
@@ -334,7 +362,9 @@ function ExamPageContent() {
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-neutral-900">No Feedback During Exam</h3>
               <p className="text-neutral-600">
-                You won't see correct answers until the end. Cannot go back to previous questions.
+                {examId === 'AB-731'
+                  ? 'Save answers and use the navigator to revisit questions. Use practice mode for source-answer feedback.'
+                  : "You won't see correct answers until the end. Cannot go back to previous questions."}
               </p>
             </div>
           </div>
@@ -377,7 +407,9 @@ function ExamPageContent() {
 
         <div className="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-200">
           <p className="text-sm text-primary-900">
-            <strong>Tip:</strong> The passing score for Azure AI-900 is 700 out of 1000 (approximately 70%).
+            {examId === 'AB-731'
+              ? 'Your result is an unweighted practice percentage, not a Microsoft scaled exam score. Multiple-select questions require every correct option and no incorrect options.'
+              : <><strong>Tip:</strong> The passing score for Azure AI-900 is 700 out of 1000 (approximately 70%).</>}
             Make sure you're in a quiet environment before starting.
           </p>
         </div>

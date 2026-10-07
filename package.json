@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "test:ab731": "node --test tests/ab731-question-bank.test.mjs",
     "start": "node server.js",
     "heroku-postbuild": "npm run build"
   },

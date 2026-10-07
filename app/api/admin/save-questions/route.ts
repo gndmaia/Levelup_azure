@@ -16,6 +16,13 @@ export async function POST(request: Request) {
   try {
     const { questions, examId } = await request.json();
 
+    if (examId === 'AB-731') {
+      return NextResponse.json(
+        { success: false, error: 'AB-731 is a generated Forms bank. Update it with scripts/import-ab731.mjs and verified source reviews.' },
+        { status: 400 }
+      );
+    }
+
     if (!questions || questions.length === 0) {
       return NextResponse.json({ success: false, error: 'No questions provided' });
     }

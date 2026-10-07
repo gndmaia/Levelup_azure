@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
     let questions;
     if (mode === 'exam') {
       questions = selectExamQuestions(selectedExam, {
-        totalQuestions: questionCount || (selectedExam === 'AZ-900' ? 60 : 45),
+        totalQuestions: questionCount || (selectedExam === 'AZ-900' || selectedExam === 'AB-731' ? 60 : 45),
         easyPercentage: 0.4,
         mediumPercentage: 0.4,
         hardPercentage: 0.2,
@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
       userId: userId,
       mode,
       startedAt: new Date().toISOString(),
-      timeLimitSec: mode === 'exam' ? (timeLimitSec || 3600) : undefined,
+      timeLimitSec: mode === 'exam' ? (timeLimitSec || (selectedExam === 'AB-731' ? 2700 : 3600)) : undefined,
       questionIds: questions.map((q) => q.id),
       answers: {},
       flaggedQuestions: [],

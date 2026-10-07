@@ -1,0 +1,3797 @@
+{
+  "importedAt": "2026-10-07",
+  "answerKeyProvenance": "Correct-answer markers exposed by the normal Microsoft Forms View results review.",
+  "questions": [
+    {
+      "id": "ab731-1-001",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 1,
+      "stem": "Which cost model is commonly used by Azure AI for generative AI solutions?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pay-as-you-go with token-based billing."
+        },
+        {
+          "id": "B",
+          "text": "One monthly subscription that covers all models with unlimited usage"
+        },
+        {
+          "id": "C",
+          "text": "One-time purchase for lifetime access to a single model"
+        },
+        {
+          "id": "D",
+          "text": "A fixed annual enterprise license with unlimited usage and no usage tracking"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-002",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 2,
+      "stem": "What is a key security practice for protecting sensitive information in AI systems?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Allowing open access to enterprise data for faster AI responses"
+        },
+        {
+          "id": "B",
+          "text": "Encrypting data at rest and in transit."
+        },
+        {
+          "id": "C",
+          "text": "Storing sensitive data in unstructured formats without access controls"
+        },
+        {
+          "id": "D",
+          "text": "Sharing API keys and secrets in prompts for easier integration"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-003",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 3,
+      "stem": "How can grounding improve the reliability of AI solutions?",
+      "options": [
+        {
+          "id": "A",
+          "text": "By connecting AI responses to verified data sources"
+        },
+        {
+          "id": "B",
+          "text": "By increasing the size of the original training dataset"
+        },
+        {
+          "id": "C",
+          "text": "By automating prompt creation"
+        },
+        {
+          "id": "D",
+          "text": "By disabling all human review of AI outputs"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-004",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 4,
+      "stem": "A company is using AI to filter job applications. Which practice best aligns with the principle of inclusiveness?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Standardizing all job applications to exclude applicants with gaps in employment history"
+        },
+        {
+          "id": "B",
+          "text": "Including people with disabilities in system testing to validate usability for the widest audience"
+        },
+        {
+          "id": "C",
+          "text": "Using only the top 10% of resumes for training the AI model"
+        },
+        {
+          "id": "D",
+          "text": "Restricting the AI to process applications only from regions with historically high hiring rates"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-005",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 5,
+      "stem": "Which metric best helps leaders understand whether AI is delivering business value rather than just technical performance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Reduction in average handling time for a customer service process"
+        },
+        {
+          "id": "B",
+          "text": "Number of GPUs used by AI workloads"
+        },
+        {
+          "id": "C",
+          "text": "Total number of models deployed in production"
+        },
+        {
+          "id": "D",
+          "text": "Number of prompts sent to a generative AI model per day"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-006",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 6,
+      "stem": "Which Azure capability best supports a unified data foundation for analytics and governance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure SQL Database"
+        },
+        {
+          "id": "B",
+          "text": "Azure Functions"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft Fabric"
+        },
+        {
+          "id": "D",
+          "text": "Azure Virtual Machines"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-007",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 7,
+      "stem": "A leadership team wants to justify an AI rollout by showing that usage will be high. The sponsor states that if a generative AI solution reduces manual effort, then ROI is automatically proven, even if token consumption, adoption friction, and rework from inaccurate outputs are not measured. This statement is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-008",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 8,
+      "stem": "How should AI risk management be integrated into an enterprise governance approach?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Managed separately from cybersecurity, privacy, and other enterprise risks"
+        },
+        {
+          "id": "B",
+          "text": "Only considered after AI solutions are in production"
+        },
+        {
+          "id": "C",
+          "text": "Integrated into existing enterprise risk frameworks and processes"
+        },
+        {
+          "id": "D",
+          "text": "Delegated entirely to external vendors who supply AI models"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-009",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 9,
+      "stem": "Why is the machine learning lifecycle considered iterative?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Models are only trained once"
+        },
+        {
+          "id": "B",
+          "text": "Models must be retrained and monitored as data and business needs change"
+        },
+        {
+          "id": "C",
+          "text": "Models never require updates after deployment"
+        },
+        {
+          "id": "D",
+          "text": "Models can only be used for a fixed time and then must be deleted"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-010",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 10,
+      "stem": "Which Copilot solution is best suited for generating first drafts of policy documents?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Teams Copilot"
+        },
+        {
+          "id": "B",
+          "text": "Outlook Copilot"
+        },
+        {
+          "id": "C",
+          "text": "Word Copilot"
+        },
+        {
+          "id": "D",
+          "text": "OneNote Copilot"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-011",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 11,
+      "stem": "What is required for users to access Microsoft 365 Copilot features?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only a Microsoft Teams account"
+        },
+        {
+          "id": "B",
+          "text": "A standalone Copilot license with no Microsoft 365 subscription"
+        },
+        {
+          "id": "C",
+          "text": "Any free Microsoft account with no license"
+        },
+        {
+          "id": "D",
+          "text": "An eligible Microsoft 365 license, such as E3, E5, or Business Premium"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-012",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 12,
+      "stem": "What approach should a company take to ensure fairness in its AI hiring system?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Using data from previous hiring decisions without modification"
+        },
+        {
+          "id": "B",
+          "text": "Prioritizing speed over accuracy in decision-making processes"
+        },
+        {
+          "id": "C",
+          "text": "Applying the same model globally without local review"
+        },
+        {
+          "id": "D",
+          "text": "Regularly auditing the system to detect and address biases in hiring decisions"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-013",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 13,
+      "stem": "When deciding to build versus buy an AI capability, which scenario favors “buy”?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data is proprietary and highly specialized"
+        },
+        {
+          "id": "B",
+          "text": "Your long-term differentiation depends on a custom model"
+        },
+        {
+          "id": "C",
+          "text": "You have a large internal ML team with capacity to build from scratch"
+        },
+        {
+          "id": "D",
+          "text": "You need speed to value for a standard capability, such as search, classification, or RAG"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-014",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 14,
+      "stem": "Which Microsoft AI offering is best described as a SaaS solution that boosts employee productivity with AI in everyday tools?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft 365 Copilot"
+        },
+        {
+          "id": "B",
+          "text": "Azure AI Foundry"
+        },
+        {
+          "id": "C",
+          "text": "Azure OpenAI Service"
+        },
+        {
+          "id": "D",
+          "text": "Azure Virtual Machines"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-015",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 15,
+      "stem": "Which statement best describes the role of Microsoft Foundry in business transformation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It enables secure, scalable AI solutions for diverse business needs"
+        },
+        {
+          "id": "B",
+          "text": "It provides only prebuilt models for basic automation"
+        },
+        {
+          "id": "C",
+          "text": "It focuses exclusively on consumer-facing applications"
+        },
+        {
+          "id": "D",
+          "text": "It is a hardware-only platform that runs AI models on-premises."
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-016",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 16,
+      "stem": "Which Microsoft Foundry Tool is best suited for extracting insights from documents?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure Vision"
+        },
+        {
+          "id": "B",
+          "text": "Azure Language"
+        },
+        {
+          "id": "C",
+          "text": "Azure Document Intelligence"
+        },
+        {
+          "id": "D",
+          "text": "Azure Speech"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-017",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 17,
+      "stem": "What is the primary purpose of prompt engineering in generative AI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To improve the speed of AI processing"
+        },
+        {
+          "id": "B",
+          "text": "To guide AI outputs for accuracy and relevance"
+        },
+        {
+          "id": "C",
+          "text": "To reduce the cost of AI solutions"
+        },
+        {
+          "id": "D",
+          "text": "To replace the need for any data or governance"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-018",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 18,
+      "stem": "In an enterprise AI strategy, what is the primary role of Microsoft Foundry (formerly Azure AI Foundry)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Store all enterprise data so separate data platforms are no longer needed"
+        },
+        {
+          "id": "B",
+          "text": "Replace Microsoft 365 Copilot for all productivity use cases"
+        },
+        {
+          "id": "C",
+          "text": "Host only prebuilt consumer chatbots with no customization"
+        },
+        {
+          "id": "D",
+          "text": "Build and deploy enterprise AI apps and agents with a unified platform"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-019",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 19,
+      "stem": "What is the primary purpose of an AI Center of Excellence (CoE)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To select a single AI vendor for the entire organization"
+        },
+        {
+          "id": "B",
+          "text": "To provide central expertise, standards, and reusable assets for AI initiatives"
+        },
+        {
+          "id": "C",
+          "text": "To replace all local teams working on analytics or automation"
+        },
+        {
+          "id": "D",
+          "text": "To run only experimental AI projects with no connection to business value"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-020",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 20,
+      "stem": "What is a key advantage of using retrieval-augmented generation (RAG)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It eliminates the need for any data sources"
+        },
+        {
+          "id": "B",
+          "text": "It replaces all prebuilt tools"
+        },
+        {
+          "id": "C",
+          "text": "It guarantees that AI models never hallucinate"
+        },
+        {
+          "id": "D",
+          "text": "It combines generative AI with trusted enterprise data"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-021",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 21,
+      "stem": "Which practice is most important for responsible AI at scale?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Maximizing model complexity"
+        },
+        {
+          "id": "B",
+          "text": "Reducing stakeholder involvement"
+        },
+        {
+          "id": "C",
+          "text": "Implementing governance, security, and regulatory controls"
+        },
+        {
+          "id": "D",
+          "text": "Focusing only on model accuracy and ignoring impact"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-022",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 22,
+      "stem": "Which driver emphasizes running focused pilots, measuring outcomes, and developing repeatable processes for scaling AI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Regulatory governance"
+        },
+        {
+          "id": "B",
+          "text": "Al strategy and experience"
+        },
+        {
+          "id": "C",
+          "text": "Data governance"
+        },
+        {
+          "id": "D",
+          "text": "Technology and data strategy"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-023",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 23,
+      "stem": "Which practice supports the principle of transparency in AI systems used for automated decision-making?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Keeping the decision-making criteria secret to avoid manipulation."
+        },
+        {
+          "id": "B",
+          "text": "Providing users with clear explanations of how decisions are made by the AI system"
+        },
+        {
+          "id": "C",
+          "text": "Using highly complex algorithms that are difficult to understand"
+        },
+        {
+          "id": "D",
+          "text": "Delegating all explanation responsibilities to external vendors"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-024",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 24,
+      "stem": "How should you include business subject matter experts in AI adoption?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Train all business domain experts in data science, enabling them to write code and train machine learning models"
+        },
+        {
+          "id": "B",
+          "text": "Retrain business domain experts to perform other tasks—AI will replace them in their current roles."
+        },
+        {
+          "id": "C",
+          "text": "Encourage domain experts to use AI copilots and no-code AI development tools to expand their impact across the enterprise"
+        },
+        {
+          "id": "D",
+          "text": "Limit their involvement to signing off the budget after deployment"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-025",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 25,
+      "stem": "Which practice is essential for ensuring accountability in AI systems when making high-impact decisions?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Keeping humans with requisite expertise in the loop for decision-making"
+        },
+        {
+          "id": "B",
+          "text": "Automating all decision-making processes to reduce human error"
+        },
+        {
+          "id": "C",
+          "text": "Relying solely on AI outputs without human intervention."
+        },
+        {
+          "id": "D",
+          "text": "Allowing the model to override established policies if it improves accuracy"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-026",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 26,
+      "stem": "An organization wants to ensure that its AI system remains fair and unbiased. What proactive step should the organization take during the development phase?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Focus exclusively on maximizing system efficiency and performance"
+        },
+        {
+          "id": "B",
+          "text": "Rely on post-deployment feedback from users to identify issues"
+        },
+        {
+          "id": "C",
+          "text": "Conduct bias detection and mitigation throughout the AI development process"
+        },
+        {
+          "id": "D",
+          "text": "Avoid documenting how the model was built to keep it flexible"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-027",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 27,
+      "stem": "What is the main purpose of an AI adoption plan?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To document only technical architecture diagrams for AI solutions"
+        },
+        {
+          "id": "B",
+          "text": "To list every possible AI technology available in the market"
+        },
+        {
+          "id": "C",
+          "text": "To allow experimentation with AI without any approvals or governance"
+        },
+        {
+          "id": "D",
+          "text": "To translate AI strategy into actionable steps, timelines, and responsibilities"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-028",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 28,
+      "stem": "What is a key difference between traditional AI and generative AI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Traditional AI uses natural language prompts, while generative AI does not"
+        },
+        {
+          "id": "B",
+          "text": "Generative AI creates new content, while traditional AI focuses on predictions and classifications"
+        },
+        {
+          "id": "C",
+          "text": "Generative AI cannot be used for automation"
+        },
+        {
+          "id": "D",
+          "text": "Traditional AI and generative AI are exactly the same in how they work and what they produce"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-029",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 29,
+      "stem": "What is a primary benefit of modernizing your estate with Azure Landing Zones?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Eliminates the need for identity management"
+        },
+        {
+          "id": "B",
+          "text": "Provides a scalable foundation with security, governance, and resource organization"
+        },
+        {
+          "id": "C",
+          "text": "Replaces all existing on-premises applications automatically"
+        },
+        {
+          "id": "D",
+          "text": "Deploys only a single subscription with no policies or controls"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-030",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 30,
+      "stem": "What role does a centralized AI inventory play in an AI governance system?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Facilitates audits and compliance tests by tracking all AI models and systems"
+        },
+        {
+          "id": "B",
+          "text": "Ensures all AI systems are automatically compliant with regulations"
+        },
+        {
+          "id": "C",
+          "text": "Eliminates the need for a dedicated ethics office"
+        },
+        {
+          "id": "D",
+          "text": "Allows teams to deploy AI systems without any approvals"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-031",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 31,
+      "stem": "A report shows that an AI system used in hiring consistently undervalues candidates from minority groups. What should be the immediate action to address this issue?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Discontinue the use of AI in the hiring process entirely"
+        },
+        {
+          "id": "B",
+          "text": "Deploy the AI system in more departments to gather additional data"
+        },
+        {
+          "id": "C",
+          "text": "Conduct an audit to identify and correct biases in the AI system"
+        },
+        {
+          "id": "D",
+          "text": "Ignore the issue until regulators raise concerns"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-032",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 32,
+      "stem": "What is the first step in the four-step framework for scaling AI adoption?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Map your AI journey"
+        },
+        {
+          "id": "B",
+          "text": "Educate and inspire"
+        },
+        {
+          "id": "C",
+          "text": "Assess your AI readiness"
+        },
+        {
+          "id": "D",
+          "text": "Deploy AI in as many use cases as possible immediately"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-033",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 33,
+      "stem": "Which driver is about creating the right environment—leadership, skills, and ways of working—that enables teams to adopt AI effectively?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al governance"
+        },
+        {
+          "id": "B",
+          "text": "Technology and data strategy."
+        },
+        {
+          "id": "C",
+          "text": "Organization and culture"
+        },
+        {
+          "id": "D",
+          "text": "Business strategy"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-034",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 34,
+      "stem": "Why is it beneficial for people from technical teams and lines of business to collaborate on AI initiatives?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The technical teams need to make sure the solution has the latest and greatest AI capabilities"
+        },
+        {
+          "id": "B",
+          "text": "Line-of-business leaders need to make sure the solution costs as little as possible"
+        },
+        {
+          "id": "C",
+          "text": "All relevant teams need to be involved in design, implementation, and ongoing maintenance to make sure the solution functions properly and achieves its business objectives"
+        },
+        {
+          "id": "D",
+          "text": "Collaboration helps avoid documenting requirements and governance processes"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-035",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 35,
+      "stem": "Why is having a documented AI strategy important for an organization?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To choose a single AI model and vendor for all scenarios"
+        },
+        {
+          "id": "B",
+          "text": "To allow teams to experiment with AI without any constraints"
+        },
+        {
+          "id": "C",
+          "text": "To align AI initiatives with business goals and create a clear, auditable plan"
+        },
+        {
+          "id": "D",
+          "text": "To ensure only technical teams are responsible for AI decisions"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-036",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 36,
+      "stem": "What does Copilot Studio enable organizations to do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Schedule recurring meetings automatically"
+        },
+        {
+          "id": "B",
+          "text": "Build custom copilots and integrate external data sources"
+        },
+        {
+          "id": "C",
+          "text": "Manage email inboxes"
+        },
+        {
+          "id": "D",
+          "text": "Change user device settings directly without any admin tools"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-037",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 37,
+      "stem": "What is the primary purpose of Microsoft Purview Data Security Posture Management (DSPM) for AI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Train new AI foundation models for the organization"
+        },
+        {
+          "id": "B",
+          "text": "Identify and protect sensitive data used by AI workloads"
+        },
+        {
+          "id": "C",
+          "text": "Automatically generate all AI prompts for business users"
+        },
+        {
+          "id": "D",
+          "text": "Replace the need for any responsible AI governance processes"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-038",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 38,
+      "stem": "When prioritizing AI use cases in a portfolio, which approach best aligns with AB-731-style guidance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Choose use cases based only on which team shouts the loudest"
+        },
+        {
+          "id": "B",
+          "text": "Focus solely on technical novelty and latest model features"
+        },
+        {
+          "id": "C",
+          "text": "Start with any experiment and worry about value later"
+        },
+        {
+          "id": "D",
+          "text": "Rank AI ideas by business impact, feasibility, and risk"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-039",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 39,
+      "stem": "Your company is deploying AI for automated loan approvals. What ethical concern should be prioritized?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Using AI to eliminate human involvement in loan decisions"
+        },
+        {
+          "id": "B",
+          "text": "Ensuring the AI does not replicate discriminatory lending patterns"
+        },
+        {
+          "id": "C",
+          "text": "Maximizing the speed of loan processing via AI"
+        },
+        {
+          "id": "D",
+          "text": "Sharing model details only with marketing teams"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-040",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 40,
+      "stem": "How can organizations address challenges such as incorrect information and bias in generative AI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Invest in fact-checking systems, prompt engineering, and governance frameworks"
+        },
+        {
+          "id": "B",
+          "text": "Ignore these issues and focus only on automation speed"
+        },
+        {
+          "id": "C",
+          "text": "Only use prebuilt models and avoid any configuration"
+        },
+        {
+          "id": "D",
+          "text": "Wait until vendors completely remove all risks before using generative AI in any scenario."
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-041",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 41,
+      "stem": "In a case where AI was used to predict student success, it was found to disadvantage students from certain backgrounds. What corrective action should be taken?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Replace the AI system with another technology immediately"
+        },
+        {
+          "id": "B",
+          "text": "Re-evaluate the training data and model to address bias"
+        },
+        {
+          "id": "C",
+          "text": "Continue using the system to gather more data on its performance"
+        },
+        {
+          "id": "D",
+          "text": "Disable all reporting about the model’s performance to avoid complaints"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-042",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 42,
+      "stem": "An executive says Microsoft 365 Copilot, Microsoft Copilot, Copilot Studio, and Microsoft Graph can be treated as interchangeable products because they all help users work with AI. The executive therefore decides that exam preparation should focus on generic AI prompting rather than understanding which Microsoft capability fits which business process or extensibility scenario. This statement is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-043",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 43,
+      "stem": "Contoso's strategy team is preparing a long-form briefing on a new market segment. They need a thorough overview that pulls from analyst reports on the web, internal slide decks, and meeting notes, with a clearly structured report they can paste into PowerPoint and share with executives. They don’t need to run code or do deep statistical modelling—just solid, defensible research with sources. \n Which Copilot experience should the team rely on first to produce this briefing?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Researcher agent in Microsoft 365 Copilot"
+        },
+        {
+          "id": "B",
+          "text": "Analyst agent in Microsoft 365 Copilot"
+        },
+        {
+          "id": "C",
+          "text": "Standard Copilot Chat without agents"
+        },
+        {
+          "id": "D",
+          "text": "A bare PowerPoint template with no Copilot involved"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-044",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 44,
+      "stem": "Contoso’s leadership team is worried that AI pilots are popping up in every department with no common rules. Some teams are experimenting with copilots on sensitive data, others are trialing external SaaS AI tools. They ask you what foundational step they should take first to establish AI governance principles before scaling further. \n Which action best represents the right first move?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Define an enterprise-wide AI use policy anchored in Responsible AI principles and clear ownership"
+        },
+        {
+          "id": "B",
+          "text": "Select a single AI platform and mandate all teams migrate before writing any policy"
+        },
+        {
+          "id": "C",
+          "text": "Block all AI tools at the firewall until regulators publish detailed AI laws"
+        },
+        {
+          "id": "D",
+          "text": "Let each department write its own AI policy with no central oversight"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-045",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 45,
+      "stem": "Adventure Works wants a unified AI assistant experience for knowledge workers who move frequently between laptops and phones. Scenario:\n Leaders are frustrated that staff currently juggle separate tools: a file app, a scanning app, and a separate AI chat tool. They want to standardize on Microsoft 365 rather than building a custom solution. \nRequirements: \n - Provide a single place to chat with an AI assistant on web and mobile \n - Allow users to quickly find and open Microsoft 365 files from the same experience \n - Capture physical documents via phone camera and then use them in chat \n - Avoid building and maintaining a custom mobile app \n\n A solution architect proposes: standardize on the Microsoft 365 Copilot app on web and mobile, enable Microsoft 365 Copilot Chat for eligible users, and train staff to treat that app as their primary entry point for AI chat, file search, content creation, and scanning. \n\n Does this proposal align with the requirements and use Microsoft 365 Copilot Chat capabilities effectively?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes, because the Microsoft 365 Copilot app unifies Copilot Chat, file access, and scanning across devices"
+        },
+        {
+          "id": "B",
+          "text": "No, because Copilot Chat is limited to the desktop and browser only"
+        },
+        {
+          "id": "C",
+          "text": "No, because scanning documents must be done in a separate app with no link to Copilot Chat"
+        },
+        {
+          "id": "D",
+          "text": "No, because staff should use a consumer-only Copilot app for work scenarios"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-046",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 46,
+      "stem": "Adventure Works has deployed several generative AI use cases on Azure OpenAI, including customer support assistance, a sales copilot, and internal knowledge search. Leadership now wants ongoing transparency into both cost and value: they want to allocate AI spend to each business unit and use case, set budgets with alerts when projected spend exceeds targets, and combine this with KPIs like tickets resolved and deals closed in a single ROI dashboard. \n Which approach best meets these requirements with minimal manual effort?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Monthly Excel tracking of Azure invoices"
+        },
+        {
+          "id": "B",
+          "text": "Azure Monitor token logs without cost context"
+        },
+        {
+          "id": "C",
+          "text": "Quarterly email surveys on perceived AI benefits"
+        },
+        {
+          "id": "D",
+          "text": "Azure Cost Management with Power Bl"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-047",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 47,
+      "stem": "Contoso's CIO is reviewing architecture diagrams for a planned RAG-based assistant. A solution architect explains how the retriever and the large language model (LLM) work together in the pipeline. \n\n “In a RAG architecture, the retriever locates and returns relevant enterprise content, while the LLM still interprets the user’s question and synthesizes a natural-language answer using that retrieved context.” \n\n Is this statement true or false?",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-048",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 48,
+      "stem": "Contoso's finance team processes thousands of supplier invoices each month. Most arrive as PDFs or scanned images attached to emails, and staff manually rekey header fields and line items into the ERP system. Leadership wants to automate the capture of these fields and send only exceptions to humans for review. \n\n Which Azure AI service is the best primary fit for extracting structured data from these invoices into the ERP workflow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure AI Search"
+        },
+        {
+          "id": "B",
+          "text": "Azure AI Translator"
+        },
+        {
+          "id": "C",
+          "text": "Azure AI Document Intelligence"
+        },
+        {
+          "id": "D",
+          "text": "Azure OpenAI"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-049",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 49,
+      "stem": "Tailwind Traders is consolidating multiple AI initiatives—some prototype notebooks in GitHub, some agents built in Copilot Studio, and several custom web apps that use Azure AI Vision and Azure AI Search. Leadership wants a single Azure environment where teams can: \n\n • Discover and compare models from Microsoft and partners \n • Wire models together with tools like Vision and Search into applications and agents \n • Deploy, monitor, and govern those applications consistently \n\n To meet these needs, the architecture should use _____ as the primary platform layer.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure AI Vision"
+        },
+        {
+          "id": "B",
+          "text": "Azure AI Search"
+        },
+        {
+          "id": "C",
+          "text": "Azure Machine Learning compute clusters"
+        },
+        {
+          "id": "D",
+          "text": "Azure AI Foundry"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-050",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 50,
+      "stem": "A regional retailer, Contoso Stores, is struggling to keep up with customer service demand during seasonal peaks. Most enquiries are repetitive questions about orders, returns, and store hours that agents answer by searching internal knowledge articles. Leadership wants to know where generative AI could create scalable value rather than trying to “use AI everywhere.” \n\n Where is generative AI most likely to deliver scalable business value in this scenario?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Designing the CEO’s annual strategy presentation"
+        },
+        {
+          "id": "B",
+          "text": "Handling high-volume chat and email enquiries with repeatable answers"
+        },
+        {
+          "id": "C",
+          "text": "Running quarterly in-person leadership workshops"
+        },
+        {
+          "id": "D",
+          "text": "Approving one-off large supplier contracts"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-051",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 51,
+      "stem": "An organization is expanding Microsoft 365 Copilot, Copilot Studio agents, and Azure AI services across finance, HR, and operations. Leaders need a standing group that sets AI direction, aligns business units, reviews risk posture, and coordinates legal, security, compliance, and change-management decisions. \n\n The organization should establish an _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al champions program"
+        },
+        {
+          "id": "B",
+          "text": "AI council"
+        },
+        {
+          "id": "C",
+          "text": "Adoption team"
+        },
+        {
+          "id": "D",
+          "text": "Copilot usage report"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-052",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 52,
+      "stem": "At Tailwind Traders, you are evaluating several candidate processes for a first wave of AI automation. Some teams propose classic rules-based RPA, while others argue for generative AI. You want to identify a signal that generative AI is particularly well-suited to a use case from a scalability and automation perspective. \n\n The best indicator that a process is a strong candidate for generative AI—driven scalable automation is the presence of ______.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stable, numeric-only calculations with no text"
+        },
+        {
+          "id": "B",
+          "text": "Infrequent, bespoke expert decisions with little history"
+        },
+        {
+          "id": "C",
+          "text": "Large volumes of unstructured text and recurring language tasks"
+        },
+        {
+          "id": "D",
+          "text": "A single approval step by a senior manager"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-1-053",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 53,
+      "stem": "Adventure Works is planning how to operationalize AI governance across its Microsoft estate. The CIO wants to avoid a patchwork of one-off controls for each copilot or agent and instead use shared enterprise tools to enforce policies and monitor AI risk. Scenario:\n Security and compliance leaders want to: \n • Discover which AI apps and agents (including Microsoft 365 Copilot and Entra- registered AI apps) are in use \n • Apply consistent information protection and data loss prevention rules to AI prompts and responses \n • Monitor AI safety risks (for example harmful content, jailbreak attempts) and investigate issues centrally \n • Align operational controls with the organization’s Responsible AI principles \nA proposed approach is to: \n • Maintain an AI use register and central AI policy owned by a cross-functional governance board \n • Use Microsoft Purview to discover AI apps, classify data, and enforce information protection and DLP policies over AI interactions \n • Use Azure AI safety and monitoring capabilities (for example content filters and safety dashboards) on Azure OpenAI workloads \n • Report regularly to the AI governance board using metrics and dashboards that map these controls back to the organization’s principles \n\n Does this proposal align with sound AI governance principles for operational control?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes, because it combines central policy, shared data-security tools, and runtime safety monitoring across AI apps"
+        },
+        {
+          "id": "B",
+          "text": "No, because AI governance should focus only on pre-deployment model testing and ignore production behavior"
+        },
+        {
+          "id": "C",
+          "text": "No, because each copilot or agent should be governed only inside its own app settings with no central visibility"
+        },
+        {
+          "id": "D",
+          "text": "No, because operational AI risk cannot be monitored using metrics or dashboards"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-054",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 54,
+      "stem": "Adventure Works’ executive team is preparing for an industry conference. Scenario: \nThey need to: \n • Synthesize external market trends with internal strategy decks and recent customer notes into a clear narrative they can share with speakers \n • Then, for a few key charts in the deck, dive into the underlying sales and pipeline datasets to understand drivers, outliers, and “what's changed vs. last quarter” \n\n The architecture team proposes this pattern: \n • Use Researcher first to produce a structured, sourced briefing that blends web insights and internal documents \n • Then open Analyst on the relevant datasets to generate charts and explain what's behind the numbers in more detail \n\n Does this mapping of tasks to Copilot agents align with how Researcher and Analyst are intended to be used?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes, start with Researcher for the narrative, then use Analyst for deeper data analysis"
+        },
+        {
+          "id": "B",
+          "text": "No, start with Analyst for everything and avoid Researcher to keep things simple"
+        },
+        {
+          "id": "C",
+          "text": "No, use only standard Copilot Chat; the specialist agents add no value in this scenario"
+        },
+        {
+          "id": "D",
+          "text": "No, start with Analyst for the research brief and then use Researcher for charts and code"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-1-055",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 55,
+      "stem": "Fabrikam's executive team is trying to understand “prompt engineering” in practical terms. A senior manager claims that prompt engineering in Azure OpenAI is primarily about tuning the internal weights of the model so it learns new patterns. \n\n “Prompt engineering is mainly about adjusting the underlying model parameters and weights in Azure OpenAI in order to change how the model behaves.” \n\n Is this statement true or false?",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-056",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 56,
+      "stem": "Tailwind Traders’ legal department wants to “chat over” thousands of contracts without putting all that text into the model's training data. They also want the assistant to reflect new clauses as soon as documents are updated in their systems. You propose a RAG-based design with Azure OpenAI. \n\nTo meet these needs without fine-tuning the model, the design should use Azure OpenAI together with _____ as part of a RAG pipeline.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Monthly PDF summaries of key contract clauses created by legal staff"
+        },
+        {
+          "id": "B",
+          "text": "ACRM system that stores only customer profile data"
+        },
+        {
+          "id": "C",
+          "text": "Screenshots of contracts saved as image files in blob storage"
+        },
+        {
+          "id": "D",
+          "text": "A search index that stores chunked and embedded contract text"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-1-057",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 57,
+      "stem": "Fabrikam's CFO argues that the only ROI metric that really matters for generative AI is “cost per 1,000 tokens,” because that is how Azure OpenAI is billed. As the AI transformation lead, you need to decide whether this is the right way for the executive team to evaluate investments. \n\n “To evaluate ROI for a generative AI solution, you should focus only on reducing the cost per 1,000 tokens, rather than connecting usage to business outcomes such as time saved or revenue uplift” \n\n Is this statement true or false?",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-1-058",
+      "sourceSetId": "Practice-Exam-1",
+      "sourceQuestionNumber": 58,
+      "stem": "Adventure Works is designing a generative AI-powered assistant for internal IT support. You want to maximize both the capability of the assistant (accurate, context-aware answers) and the governance (controlled tone, security, and fallbacks). \n\n Requirements: \n • Use existing knowledge articles and ticket history to ground responses \n • Ensure the assistant clearly states limits and asks for clarification when needed \n • Support different tones (concise, detailed) depending on user preference \n • Minimize changes to the underlying model or infrastructure \n\n A solution architect proposes to invest primarily in a structured prompt design that: \n • Defines system role, guardrails, and style controls \n • Includes few-shot examples of good and bad answers \n • Explicitly instructs the model to use retrieved content and avoid speculation \n\n Does this approach align with the requirements and leverage the benefits of generative AI effectively?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes, because it uses prompt engineering to steer behavior over existing models"
+        },
+        {
+          "id": "B",
+          "text": "No, because only model fine-tuning can meet these requirements"
+        },
+        {
+          "id": "C",
+          "text": "No, because prompt engineering cannot control tone or style"
+        },
+        {
+          "id": "D",
+          "text": "No, because generative AI cannot use existing knowledge sources"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-001",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 1,
+      "stem": "Select the answer that correctly completes the sentence.\n\nTo reduce data security and privacy risks when adopting Microsoft 365 Copilot, your organization must ensure that [XXXXXXX].",
+      "options": [
+        {
+          "id": "A",
+          "text": "existing Microsoft Purview data loss prevention (DLP) and sensitivity labeling policies are configured properly"
+        },
+        {
+          "id": "B",
+          "text": "Microsoft 365 Copilot is limited to executives"
+        },
+        {
+          "id": "C",
+          "text": "network firewall rules block external Al services"
+        },
+        {
+          "id": "D",
+          "text": "users are restricted from accessing Microsoft SharePoint Online and OneDrive"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-002",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 2,
+      "stem": "Your company is developing an Al solution that can summarize meetings, recap Microsoft Teams conversations, and answer questions by using documents and emails stored in the Microsoft 365 tenant.\n\nYou need to recommend a solution that respects existing Microsoft Entra ID permissions and uses organization-specific data.\n\nWhat should you include in the recommendation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft 365 Copilot"
+        },
+        {
+          "id": "B",
+          "text": "Microsoft Copilot Chat"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft Copilot Studio"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Security Copilot"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-003",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 3,
+      "stem": "Your company plans to deploy Microsoft 365 Copilot to generate insights from internal documents.\n\nYou discover that the company data is outdated, inconsistent, and stored across disconnected systems.\n\nWhat is the primary impact on Copilot performance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "higher operational licensing costs"
+        },
+        {
+          "id": "B",
+          "text": "increased response variability and lower accuracy"
+        },
+        {
+          "id": "C",
+          "text": "limited availability of Copilot features"
+        },
+        {
+          "id": "D",
+          "text": "reduced need for governance controls"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-004",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 4,
+      "stem": "Your company is evaluating Microsoft 365 Copilot as part of its broader Microsoft 365 environment.\n\nLeadership needs to understand how an integrated Microsoft Al solution can help reduce risk while improving productivity.\n\nWhich benefit does this integrated approach provide?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al responses that automatically override existing Microsoft 365 permissions"
+        },
+        {
+          "id": "B",
+          "text": "built-in permission trimming and compliance controls aligned with Microsoft 365 policies"
+        },
+        {
+          "id": "C",
+          "text": "independent data storage outside the Microsoft 365 tenant"
+        },
+        {
+          "id": "D",
+          "text": "unrestricted access to web and organizational data by default"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-005",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 5,
+      "stem": "Your company plans to deploy Microsoft 365 Copilot to its existing Microsoft 365 environment.\n\nSecurity leaders needs assurance that Al-generated responses will align with current governance, compliance, and access controls without introducing new security frameworks.\n\nWhich benefit does this integrated approach provide?",
+      "options": [
+        {
+          "id": "A",
+          "text": "the automatic elevation of user permissions to improve productivity"
+        },
+        {
+          "id": "B",
+          "text": "the built-in enforcement of existing Microsoft 365 access and compliance policies"
+        },
+        {
+          "id": "C",
+          "text": "the independent storage of Copilot-generated content outside the tenant"
+        },
+        {
+          "id": "D",
+          "text": "unrestricted access to both organizational and web content by default"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-006",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 6,
+      "stem": "A company wants employees to:\n\n-Ask questions about Microsoft 365 tenant data-Generate summaries and draft responses-Access the experience from a browser or mobile device-Avoid building a solution that requires custom creation.\n\nWhich Copilot experience should you recommend?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Copilot in Microsoft Power Apps"
+        },
+        {
+          "id": "B",
+          "text": "Copilot in Microsoft Power Automate"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft 365 Copilot Chat"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Copilot Studio"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-007",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 7,
+      "stem": "Select the answer that correctly completes the sentence.\n\n[ XXXXXXX ] provides contextual signals and permission-aware access to Microsoft 365 data used by Microsoft 365 Copilot for grounding.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft 365 Copilot"
+        },
+        {
+          "id": "B",
+          "text": "Microsoft Copilot Studio"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft Foundry"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Graph"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-2-008",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 8,
+      "stem": "Your company wants to deploy a solution that:\n\n-Uses Microsoft 365 data for grounding-Can be extended by using plugins, connectors, or custom agents-Provides a unified extensibility framework across multiple Microsoft 365 applications\n\nYou need to identify which Copilot experience supports this extensibility model.\n\nWhich Copilot experience should you choose?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Copilot in Microsoft Excel"
+        },
+        {
+          "id": "B",
+          "text": "Copilot in Microsoft Teams"
+        },
+        {
+          "id": "C",
+          "text": "Copilot in Windows"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft 365 Copilot"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-2-009",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 9,
+      "stem": "Your company wants to create a conversational agent that:\n\n-Uses internal business data-Applies custom workflows and logic-Integrates with an external ticketing system\n\nYou need a low-code platform to design, manage, and publish the agent for non-developers.\n\nWhat should you use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft 365 Copilot"
+        },
+        {
+          "id": "B",
+          "text": "Microsoft Copilot Studio"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft Foundry"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Graph"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-010",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 10,
+      "stem": "Your company plans to expand Microsoft 365 Copilot usage to all employees..\n\nDuring a readiness review, stakeholders ask whether Copilot can generate responses based on files stored in Microsoft SharePoint Online and OneDrive.\n\nHow does Copilot identify which content a user can access?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Copilot can access only publicly shared documents across the tenant."
+        },
+        {
+          "id": "B",
+          "text": "Copilot requires administrators to manually approve each document referenced."
+        },
+        {
+          "id": "C",
+          "text": "Copilot generates responses based only on data that the user is authorized to access."
+        },
+        {
+          "id": "D",
+          "text": "Copilot can access all organizational data stored in Microsoft 365 regardless of user permissions."
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-011",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 11,
+      "stem": "Select the answer that correctly completes the sentence.\n\nMicrosoft 365 Copilot licensing options include [XXXXXX].",
+      "options": [
+        {
+          "id": "A",
+          "text": "pay-as-you-go billing and per-user subscription licenses"
+        },
+        {
+          "id": "B",
+          "text": "per-device perpetual licenses and pay-as-you-go billing"
+        },
+        {
+          "id": "C",
+          "text": "prepaid server licenses and annual device subscriptions"
+        },
+        {
+          "id": "D",
+          "text": "usage included automatically with all Microsoft 365 plans"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-012",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 12,
+      "stem": "Select the answer that correctly completes the sentence.\n\nThe Microsoft 365 Copilot app enables users to [ XXXXX ].",
+      "options": [
+        {
+          "id": "A",
+          "text": "build fully custom Al orchestration solutions by using Azure Al services"
+        },
+        {
+          "id": "B",
+          "text": "extend functionality by using APIs in Microsoft Foundry"
+        },
+        {
+          "id": "C",
+          "text": "manage tenant-level Copilot licensing and billing settings"
+        },
+        {
+          "id": "D",
+          "text": "use a centralized experience that unites chat, search, agents, and content creation across Microsoft 365"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-2-013",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 13,
+      "stem": "Your company plans to use generative Al to create marketing content for a global audience.\n\nDuring testing, the generative Al system produces messaging that favors certain demographic groups, while excluding others.\n\nWhich challenge of generative Al is this an example of?",
+      "options": [
+        {
+          "id": "A",
+          "text": "automation"
+        },
+        {
+          "id": "B",
+          "text": "bias"
+        },
+        {
+          "id": "C",
+          "text": "fabrication"
+        },
+        {
+          "id": "D",
+          "text": "scalability"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-014",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 14,
+      "stem": "QuestionA company is deploying an Al solution that generates automated maintenance instructions for field technicians servicing industrial equipment.\n\nLeadership requires that the solution align with Microsoft responsible Al principles before deployment.\n\nYou need to reduce the risk of inaccurate or unsafe instructions causing operational disruption or injury.\n\nWhat should you prioritize?",
+      "options": [
+        {
+          "id": "A",
+          "text": "expanding the model's access to all historical maintenance logs"
+        },
+        {
+          "id": "B",
+          "text": "increasing the speed of automated instruction generation"
+        },
+        {
+          "id": "C",
+          "text": "limiting external visibility into how the Al system produces recommendations"
+        },
+        {
+          "id": "D",
+          "text": "validating outputs and implementing safeguards"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-2-015",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 15,
+      "stem": "Which capability does Microsoft Graph provide to support Microsoft 365 Copilot?",
+      "options": [
+        {
+          "id": "A",
+          "text": "aggregates organizational signals and relationships across Microsoft 365"
+        },
+        {
+          "id": "B",
+          "text": "builds custom Al models for each department within an organization"
+        },
+        {
+          "id": "C",
+          "text": "stores all Microsoft 365 files in one database for each department within an organization"
+        },
+        {
+          "id": "D",
+          "text": "generates large language model (LLM) responses across Microsoft 365"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-016",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 16,
+      "stem": "Your company processes thousands of supplier contracts each month.\n\nThe legal department needs to automatically extract fields, such as renewal dates, payment terms, and liability clauses, and structure the data for reporting.\n\nWhich Microsoft Foundry capability should you use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure Al Search"
+        },
+        {
+          "id": "B",
+          "text": "Azure AI Document Intelligence."
+        },
+        {
+          "id": "C",
+          "text": "model fine-tuning"
+        },
+        {
+          "id": "D",
+          "text": "prompt flow"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-017",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 17,
+      "stem": "Select the answer that correctly completes the sentence.\n\nFor a solution that must compare documents and identify related content based on similarity, you should use [ XXXXX ].",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure Translator in Foundry Tools"
+        },
+        {
+          "id": "B",
+          "text": "the custom text classification REST API"
+        },
+        {
+          "id": "C",
+          "text": "an embedding model"
+        },
+        {
+          "id": "D",
+          "text": "a speech-to-text model"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-018",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 18,
+      "stem": "Your company plans to create Microsoft 365 Copilot agent that will respond to user requests by following predefined instructions and response patterns. All data must be grounded in Microsoft 365 data.\n\nThe company does NOT have the budget for a developer.\n\nYou need to recommend the appropriate type of agent.\n\nWhat should you recommend?",
+      "options": [
+        {
+          "id": "A",
+          "text": "custom engine agent"
+        },
+        {
+          "id": "B",
+          "text": "declarative agent"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft Copilot Chat agent"
+        },
+        {
+          "id": "D",
+          "text": "standalone Azure Al agent"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-019",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 19,
+      "stem": "Your company wants to automate a support process that:\n\n. Accepts user requests. Applies complex priority rules. Integrates with an external ticketing system. Automatically assigns and escalates cases\n\nYou need to identify which Microsoft 365 Copilot agent capability supports this level of orchestration and system integration.\n\nWhat should you identify?",
+      "options": [
+        {
+          "id": "A",
+          "text": "declarative agent capability"
+        },
+        {
+          "id": "B",
+          "text": "the custom engine agent capability"
+        },
+        {
+          "id": "C",
+          "text": "the Microsoft 365 Copilot Chat capability"
+        },
+        {
+          "id": "D",
+          "text": "the Microsoft 365 Copilot in-app assistance capability"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-020",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 20,
+      "stem": "A regional manager is traveling and needs to:\n\n. Ask questions about organizational documents.. Generate a summary of recent project updates.. Draft a response from a mobile device.\n\nWhich Copilot experience should the manager use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Copilot in Microsoft Excel"
+        },
+        {
+          "id": "B",
+          "text": "Copilot in Microsoft Teams"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft 365 Copilot Chat"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Copilot Studio"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-021",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 21,
+      "stem": "Your company needs a conversational solution for external customers that will use a support portal.\n\nYou need to be able to design, test, and publish an agent to multiple channels and trigger tenant APIs and Microsoft PowerAutomate flows.\n\nWhat solution should you use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft Copilot Studio"
+        },
+        {
+          "id": "B",
+          "text": "Copilot in Microsoft Teams"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft 365 Copilot Chat"
+        },
+        {
+          "id": "D",
+          "text": "the Agent Builder in Microsoft 365 Copilot"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-022",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 22,
+      "stem": "Your company plans to deploy Microsoft 365 Copilot to a small group of users.\n\nThe security team requires that user sign-ins be strongly protected and that user and administrator activity be traceable for compliance.\n\nWhich two security measures should you implement? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Assign Copilot licenses to guest users."
+        },
+        {
+          "id": "B",
+          "text": "Turn on unified audit logging in Microsoft Purview."
+        },
+        {
+          "id": "C",
+          "text": "Enable multifactor authentication (MFA) for all users."
+        },
+        {
+          "id": "D",
+          "text": "Move Microsoft 365 Apps to the Semi-Annual Enterprise Channel."
+        }
+      ],
+      "correctOptions": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-023",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 23,
+      "stem": "Your company plans to develop a Microsoft 365 Copilot solution that generates responses based on internal policies and procedures.\nLeadership requires that the responses reflect only approved company content and remains up-to-date without retraining the model.\n\nYou need to recommend a solution to meet the requirements.",
+      "options": [
+        {
+          "id": "A",
+          "text": "a larger pretrained foundation model"
+        },
+        {
+          "id": "B",
+          "text": "a prompt engineering guide for employees"
+        },
+        {
+          "id": "C",
+          "text": "a fine-tuned language model trained on company documents"
+        },
+        {
+          "id": "D",
+          "text": "a grounding solution that retrieves approved content at query time"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-2-024",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 24,
+      "stem": "Your company plans to deploy Microsoft 365 Copilot to 200 employees. \nA company security policy requires that access to Microsoft 365 services be limited to compliant devices and protected by strong authentication controls.\n\nYou need to ensure that Copilot access meets the requirements.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Enforce Microsoft Entra Conditional Access policies."
+        },
+        {
+          "id": "B",
+          "text": "Increase the maximum token limit for Copilot responses."
+        },
+        {
+          "id": "C",
+          "text": "Enable multifactor authentication (MFA) for all Copilot users."
+        },
+        {
+          "id": "D",
+          "text": "Move Microsoft 365 Apps to the Semi-Annual Enterprise Channel."
+        },
+        {
+          "id": "E",
+          "text": "Use web-grounded Microsoft Copilot instead of tenant-grounded Copilot."
+        }
+      ],
+      "correctOptions": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-025",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 25,
+      "stem": "Your company is deploying Microsoft 365 Copilot. Early pilot results show inconsistent usage across departments.\n\nYou need to create a network of internal advocates to promote effective and responsible use.\n\nWhat is the best approach to achieve the goal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rotate advocacy responsibilities among employees each quarter."
+        },
+        {
+          "id": "B",
+          "text": "Encourage voluntary participation without assigning clear responsibilities."
+        },
+        {
+          "id": "C",
+          "text": "Require all guidance and communication to come only from the IT department."
+        },
+        {
+          "id": "D",
+          "text": "Establish defined expectations, such as peer enablement, feedback collection, and sharing practical use cases."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-2-026",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 26,
+      "stem": "Your company is deploying Microsoft 365 Copilot.\n\nSecurity leaders are concerned about prompt injection attacks embedded in external documents.\n\nWhat is the most important control to reduce this risk?",
+      "options": [
+        {
+          "id": "A",
+          "text": "enforcing least-privilege access and data protection policies"
+        },
+        {
+          "id": "B",
+          "text": "increasing the maximum token limit for Copilot responses"
+        },
+        {
+          "id": "C",
+          "text": "limiting Copilot responses to shorter summaries"
+        },
+        {
+          "id": "D",
+          "text": "training users to write more detailed prompts"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-027",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 27,
+      "stem": "You are deploying Microsoft 365 Copilot and a Copilot Studio agent that answers HR policy questions. The agent retrieves contentfrom Microsoft SharePoint Online sites that contain GDPR-regulated personal data.\n\nLeadership is concerned that responses might surface content from SharePoint sites where permissions are overly broad.\n\nYou need to resolve this concern for the current agent and all future agents.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Modify the SharePoint permissions to enforce least-privilege access."
+        },
+        {
+          "id": "B",
+          "text": "Disable connected experiences that analyze the content in Microsoft 365 Apps."
+        },
+        {
+          "id": "C",
+          "text": "Use Copilot content filtering to prevent all sensitive data from appearing in responses."
+        },
+        {
+          "id": "D",
+          "text": "Enable all agents in integrated apps and require users to enable the agent only when needed."
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-028",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 28,
+      "stem": "Which statement accurately describes the Microsoft 365 Copilot extensibility framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Enables companies to create operating system-level Copilot integrations."
+        },
+        {
+          "id": "B",
+          "text": "Enables companies to build fully custom Al solutions by using Azure OpenAl."
+        },
+        {
+          "id": "C",
+          "text": "Enables companies to customize visual themes and branding in Copilot experiences."
+        },
+        {
+          "id": "D",
+          "text": "Enables companies to surface external data and services into Copilot by using connectors and plugins."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-2-029",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 29,
+      "stem": "You are evaluating the operational costs of deploying a generative Al solution at scale.\n\nWhich two factors directly influence usage-based costs? Each correct answer presents a complete solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "the number of tokens processed in prompts and responses"
+        },
+        {
+          "id": "B",
+          "text": "the number of users interacting with the solution"
+        },
+        {
+          "id": "C",
+          "text": "the selected model and its pricing tier"
+        },
+        {
+          "id": "D",
+          "text": "the total number of internal policies documented"
+        },
+        {
+          "id": "E",
+          "text": "the volume of historical data stored in databases"
+        }
+      ],
+      "correctOptions": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-030",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 30,
+      "stem": "Your organization is deploying an internal assistant that answers HR policy questions grounded in SharePoint content.   The AI council asks how you will prevent an employee from receiving an answer drawn from a document they are not permitted to open.   Which control addresses this requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apply a content safety filter to the assistant's outputs."
+        },
+        {
+          "id": "B",
+          "text": "Enforce Microsoft Entra authentication and role-based access control so retrieval returns only content the signed-in user can already access."
+        },
+        {
+          "id": "C",
+          "text": "Lower the model temperature so responses are more deterministic."
+        },
+        {
+          "id": "D",
+          "text": "Expand the grounding index so more documents are available to the assistant."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-031",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 31,
+      "stem": "A customer-facing agent built on Microsoft Foundry can call an internal pricing tool.  During a security review the team is asked how it will stop a crafted user message from making the agent misuse that tool.   Which security category does this concern belong to, and what is the appropriate mitigation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data security; encrypt the pricing database at rest."
+        },
+        {
+          "id": "B",
+          "text": "Authentication; require multifactor authentication for every user of the agent."
+        },
+        {
+          "id": "C",
+          "text": "Application security; add prompt injection defences and restrict the agent to an approved tool allow-list."
+        },
+        {
+          "id": "D",
+          "text": "Data residency; deploy the model in the same region as the pricing database."
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-032",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 32,
+      "stem": "Leadership wants assurance that confidential documents summarized by an AI assistant keep their protection when the summary is saved as a new file and shared.   Which control set should you cite?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sensitivity labels enforced at retrieval and inherited by generated outputs, with data loss prevention applied to sharing."
+        },
+        {
+          "id": "B",
+          "text": "A larger context window so the entire document fits in a single prompt."
+        },
+        {
+          "id": "C",
+          "text": "Fine-tuning the model on the confidential document set."
+        },
+        {
+          "id": "D",
+          "text": "Moving the documents to a single open location so retrieval is simpler."
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-033",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 33,
+      "stem": "AI pilots are running in six departments with no shared rules.   The CIO wants a single body that sets strategy, approves high-impact use cases, and keeps legal, security, HR and the business aligned.   What should the organization establish?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An AI champions program"
+        },
+        {
+          "id": "B",
+          "text": "An adoption team."
+        },
+        {
+          "id": "C",
+          "text": "An AI council."
+        },
+        {
+          "id": "D",
+          "text": "A data engineering center of excellence."
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-034",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 34,
+      "stem": "Your executive team asks whether appointing a single Chief AI Ethics Officer is sufficient to satisfy governance expectations for the AI programme.   What is the best response?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes, provided the officer reports directly to the board."
+        },
+        {
+          "id": "B",
+          "text": "No. Governance rests on published principles and a cross-functional AI council; a single officer is one optional way to implement them."
+        },
+        {
+          "id": "C",
+          "text": "Yes. A single accountable officer is the required governance model for AI."
+        },
+        {
+          "id": "D",
+          "text": "No. Governance should be delegated entirely to each business unit."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-035",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 35,
+      "stem": "The AI council has approved the first wave of Microsoft 365 Copilot.   Someone must now own the wave plan, communications, training, licence assignment and adoption reporting.   Which structure owns this work?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The AI council."
+        },
+        {
+          "id": "B",
+          "text": "The adoption team."
+        },
+        {
+          "id": "C",
+          "text": "The AI champions program."
+        },
+        {
+          "id": "D",
+          "text": "The security operations centre."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-036",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 36,
+      "stem": "Six weeks into a Copilot rollout, licensed users are active but shallow: most only summarize email.   Interviews show that people do not know what else to try and do not trust the output for client-facing work.   Which barriers are you facing, and what is the most appropriate first countermeasure? More than one answer choice may achieve the goal. Select the BEST answer.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cost uncertainty and licensing; move the population to pay-as-you-go."
+        },
+        {
+          "id": "B",
+          "text": "A skills gap and a trust concern; run role-based enablement through a champions program and teach grounding and citation checking."
+        },
+        {
+          "id": "C",
+          "text": "Data readiness and oversharing; start a permissions remediation project."
+        },
+        {
+          "id": "D",
+          "text": "Weak executive sponsorship; escalate to the board for a mandate."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-037",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 37,
+      "stem": "You need peer-level support for adoption across 40 teams without adding headcount.   Which motion should you establish, and how should members be chosen?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An AI council, made up of the most senior leader in each team."
+        },
+        {
+          "id": "B",
+          "text": "An adoption team, staffed with one IT administrator per region."
+        },
+        {
+          "id": "C",
+          "text": "An AI champions program, selecting people for influence and enthusiasm rather than seniority and enabling them ahead of their peers."
+        },
+        {
+          "id": "D",
+          "text": "A vendor-led help desk staffed by external contractors."
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-038",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 38,
+      "stem": "Frontline staff have Microsoft 365 but no Microsoft 365 Copilot licences.   They need a safe AI chat tool they can use from a phone and from the web, where they can upload a PDF and ask questions about it, and where prompts are not used to train foundation models.   What should you tell them they can use today?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nothing until Microsoft 365 Copilot licences are purchased."
+        },
+        {
+          "id": "B",
+          "text": "Microsoft 365 Copilot Chat, which offers secure AI chat with enterprise data protection, file upload and mobile access."
+        },
+        {
+          "id": "C",
+          "text": "A Copilot Studio agent published to a public website."
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Foundry, deployed to each user's device."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-039",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 39,
+      "stem": "A director asks Copilot to summarise everything her team discussed about a customer across last month's meetings, chats and documents, and gets an incomplete answer.   She is using Copilot Chat without a Microsoft 365 Copilot licence.   What is the correct explanation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Copilot Chat is web-grounded and does not provide broad grounding across her Microsoft 365 content; that requires a Microsoft 365 Copilot licence."
+        },
+        {
+          "id": "B",
+          "text": "Copilot Chat cannot process natural language questions of that length."
+        },
+        {
+          "id": "C",
+          "text": "Microsoft Graph does not index meetings, chats or documents."
+        },
+        {
+          "id": "D",
+          "text": "The tenant has not enabled pay-as-you-go agents."
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-040",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 40,
+      "stem": "Your service desk runs on a third-party ticketing platform.   Leadership wants Microsoft 365 Copilot to answer questions using those tickets while preserving who is allowed to see what.   Which element of the Microsoft 365 Copilot extensibility framework applies?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Connectors, which bring external content into the Copilot grounding surface with permissions preserved."
+        },
+        {
+          "id": "B",
+          "text": "The Microsoft 365 Copilot APIs, which embed Copilot into third-party applications."
+        },
+        {
+          "id": "C",
+          "text": "Fine-tuning a model on an export of the ticket history."
+        },
+        {
+          "id": "D",
+          "text": "Building a standalone application on Microsoft Foundry."
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-041",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 41,
+      "stem": "Which set correctly lists the components of the Microsoft 365 Copilot extensibility framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Agents, connectors, the Work IQ API, and the Microsoft 365 Copilot APIs."
+        },
+        {
+          "id": "B",
+          "text": "Copilot Chat, Researcher, Analyst, and Copilot Pages."
+        },
+        {
+          "id": "C",
+          "text": "Azure AI Search, Document Intelligence, Vision, and Language."
+        },
+        {
+          "id": "D",
+          "text": "Pay-as-you-go, monthly subscription, and included licensing."
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-2-042",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 42,
+      "stem": "A strategy lead must produce a twelve-page briefing on entering a new market, drawing on internal planning documents and public sources, with every claim traceable to a citation.   Which Microsoft 365 Copilot capability should she use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Analyst, because the briefing will include figures."
+        },
+        {
+          "id": "B",
+          "text": "Researcher, because the task is multi-step research across work and web content producing cited synthesis."
+        },
+        {
+          "id": "C",
+          "text": "Copilot in PowerPoint, because the output is a leadership deliverable."
+        },
+        {
+          "id": "D",
+          "text": "A Copilot Studio agent, because the task recurs quarterly"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-043",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 43,
+      "stem": "A finance manager has three years of monthly revenue in a workbook and needs a seasonality-adjusted forecast for the next four quarters with a chart, and she does not write code.   Which capability should she use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Researcher, because forecasting requires external market context."
+        },
+        {
+          "id": "B",
+          "text": "Analyst, because the task is advanced data analysis with Python-backed reasoning and visualization."
+        },
+        {
+          "id": "C",
+          "text": "Copilot Chat, because the workbook can be uploaded."
+        },
+        {
+          "id": "D",
+          "text": "Azure AI Search, because the data must first be indexed."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-044",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 44,
+      "stem": "A customer-service quality model performs well overall but consistently misjudges cases from two of your eight operating regions.   Reviewing the training data shows 92 percent of it came from the two largest regions.   What is the most accurate description of the problem, and the correct first fix?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Poor data quality; run a de-duplication and cleansing pass."
+        },
+        {
+          "id": "B",
+          "text": "An unrepresentative dataset; collect and include data that reflects all eight regions before retraining."
+        },
+        {
+          "id": "C",
+          "text": "Insufficient data volume; add more records from the two largest regions."
+        },
+        {
+          "id": "D",
+          "text": "A prompt engineering problem; add regional context to the prompt."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-045",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 45,
+      "stem": "A regulated insurer needs an AI solution that applies its own underwriting rules, runs inside its own application, and must be evaluated and audited against internal model risk policy.   Which approach fits, and why?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Buy, because Microsoft 365 Copilot already summarises documents."
+        },
+        {
+          "id": "B",
+          "text": "Extend, because a connector can bring underwriting data into Copilot."
+        },
+        {
+          "id": "C",
+          "text": "Build on Microsoft Foundry, because the solution needs its own model, tool and agent lifecycle with evaluation and observability."
+        },
+        {
+          "id": "D",
+          "text": "Build a Copilot Studio agent, because it is low-code."
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-046",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 46,
+      "stem": "A solution architect explains that Microsoft 365 Copilot relies on two components: one that supplies work data and enforces permissions, and one that adds context about how work gets done.   Which statement correctly describes Work IQ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Work IQ replaces Microsoft Graph as the data layer for Microsoft 365 content."
+        },
+        {
+          "id": "B",
+          "text": "Work IQ is the intelligence layer built on Microsoft Graph that understands context, work patterns and relevance."
+        },
+        {
+          "id": "C",
+          "text": "Work IQ is the licensing model that meters agent consumption in Copilot Chat."
+        },
+        {
+          "id": "D",
+          "text": "Work IQ is the content safety service that filters harmful Copilot responses."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-047",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 47,
+      "stem": "Your company is moving a Foundry Tools workload from pilot into production. Volume is now steady and predictable month to month, and finance wants the lowest unit cost with a forecastable monthly bill.   Which subscription model should you recommend?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pay-as-you-go, because it requires no upfront commitment."
+        },
+        {
+          "id": "B",
+          "text": "A commitment tier, because pre-paid reserved capacity gives a discounted unit rate and predictable monthly cost for steady volume."
+        },
+        {
+          "id": "C",
+          "text": "A per-user monthly Microsoft 365 Copilot subscription."
+        },
+        {
+          "id": "D",
+          "text": "Enterprise data protection, because it reduces token consumption."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-048",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 48,
+      "stem": "Tailwind Traders wants an agent to answer questions grounded across several enterprise repositories, and requires that each user sees only what they are already permitted to open, without the team assembling and maintaining a retrieval pipeline.   Which capability should you recommend?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fine-tune a model on an export of all repositories."
+        },
+        {
+          "id": "B",
+          "text": "Foundry IQ, the managed, permission-aware knowledge layer for grounding agents."
+        },
+        {
+          "id": "C",
+          "text": "Increase the model's context window and paste the documents into each prompt."
+        },
+        {
+          "id": "D",
+          "text": "Copilot Pages, so answers can be shared across the team."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-049",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 49,
+      "stem": "A manager asks why Microsoft 365 Copilot Chat is considered safe for business use when consumer chat assistants are not approved.   Which characteristic should you cite?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It runs entirely offline on the user's device."
+        },
+        {
+          "id": "B",
+          "text": "Enterprise data protection, meaning prompts, responses and tenant content are not used to train foundation models and stay inside the organization's compliance boundary."
+        },
+        {
+          "id": "C",
+          "text": "It cannot access the web, so no external content is ever returned."
+        },
+        {
+          "id": "D",
+          "text": "It requires a per-user Microsoft 365 Copilot licence for every user."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-2-050",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 50,
+      "stem": "You are briefing leaders on secure AI for an upcoming deployment.   Which two areas does the assessment expect a leader to evaluate alongside data security? Each correct answer presents part of the solution.   Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "application security, including prompt injection defences and an approved tool allow-list"
+        },
+        {
+          "id": "B",
+          "text": "model temperature and top-p sampling settings"
+        },
+        {
+          "id": "C",
+          "text": "authentication requirements, including Microsoft Entra identity and role-based access control"
+        },
+        {
+          "id": "D",
+          "text": "the number of tokens consumed per user each month"
+        },
+        {
+          "id": "E",
+          "text": "the choice between supervised and unsupervised learning"
+        }
+      ],
+      "correctOptions": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-2-051",
+      "sourceSetId": "Practice-Exam-2",
+      "sourceQuestionNumber": 51,
+      "stem": "Your organization is preparing a data readiness review before funding a grounded AI assistant.   Which two properties of the data should the review assess in addition to data quality? Each correct answer presents part of the solution.   Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "data type, because structured, unstructured and media content determine which AI capability applies"
+        },
+        {
+          "id": "B",
+          "text": "the physical storage medium used by the data centre"
+        },
+        {
+          "id": "C",
+          "text": "whether the dataset is representative of every population, region and edge case the solution will serve"
+        },
+        {
+          "id": "D",
+          "text": "the programming language used to build the retrieval pipeline"
+        },
+        {
+          "id": "E",
+          "text": "the number of employees who will use the assistant"
+        }
+      ],
+      "correctOptions": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-3-001",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 1,
+      "stem": "You are using a generative Al solution to draft executive summaries from internal reports. The responses are often too generic andare irrelevant to the organization.\n\nWhich prompt engineering technique should you use to improve the quality of the responses?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Increase the maximum response length."
+        },
+        {
+          "id": "B",
+          "text": "Request multiple variations of the same summary in one prompt."
+        },
+        {
+          "id": "C",
+          "text": "Assign a creative writing tone to make the summaries more engaging."
+        },
+        {
+          "id": "D",
+          "text": "Provide clear instructions and include specific business context in the prompt."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-3-002",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 2,
+      "stem": "A retail company receives many open-ended customer questions about products and policies.\n\nThe company needs a solution to help them quickly draft friendly and accurate replies based on their internal data.\n\nWhich approach best achieves the goal? More than one answer choice may achieve the goal. \n\nSelect the BEST answer.",
+      "options": [
+        {
+          "id": "A",
+          "text": "a generative Al agent grounded in the company's product and policy data"
+        },
+        {
+          "id": "B",
+          "text": "a machine learning classification model that labels customer inquiries by category"
+        },
+        {
+          "id": "C",
+          "text": "a rules-based decision tree that routes inquiries to predefined FAQ responses"
+        },
+        {
+          "id": "D",
+          "text": "a traditional analytics dashboard that displays customer inquiry trends"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-3-003",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 3,
+      "stem": "A business team is evaluating whether to use a generative Al solution or a rules-based automation system.\n\nYou need to identify a key characteristic of generative Al.\n\nWhich characteristic distinguishes generative Al from a rules-based system?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A rules-based system requires manually defined logic for every possible scenario."
+        },
+        {
+          "id": "B",
+          "text": "A rules-based system follows predefined decision paths to produce consistent outputs."
+        },
+        {
+          "id": "C",
+          "text": "A rules-based system produces the same output each time for a given structured input."
+        },
+        {
+          "id": "D",
+          "text": "Generative Al generates responses by learning patterns from large datasets rather than relying on predefined rules."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-3-004",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 4,
+      "stem": "A team deploys a generative Al assistant to summarize regulatory documents.\n\nDuring testing, the assistant occasionally includes statements that are NOT supported by the source material.\n\nWhich challenge of generative Al is this an example of?",
+      "options": [
+        {
+          "id": "A",
+          "text": "automation bias"
+        },
+        {
+          "id": "B",
+          "text": "fabrication of information"
+        },
+        {
+          "id": "C",
+          "text": "overfitting to training data"
+        },
+        {
+          "id": "D",
+          "text": "scalability limitations"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-3-005",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 5,
+      "stem": "A company is deciding whether to use a pretrained model or a fine-tuned model.\n\nWhat is a key characteristic of a fine-tuned model compared to a pretrained model?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A pretrained model must always be trained from scratch before it can be used."
+        },
+        {
+          "id": "B",
+          "text": "A pretrained model is trained only on an organization's internal proprietary data."
+        },
+        {
+          "id": "C",
+          "text": "A fine-tuned model requires no training data and generates responses by using rules-based logic."
+        },
+        {
+          "id": "D",
+          "text": "A fine-tuned model is adapted with additional domain-specific data to improve performance for a targeted task."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-3-006",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 6,
+      "stem": "A company deploys generative Al to draft internal knowledge base articles.\n\nDuring testing, the generative Al system produces clear and accurate drafts in some test cases and incomplete or inconsistent drafts for similar inputs during other tests.\n\nWhich challenge of generative Al is this an example of?",
+      "options": [
+        {
+          "id": "A",
+          "text": "bias"
+        },
+        {
+          "id": "B",
+          "text": "fabrication"
+        },
+        {
+          "id": "C",
+          "text": "reliability"
+        },
+        {
+          "id": "D",
+          "text": "scalability"
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-3-007",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 7,
+      "stem": "A company wants to automatically draft marketing emails based on customer input and product data.\n\nWhich type of model is required?",
+      "options": [
+        {
+          "id": "A",
+          "text": "a generative Al model that produces new content"
+        },
+        {
+          "id": "B",
+          "text": "a predictive model that forecasts customer behavior"
+        },
+        {
+          "id": "C",
+          "text": "a statistical model that classifies customer segments"
+        },
+        {
+          "id": "D",
+          "text": "a rules-based system that follows predefined decision logic"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-3-008",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 8,
+      "stem": "Your company wants to reduce equipment downtime in its manufacturing plants. The company collects operational readings andmaintenance records over time.\n\nYou need to recommend a solution that predicts equipment failures before they occur.\n\nWhat should you recommend?",
+      "options": [
+        {
+          "id": "A",
+          "text": "a retrieval-augmented generation (RAG) solution"
+        },
+        {
+          "id": "B",
+          "text": "a prompt engineering framework for maintenance staff"
+        },
+        {
+          "id": "C",
+          "text": "a generative Al solution that summarizes maintenance logs"
+        },
+        {
+          "id": "D",
+          "text": "a machine learning model trained on historical sensor data"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-3-009",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 9,
+      "stem": "You are leading the rollout of a machine learning solution. The model is already deployed to production.\n\nYou need to ensure that the solution continues to deliver accurate results as customer behavior changes.\n\nWhat activity should you prioritize?",
+      "options": [
+        {
+          "id": "A",
+          "text": "continuously monitoring model performance and retraining the model as needed"
+        },
+        {
+          "id": "B",
+          "text": "defining marketing campaign messaging to align with predicted churn segments"
+        },
+        {
+          "id": "C",
+          "text": "expanding the number of users that can access the model outputs"
+        },
+        {
+          "id": "D",
+          "text": "increasing the size of the original training dataset without evaluating model performance"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-3-010",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 10,
+      "stem": "Your company is deploying a domain-specific Al agent to review legal contracts.\n\nEarly testing with a pretrained large language model (LLM) produces inconsistent terminology and formatting, even when using detailed prompts.\n\nYou are considering whether to fine-tune the model.\n\nWhich statement best describes how fine-tuning differs from using the pretrained model as is?\n\nMore than one answer choice may achieve the goal. Select the BEST answer.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fine-tuning requires only modifying prompt instructions during inference without retraining the model."
+        },
+        {
+          "id": "B",
+          "text": "Fine-tuning replaces the pretrained model by training a completely new model from scratch on a large dataset."
+        },
+        {
+          "id": "C",
+          "text": "Fine-tuning limits responses to information retrieved from enterprise documents at query time without changing the model."
+        },
+        {
+          "id": "D",
+          "text": "Fine-tuning adjusts the model's weights by training it on a smaller, domain-specific dataset to improve performance for targeted tasks."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-3-011",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 11,
+      "stem": "Your company has an internal support portal that uses a large language model (LLM)-based agent to answer employee policy questions. Policy documents are stored in Microsoft SharePoint Online and updated weekly, and responses must cite the exact source and reflect updates within 24 hours.\n\nThe agent sometimes generates responses that are NOT in the approved policy documents.\n\nYou need to ensure that responses are grounded in the latest approved content and include verifiable citations.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Implement retrieval-augmented generation (RAG)."
+        },
+        {
+          "id": "B",
+          "text": "Increase the model temperature to generate more diverse responses."
+        },
+        {
+          "id": "C",
+          "text": "Use a web-grounded chat experience to search public internet sources."
+        },
+        {
+          "id": "D",
+          "text": "Fine-tune a generative Al model on the SharePoint policy documents every week."
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-3-012",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 12,
+      "stem": "Your company is evaluating Al technologies to improve operations.\n\nA business leader asks how generative Al differs from traditional predictive Al systems.\n\nWhich statement most accurately describes generative Al?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Generative Al detects anomalies in datasets by identifying statistical deviations."
+        },
+        {
+          "id": "B",
+          "text": "Generative Al classifies input data into predefined categories based on labeled training data."
+        },
+        {
+          "id": "C",
+          "text": "Generative Al analyzes historical data to predict future outcomes without creating new content."
+        },
+        {
+          "id": "D",
+          "text": "Generative Al creates new content, such as text, images, and code, based on patterns learned from data."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-3-013",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 13,
+      "stem": "Select the answer that correctly completes the sentence.\n\nFor Generative AI Models, supervised fine-tuning is used to adapt a [XXXXXXXXX] by training it on labeled input-output pairs for specific tasks and organizational requirements.",
+      "options": [
+        {
+          "id": "A",
+          "text": "grounding source"
+        },
+        {
+          "id": "B",
+          "text": "pretrained model"
+        },
+        {
+          "id": "C",
+          "text": "prompt template"
+        },
+        {
+          "id": "D",
+          "text": "tokenized dataset"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-3-014",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 14,
+      "stem": "You are using a generative Al solution to create policy summaries for employees across multiple departments. Some responses include fabricated details that are NOT in the source material.\n\nWhich prompt engineering technique should you use to reduce the likelihood of fabricated content?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use more formal language when writing the prompt."
+        },
+        {
+          "id": "B",
+          "text": "Request that the model generate multiple summary variations."
+        },
+        {
+          "id": "C",
+          "text": "Ask the model to provide the most detailed response possible."
+        },
+        {
+          "id": "D",
+          "text": "Instruct the model to base its response only on the provided source content."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-3-015",
+      "sourceSetId": "Homework-Day-1",
+      "sourceQuestionNumber": 15,
+      "stem": "You are developing a GPT model in Microsoft Foundry to generate detailed financial reports. The reports require the analysis of multiple complex data inputs to produce structured written summaries.\n\nWhich type of model should you use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "large language model (LLM)"
+        },
+        {
+          "id": "B",
+          "text": "Diffusion Model"
+        },
+        {
+          "id": "C",
+          "text": "speech-to-text model"
+        },
+        {
+          "id": "D",
+          "text": "vision model"
+        }
+      ],
+      "correctOptions": [
+        "A"
+      ]
+    },
+    {
+      "id": "ab731-4-001",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 1,
+      "stem": "Your company plans to use Copilot to reference data from an external CRM system, while continuing to respect existing Microsoft 365 permissions. You need to make the CRM data available for data grounding. Which should you use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft 365 Copilot Chat"
+        },
+        {
+          "id": "B",
+          "text": "Microsoft 365 Copilot Connectors"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft Copilot Studio"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Graph Explorer"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-4-002",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 2,
+      "stem": "You are leading the deployment of an AI solution that generates customer-facing product recommendations. Executive leadership requires that your AI governance framework align with Microsoft responsible AI principles. You need to establish governance controls that reduce the risk of biased outputs and ensure that customers understand how AI is being used. Which two principles should you prioritize? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Accountability"
+        },
+        {
+          "id": "B",
+          "text": "Fairness"
+        },
+        {
+          "id": "C",
+          "text": "Reliability"
+        },
+        {
+          "id": "D",
+          "text": "Safety"
+        },
+        {
+          "id": "E",
+          "text": "Transparency"
+        }
+      ],
+      "correctOptions": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "id": "ab731-4-003",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 3,
+      "stem": "You are sponsoring an AI solution that will automate eligibility assessments for a financial assistance program. The solution will directly influence decisions that affect customers. You need to ensure the AI solution meets he Microsoft Responsible AI Standard for consistent performance and organizational oversight. Which two principles should you prioritize? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Accessibility"
+        },
+        {
+          "id": "B",
+          "text": "Accountability"
+        },
+        {
+          "id": "C",
+          "text": "Fairness"
+        },
+        {
+          "id": "D",
+          "text": "Reliability and safety"
+        },
+        {
+          "id": "E",
+          "text": "Scalability"
+        }
+      ],
+      "correctOptions": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-4-004",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 4,
+      "stem": "Your company plans to deploy AI solutions that extract structured data from documents and enable natural language search across internal knowledge. Which two Microsoft Foundry capabilities should you recommend? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure AI Search"
+        },
+        {
+          "id": "B",
+          "text": "Azure Document Intelligence in Foundry Tools"
+        },
+        {
+          "id": "C",
+          "text": "Model fine-tuning"
+        },
+        {
+          "id": "D",
+          "text": "Prompt flow"
+        },
+        {
+          "id": "E",
+          "text": "Speech to text in Azure Speech"
+        }
+      ],
+      "correctOptions": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-4-005",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 5,
+      "stem": "You are evaluating Microsoft Foundry for building enterprise AI solutions.\nWhich two security capabilities are supported by using Foundry? Each correct answer presents a complete solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Public sharing of model outputs across tenants"
+        },
+        {
+          "id": "B",
+          "text": "Unrestricted anonymous access to deployed models"
+        },
+        {
+          "id": "C",
+          "text": "Training foundation models by using shared customer data"
+        },
+        {
+          "id": "D",
+          "text": "The isolation of customer data within the tenant boundary"
+        },
+        {
+          "id": "E",
+          "text": "Integration with Microsoft Entra ID for role-based access control (RBAC)"
+        }
+      ],
+      "correctOptions": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "id": "ab731-4-006",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 6,
+      "stem": "You are deploying an AI service that generates personalized product recommendations based on customer purchase history. You need to explain why to apply responsible AI principles before deployment. Which two explanations should you provide? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Removes the need for ongoing human oversight"
+        },
+        {
+          "id": "B",
+          "text": "Supports transparency in customer data usage"
+        },
+        {
+          "id": "C",
+          "text": "Increases automation that removes governance controls"
+        },
+        {
+          "id": "D",
+          "text": "Shifts compliance responsibility entirely to Microsoft"
+        },
+        {
+          "id": "E",
+          "text": "Prevents biased recommendations that can harm customer trust"
+        }
+      ],
+      "correctOptions": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "id": "ab731-4-007",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 7,
+      "stem": "Your company is planning a large-scale rollout of an Azure AI service for a production workload that has stable and predictable monthly usage. The finance department requires consistent monthly spending and minimal billing variability. You need to select the most appropriate subscription model. What should you choose?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Per-user Microsoft 365 licensing"
+        },
+        {
+          "id": "B",
+          "text": "Pay-as-you-go consumption billing"
+        },
+        {
+          "id": "C",
+          "text": "A separate Azure subscription for each department"
+        },
+        {
+          "id": "D",
+          "text": "A prepaid capacity commitment for the Azure AI service"
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-4-008",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 8,
+      "stem": "Employees need to search internal content by using natural language, find conceptually related information, and limit results to specific document categories. Which Azure AI Search capability supports this requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "AI enrichment"
+        },
+        {
+          "id": "B",
+          "text": "Hybrid search"
+        },
+        {
+          "id": "C",
+          "text": "Semantic ranking"
+        },
+        {
+          "id": "D",
+          "text": "Skillset indexing"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-4-009",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 9,
+      "stem": "Your company plans to deploy an Azure AI solution trained on historical customer data. During a review, you discover that most of the training data comes from a single customer segment, while other segments are underrepresented. You need to assess the potential impact before deployment. What is the primary risk?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The model will become unsupervised because the dataset is incomplete."
+        },
+        {
+          "id": "B",
+          "text": "The AI solution will require fewer compute resources during inference."
+        },
+        {
+          "id": "C",
+          "text": "The AI solution will rebalance predictions automatically over time without additional data."
+        },
+        {
+          "id": "D",
+          "text": "The AI solution might generate responses that do not generalize well across all customer segments."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-4-010",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 10,
+      "stem": "Select the answer that correctly completes the sentence. When a company needs to extract structured data, such as contract terms and renewal dates, from large volumes of documents, it should use _______.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure AI Search"
+        },
+        {
+          "id": "B",
+          "text": "Azure Document Intelligence in Foundry Tools"
+        },
+        {
+          "id": "C",
+          "text": "Azure Vision in Foundry Tools"
+        },
+        {
+          "id": "D",
+          "text": "Prompt flow in Microsoft Foundry"
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-4-011",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 11,
+      "stem": "You need to explain the value of Microsoft Foundry to stakeholders. Which statement accurately describes a key benefit of Foundry?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Provides tools for automating business process with AI, without requiring AI models."
+        },
+        {
+          "id": "B",
+          "text": "Supports building custom AI models by using open-source development frameworks only."
+        },
+        {
+          "id": "C",
+          "text": "Focuses primarily on delivering AI capabilities within Microsoft 365 productivity apps."
+        },
+        {
+          "id": "D",
+          "text": "Enables the centralized management and governance of AI solutions across an organization."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-4-012",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 12,
+      "stem": "Your company plans to use Microsoft Foundry to build generative AI solutions that process sensitive internal data across multiple departments.Which benefit of Foundry supports this requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Model outputs are shared across organizations to enhance collaboration."
+        },
+        {
+          "id": "B",
+          "text": "Enterprise data remains within the company's tenant boundary during model use."
+        },
+        {
+          "id": "C",
+          "text": "User access to AI solutions is managed independently by each application team."
+        },
+        {
+          "id": "D",
+          "text": "Foundation models are retrained by using aggregated customer data to improve accuracy."
+        }
+      ],
+      "correctOptions": [
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-4-013",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 13,
+      "stem": "You are evaluating Microsoft Foundry for enterprise generative AI initiatives. Which two benefits of Foundry should you highlight to stakeholders? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Access to foundation models from multiple providers in a single environment"
+        },
+        {
+          "id": "B",
+          "text": "The ability to scale AI deployments across regions and business units"
+        },
+        {
+          "id": "C",
+          "text": "The automatic replacement of legacy business applications"
+        },
+        {
+          "id": "D",
+          "text": "The need to train custom models for every solution"
+        },
+        {
+          "id": "E",
+          "text": "Use of public shared datasets for enterprise model training"
+        }
+      ],
+      "correctOptions": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "ab731-4-014",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 14,
+      "stem": "Your company is developing an AI solution to summarize customer feedback. The training data consists primarily of feedback from one geographic region, even though the company operates globally. After deploying the solution, users report that summaries do NOT reflect concerns from other regions. What is the primary cause of the issue?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The model requires a larger token limit."
+        },
+        {
+          "id": "B",
+          "text": "The model lacks sufficient prompt engineering guidance."
+        },
+        {
+          "id": "C",
+          "text": "The solution uses retrieval-augmented generation (RAG)."
+        },
+        {
+          "id": "D",
+          "text": "The training data fails to represent the full customer base."
+        }
+      ],
+      "correctOptions": [
+        "D"
+      ]
+    },
+    {
+      "id": "ab731-4-015",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 15,
+      "stem": "Your company plans to pilot Microsoft Copilot Studio for customer support and deploy a protected partner model from Microsoft Foundry Models by using the same Azure subscription. During deployment, you receive a notification that the subscription is NOT authorized for partner model purchases. You need both initiatives to use pay-as-you-go billing with the existing Azure subscription without changing billing models. What should you do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Switch the model deployment to prepaid Azure capacity."
+        },
+        {
+          "id": "B",
+          "text": "Create a new Azure subscription dedicated to AI workloads."
+        },
+        {
+          "id": "C",
+          "text": "Enable Azure Marketplace purchases for the existing Azure subscription."
+        },
+        {
+          "id": "D",
+          "text": "Purchase Copilot Studio message packs instead of pay-as-you-go billing."
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    },
+    {
+      "id": "ab731-4-016",
+      "sourceSetId": "Homework-Day-2",
+      "sourceQuestionNumber": 16,
+      "stem": "Your company is preparing to expand Microsoft 365 Copilot beyond a small pilot group. Leadership has decided to form a centralized team to guide governance, rollout planning, and risk management across departments. What is the best approach to ensure that the team operates effectively? More than one answer choice may achieve the goal. Select the BEST answer.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Assign an executive sponsor to oversee the rollout."
+        },
+        {
+          "id": "B",
+          "text": "Rotate rollout responsibilities between departments each quarter."
+        },
+        {
+          "id": "C",
+          "text": "Define clear decision-making authority and accountability for the team."
+        },
+        {
+          "id": "D",
+          "text": "Enable each department to manage its own rollout timeline and governance approach."
+        }
+      ],
+      "correctOptions": [
+        "C"
+      ]
+    }
+  ]
+}

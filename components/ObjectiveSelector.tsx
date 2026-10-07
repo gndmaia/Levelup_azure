@@ -1,15 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface ObjectiveSelectorProps {
   objectives: string[];
   onSelect: (selected: string[]) => void;
   selectedObjectives?: string[];
+  selectionName?: string;
 }
 
-export default function ObjectiveSelector({ objectives, onSelect, selectedObjectives = [] }: ObjectiveSelectorProps) {
+const EMPTY_SELECTION: string[] = [];
+
+export default function ObjectiveSelector({ objectives, onSelect, selectedObjectives = EMPTY_SELECTION, selectionName = 'topic' }: ObjectiveSelectorProps) {
   const [selected, setSelected] = useState<string[]>(selectedObjectives);
+
+  useEffect(() => {
+    setSelected(selectedObjectives);
+  }, [selectedObjectives]);
 
   const toggleObjective = (objective: string) => {
     const newSelected = selected.includes(objective)
@@ -40,7 +47,9 @@ export default function ObjectiveSelector({ objectives, onSelect, selectedObject
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <h3 className="text-lg font-semibold text-neutral-900">Select Topics</h3>
+        <h3 className="text-lg font-semibold text-neutral-900">
+          Select {selectionName === 'topic' ? 'Topics' : 'Question Sets'}
+        </h3>
         <div className="flex space-x-2">
           <button
             onClick={selectAll}
@@ -60,8 +69,8 @@ export default function ObjectiveSelector({ objectives, onSelect, selectedObject
 
       <p className="text-sm text-neutral-600">
         {selected.length === 0 
-          ? 'Select topics to practice, or leave empty for mixed questions'
-          : `${selected.length} topic${selected.length > 1 ? 's' : ''} selected`}
+          ? `Select ${selectionName}s to practice, or leave empty for mixed questions`
+          : `${selected.length} ${selectionName}${selected.length > 1 ? 's' : ''} selected`}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

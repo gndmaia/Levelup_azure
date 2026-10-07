@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { seedQuestions } from '@/lib/seed-data';
 import { seedQuestionsAZ900 } from '@/lib/seed-data-az900';
+import { seedQuestionsAB731 } from '@/lib/seed-data-ab731';
 
 interface DuplicateGroup {
   questions: any[];
@@ -61,7 +62,8 @@ export async function GET(request: Request) {
     const exam = searchParams.get('exam') || 'AI-900';
     
     // Select the appropriate question set
-    const questions = exam === 'AZ-900' ? seedQuestionsAZ900 : seedQuestions;
+    const questions = exam === 'AB-731' ? seedQuestionsAB731
+      : exam === 'AZ-900' ? seedQuestionsAZ900 : seedQuestions;
     
     const duplicates: DuplicateGroup[] = [];
     const processedQuestions = new Set<string>();
@@ -109,7 +111,7 @@ export async function GET(request: Request) {
       success: true,
       duplicates,
       count: duplicates.length,
-      totalQuestionsAnalyzed: seedQuestions.length,
+      totalQuestionsAnalyzed: questions.length,
     });
   } catch (error: any) {
     console.error('Error finding duplicates:', error);

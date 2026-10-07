@@ -14,12 +14,14 @@ interface QuestionCardProps {
   totalQuestions?: number;
 }
 
+const EMPTY_ANSWER: string[] = [];
+
 export default function QuestionCard({
   question,
   onAnswer,
   showFeedback = false,
   isCorrect,
-  userAnswer = [],
+  userAnswer = EMPTY_ANSWER,
   disabled = false,
   questionNumber,
   totalQuestions,
@@ -27,10 +29,10 @@ export default function QuestionCard({
   const [selectedOptions, setSelectedOptions] = useState<string[]>(userAnswer);
   const isMultiSelect = question.correctOptions.length > 1;
 
-  // Reset selected options when question changes
+  // Restore saved choices when navigating between exam questions.
   useEffect(() => {
-    setSelectedOptions([]);
-  }, [question.id]);
+    setSelectedOptions(userAnswer);
+  }, [question.id, userAnswer]);
 
   const handleOptionClick = (optionId: string) => {
     if (disabled) return;
@@ -182,7 +184,7 @@ export default function QuestionCard({
 
       {/* Question Stem */}
       <div className="prose prose-lg max-w-none">
-        <p className="text-neutral-900 text-lg font-medium">{cleanQuestionText}</p>
+        <p className={`text-neutral-900 text-lg font-medium${question.examId === 'AB-731' ? ' whitespace-pre-line' : ''}`}>{cleanQuestionText}</p>
       </div>
 
       {/* Display Images if present */}

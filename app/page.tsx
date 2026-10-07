@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { AB731_QUESTION_COUNT } from '@/lib/ab731-metadata';
 
 export default function HomePage() {
   const [questionCount, setQuestionCount] = useState<number>(737); // Default fallback
@@ -153,6 +154,29 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex items-center text-violet-600 font-semibold group-hover:text-violet-700">
+                  Start Learning &rarr;
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/ab-731" className="group">
+              <div className="h-full cursor-pointer rounded-xl border-t-4 border-emerald-600 bg-white/95 p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-2xl">
+                <div className="mb-4 flex items-start justify-between gap-3">
+                  <h3 className="text-2xl font-bold text-gray-900">Microsoft AB-731</h3>
+                  <span className="rounded-full bg-emerald-600 px-3 py-1 text-sm font-semibold text-white">
+                    Available Now
+                  </span>
+                </div>
+                <p className="mb-6 text-gray-600">
+                  AI Transformation Leader - Lead AI adoption, evaluate business value, and plan responsible enterprise AI.
+                </p>
+                <div className="mb-6 space-y-3 text-gray-700">
+                  <p>{AB731_QUESTION_COUNT} Imported Training Questions</p>
+                  <p>4 Practice &amp; Homework Sets</p>
+                  <p>Single-Choice &amp; Multiple-Select Questions</p>
+                  <p>Source Answer Keys &amp; Timed Practice</p>
+                </div>
+                <div className="font-semibold text-emerald-700 group-hover:text-emerald-800">
                   Start Learning &rarr;
                 </div>
               </div>

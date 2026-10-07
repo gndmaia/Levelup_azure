@@ -32,6 +32,26 @@ A comprehensive web application for practicing Azure certifications with interac
 - **Coverage analysis** by topic
 - **Question management** interface
 
+### AB-731 AI Transformation Leader
+- **140 imported training questions** from four MSS AI First Forms quizzes: 58, 51, 15, and 16 questions.
+- **Four selectable practice sets**, mixed practice, and a 60-question, 45-minute timed practice mode.
+- **11 multiple-select questions** with exact-match scoring and no partial credit.
+- Correct answers come from the source Forms' normal **View results** answer markers. Random trial responses, respondent information, and submission scores are not included.
+- Source wording, paragraph breaks, question numbers, and links are retained. Feedback identifies the source's correct options; it does not invent authored explanations.
+- These are training questions, not live certification-exam content. Practice percentages do not reproduce Microsoft's scaled exam scores or the Forms' individual point weights.
+- Imported question content remains subject to its source owners' permissions; the application's code license does not grant additional rights to third-party question content.
+
+Open `/ab-731`, or use `/practice?exam=AB-731`. A source set can be selected with, for example, `/practice?exam=AB-731&set=Practice-Exam-1`.
+
+To regenerate the imported bank from authorized source extracts and revealed reviews:
+
+```bash
+node scripts/import-ab731.mjs <source-directory> YYYY-MM-DD
+npm run test:ab731
+```
+
+The source directory must contain `ab731-trial-responses.json`, `ab731-visible-stems.json`, and `ab731-form-1-review.json` through `ab731-form-4-review.json`. The importer checks source IDs, wording, choices, selection counts, and revealed correct-answer markers before writing the bank. Source extracts are not checked into the repository. The legacy admin text-import endpoint rejects AB-731 writes to avoid modifying an unrelated exam's seed file.
+
 ## 🎯 Current Statistics
 
 - **737** Deduplicated practice questions
@@ -57,6 +77,7 @@ levelup-azure/
 │   ├── practice/         # Practice mode
 │   ├── exam/             # Exam mode  
 │   ├── ai-103/           # Embedded full-fidelity AI-103 simulator
+│   ├── ab-731/           # Imported Forms practice sets and source attribution
 │   ├── sessions/         # Session history
 │   ├── about/            # About pages
 │   ├── auth/             # Authentication
