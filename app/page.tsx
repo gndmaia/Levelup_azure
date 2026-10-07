@@ -111,55 +111,52 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* AI-102 Card - Coming Soon */}
-            <div className="opacity-75">
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-8 border-t-4 border-amber-500 h-full relative">
+            {/* AI-103 Card - Available */}
+            <Link href="/ai-103" className="group">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-8 border-t-4 border-violet-600 hover:shadow-2xl hover:bg-white transition-all duration-300 transform hover:-translate-y-1 cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">Azure AI-102</h3>
-                  <span className="bg-warning text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Coming Soon
+                  <h3 className="text-2xl font-bold text-gray-900">Azure AI-103</h3>
+                  <span className="bg-violet-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Available Now
                   </span>
                 </div>
                 
                 <p className="text-gray-600 mb-6">
-                  Azure AI Engineer Associate - Advanced AI solutions and cognitive services
+                  Azure AI Apps and Agents Developer Associate - Build generative AI, agents, vision, text, and information extraction solutions
                 </p>
                 
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-center text-gray-500">
-                    <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  <div className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 mr-3 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Comprehensive Question Bank</span>
+                    <span>226 Original Practice Questions</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
-                    <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  <div className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 mr-3 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Practice & Exam Modes</span>
+                    <span>51-Question Timed & Study Modes</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
-                    <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  <div className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 mr-3 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Detailed Explanations</span>
+                    <span>Case Studies & Interactive Formats</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
-                    <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  <div className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 mr-3 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 10-1.414-1.414L10 8.586 8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293z" clipRule="evenodd" />
                     </svg>
-                    <span>Real Exam Scenarios</span>
+                    <span>Original Content - Not Live Exam Questions</span>
                   </div>
                 </div>
 
-                <div className="flex items-center text-gray-500 font-semibold">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                  </svg>
-                  Coming Soon
+                <div className="flex items-center text-violet-600 font-semibold group-hover:text-violet-700">
+                  Start Learning &rarr;
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* AZ-900 Card - Available */}
             <Link href="/az-900" className="group">
