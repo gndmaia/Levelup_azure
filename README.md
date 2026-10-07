@@ -52,6 +52,25 @@ npm run test:ab731
 
 The source directory must contain `ab731-trial-responses.json`, `ab731-visible-stems.json`, and `ab731-form-1-review.json` through `ab731-form-4-review.json`. The importer checks source IDs, wording, choices, selection counts, and revealed correct-answer markers before writing the bank. Source extracts are not checked into the repository. The legacy admin text-import endpoint rejects AB-731 writes to avoid modifying an unrelated exam's seed file.
 
+### AB-730 AI Business Professional
+- **160 imported training questions** from four Forms quizzes: 50, 50, 30, and 30 questions, including **10 two-answer multiple-select questions**.
+- Open `/ab-730` for source-set selection, `/practice?exam=AB-730` for mixed practice, or `/exam?exam=AB-730` for a 60-question, 45-minute timed practice attempt.
+- Source answer keys were collected through normal Forms results review. Trial selections, respondent details, and trial scores are not published. Question wording and source-set provenance are retained.
+- The 160 count is source-set items, not unique stems: questions repeated across source quizzes are retained so each original set stays complete.
+- The shared Forms landing, import validation, seed conversion, and practice flow also serve AB-731 without changing its question bank.
+- Source mistakes are not silently rewritten: Practice exam 2, question 10 repeats an incorrect distractor. Both options are retained under distinct IDs; the correct answer is unambiguous.
+- These are unofficial training questions, not live exam content. Microsoft's AB-730 certification page lists an English syllabus update for **October 20, 2026**; review the latest official study guide rather than assuming these source quizzes cover the updated syllabus.
+- Imported content remains subject to its source owners' permissions, not the application's code license.
+
+Regenerate from the authorized AB-730 extracts using the same file naming convention as AB-731:
+
+```bash
+node scripts/import-ab730.mjs <source-directory> YYYY-MM-DD
+npm run test:forms
+```
+
+Both wrappers use `scripts/import-forms-bank.mjs`, which validates source IDs, counts, original wording, option text, and revealed keys. Duplicate incorrect distractors are allowed, but an ambiguous correct-option mapping stops the import. The legacy admin import endpoint rejects both generated Forms banks. Pull-request builds run the data regressions for both exams without deploying production.
+
 ## 🎯 Current Statistics
 
 - **737** Deduplicated practice questions
@@ -78,6 +97,7 @@ levelup-azure/
 │   ├── exam/             # Exam mode  
 │   ├── ai-103/           # Embedded full-fidelity AI-103 simulator
 │   ├── ab-731/           # Imported Forms practice sets and source attribution
+│   ├── ab-730/           # AI Business Professional Forms practice sets
 │   ├── sessions/         # Session history
 │   ├── about/            # About pages
 │   ├── auth/             # Authentication

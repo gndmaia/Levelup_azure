@@ -4,7 +4,7 @@ const [sourceDirectory, importedAt] = process.argv.slice(2);
 importFormsBank({
   sourceDirectory,
   importedAt,
-  examId: 'AB-731',
-  prefix: 'ab731',
-  counts: [58, 51, 15, 16],
+  examId: 'AB-730',
+  prefix: 'ab730',
+  counts: [50, 50, 30, 30],
 });

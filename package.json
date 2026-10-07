@@ -6,6 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "test:ab731": "node --test tests/ab731-question-bank.test.mjs",
+    "test:ab730": "node --test tests/ab730-question-bank.test.mjs",
+    "test:forms": "node --test tests/ab730-question-bank.test.mjs tests/ab731-question-bank.test.mjs",
     "start": "node server.js",
     "heroku-postbuild": "npm run build"
   },

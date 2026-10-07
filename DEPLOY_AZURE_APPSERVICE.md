@@ -30,7 +30,7 @@ First, let's add a production configuration:
 - Configure the repository secret `AZUREAPPSERVICE_PUBLISHPROFILE_78789C0D50994F9C8A2B0A4A71E3E96D` with the App Service publish profile. Never commit the profile.
 - The build job runs `npm ci --include=dev` and `npm run build`, then archives the production `.next` output, dependencies, public assets, and runtime configuration.
 - The deploy job extracts that archive and deploys it with the publish profile. Archiving preserves the hidden `.next` directory across the artifact upload/download steps.
-- Pull requests run the AB-731 data regression checks and production build without deploying. The deploy job runs only for non-pull-request runs on `main`; manual dispatches on other branches are build-only.
+- Pull requests targeting `main` or the AB-731 feature branch run both Forms banks' data regression checks and production build without deploying. The AB-731 branch target supports a stacked AB-730 pull request while AB-731 is under review. The deploy job runs only for non-pull-request runs on `main`; manual dispatches on other branches are build-only.
 - This workflow does not use Azure OIDC login. If switching back to OIDC, the Azure federated credential's subject must exactly match GitHub's emitted subject, including immutable owner/repository IDs when enabled.
 
 ### Option B: Azure CLI

@@ -184,7 +184,7 @@ export default function QuestionCard({
 
       {/* Question Stem */}
       <div className="prose prose-lg max-w-none">
-        <p className={`text-neutral-900 text-lg font-medium${question.examId === 'AB-731' ? ' whitespace-pre-line' : ''}`}>{cleanQuestionText}</p>
+        <p className={`text-neutral-900 text-lg font-medium${question.examId === 'AB-731' || question.examId === 'AB-730' ? ' whitespace-pre-line' : ''}`}>{cleanQuestionText}</p>
       </div>
 
       {/* Display Images if present */}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "Practice-Exam-1",
+    "title": "Practice exam 1",
+    "questionCount": 50,
+    "originalTitle": "Next Level with MSS AI First - AB-730: AI Business Professional - Practice exam 1",
+    "url": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR1Nrpq25jvhFpgjhHuadukNUMzJYT1BTV1MwT09FOUNaOERCQTU1VkI1WC4u&route=shorturl",
+    "multiSelectCount": 0
+  },
+  {
+    "id": "Practice-Exam-2",
+    "title": "Practice exam 2",
+    "questionCount": 50,
+    "originalTitle": "Next Level with MSS AI First - AB-730: AI Business Professional - Practice exam 2",
+    "url": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR1Nrpq25jvhFpgjhHuadukNUNk00UUtVVlE1MTJTSkRUUEdBTU9PWFY5Ny4u&route=shorturl",
+    "multiSelectCount": 7
+  },
+  {
+    "id": "Homework-Day-1",
+    "title": "Homework Day 1",
+    "questionCount": 30,
+    "originalTitle": "AB-730: AI Business Professional Next Level with MSS: Homework Day 1",
+    "url": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR5m99glVQDdPpHOpqaPzmu9UQlRPUDBGREdLVVBWTzkxWEFIT1AzWkxBUy4u&route=shorturl",
+    "multiSelectCount": 2
+  },
+  {
+    "id": "Homework-Day-2",
+    "title": "Homework Day 2",
+    "questionCount": 30,
+    "originalTitle": "AB-730: AI Business Professional Next Level with MSS: Homework Day 2",
+    "url": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR5m99glVQDdPpHOpqaPzmu9UMVQxNVVFUlhIUzFITDJVMVY0ODVOOVlVRi4u&route=shorturl",
+    "multiSelectCount": 1
+  }
+]

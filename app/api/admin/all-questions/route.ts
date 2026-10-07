@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
-import { seedQuestions } from '@/lib/seed-data';
-import { seedQuestionsAZ900 } from '@/lib/seed-data-az900';
-import { seedQuestionsAB731 } from '@/lib/seed-data-ab731';
+import { getSeedQuestionsForExam } from '@/lib/question-banks';
 
 export async function GET(request: Request) {
   try {
@@ -9,8 +7,7 @@ export async function GET(request: Request) {
     const exam = searchParams.get('exam') || 'AI-900';
     
     // Select the appropriate question set
-    const sourceQuestions = exam === 'AB-731' ? seedQuestionsAB731
-      : exam === 'AZ-900' ? seedQuestionsAZ900 : seedQuestions;
+    const sourceQuestions = getSeedQuestionsForExam(exam);
     
     console.log(`Admin endpoint - ${exam} questions:`, sourceQuestions.length);
     
