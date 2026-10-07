@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { FORMS_PRACTICE_EXAMS } from '@/lib/forms-practice';
+import { IMPORTED_PRACTICE_EXAMS } from '@/lib/imported-practice';
 
 export default function HomePage() {
   const [questionCount, setQuestionCount] = useState<number>(737); // Default fallback
@@ -159,11 +159,11 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {Object.values(FORMS_PRACTICE_EXAMS).map((exam) => (
+            {Object.values(IMPORTED_PRACTICE_EXAMS).map((exam) => (
               <Link key={exam.id} href={`/${exam.id.toLowerCase()}`} className="group">
                 <div className="h-full cursor-pointer rounded-xl border-t-4 border-emerald-600 bg-white/95 p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-2xl">
                   <div className="mb-4 flex items-start justify-between gap-3">
-                    <h3 className="text-2xl font-bold text-gray-900">Microsoft {exam.id}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">{exam.id === 'GH-300' ? 'GitHub' : 'Microsoft'} {exam.id}</h3>
                     <span className="rounded-full bg-emerald-600 px-3 py-1 text-sm font-semibold text-white">
                       Available Now
                     </span>
@@ -173,9 +173,9 @@ export default function HomePage() {
                   </p>
                   <div className="mb-6 space-y-3 text-gray-700">
                     <p>{exam.questionCount} Imported Training Questions</p>
-                    <p>{exam.sources.length} Practice &amp; Homework Sets</p>
+                    <p>{exam.sources.length} {exam.sourceKind === 'markdown' ? 'Detailed Practice Tests' : 'Practice & Homework Sets'}</p>
                     <p>Single-Choice &amp; Multiple-Select Questions</p>
-                    <p>Source Answer Keys &amp; Timed Practice</p>
+                    <p>{exam.sourceKind === 'markdown' ? 'Detailed Explanations & Reference Links' : 'Source Answer Keys & Timed Practice'}</p>
                   </div>
                   <div className="font-semibold text-emerald-700 group-hover:text-emerald-800">
                     Start Learning &rarr;

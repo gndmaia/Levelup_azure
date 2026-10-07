@@ -1,6 +1,6 @@
 // Data models for LevelUp Azure
 
-export type ExamId = "AI-900" | "AZ-900" | "AB-730" | "AB-731" | "DP-900" | "AZ-104"; // Extensible for future exams
+export type ExamId = "AI-900" | "AZ-900" | "AB-730" | "AB-731" | "GH-300" | "DP-900" | "AZ-104"; // Extensible for future exams
 
 export type Difficulty = "easy" | "medium" | "hard";
 
@@ -33,6 +33,7 @@ export interface Question {
   tags: string[];
   status: QuestionStatus;
   lastUpdated: string; // ISO date string
+  textFormat?: 'markdown';
 }
 
 export interface Session {

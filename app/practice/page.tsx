@@ -6,14 +6,14 @@ import ObjectiveSelector from '@/components/ObjectiveSelector';
 import QuestionCard from '@/components/QuestionCard';
 import SummaryPanel from '@/components/SummaryPanel';
 import { Question, SessionSummary } from '@/types';
-import { getFormsPracticeExam } from '@/lib/forms-practice';
+import { getImportedPracticeExam } from '@/lib/imported-practice';
 
 function PracticePageContent() {
   const searchParams = useSearchParams();
   const examId = searchParams.get('exam') || 'AI-900';
   const sourceSetId = searchParams.get('set');
-  const formsExam = getFormsPracticeExam(examId);
-  const sourceSet = formsExam?.sources.find((source) => source.id === sourceSetId);
+  const importedExam = getImportedPracticeExam(examId);
+  const sourceSet = importedExam?.sources.find((source) => source.id === sourceSetId);
   
   const [stage, setStage] = useState<'config' | 'practice' | 'summary'>('config');
   const [objectives, setObjectives] = useState<string[]>([]);
@@ -54,7 +54,7 @@ function PracticePageContent() {
       ],
     };
     
-    setObjectives(formsExam?.sources.map((source) => source.id) ?? examObjectives[examId] ?? examObjectives['AI-900']);
+    setObjectives(importedExam?.sources.map((source) => source.id) ?? examObjectives[examId] ?? examObjectives['AI-900']);
     
     // Fetch available question count
     fetch(`/api/questions/count?exam=${examId}`)
@@ -68,24 +68,24 @@ function PracticePageContent() {
         // Default to 20 if API fails
         setAvailableQuestionCount(20);
       });
-  }, [examId, formsExam]);
+  }, [examId, importedExam]);
 
   useEffect(() => {
-    if (formsExam) {
+    if (importedExam) {
       setSelectedObjectives(sourceSet ? [sourceSet.id] : []);
       setQuestionCount(sourceSet?.questionCount ?? 10);
     }
-  }, [formsExam, sourceSet]);
+  }, [importedExam, sourceSet]);
 
-  const availableCount = formsExam
-    ? formsExam.sources.filter((source) => selectedObjectives.length === 0 || selectedObjectives.includes(source.id))
+  const availableCount = importedExam
+    ? importedExam.sources.filter((source) => selectedObjectives.length === 0 || selectedObjectives.includes(source.id))
       .reduce((total, source) => total + source.questionCount, 0)
     : availableQuestionCount;
 
   const selectObjectives = (next: string[]) => {
     setSelectedObjectives(next);
-    if (formsExam) {
-      const count = formsExam.sources.filter((source) => next.length === 0 || next.includes(source.id))
+    if (importedExam) {
+      const count = importedExam.sources.filter((source) => next.length === 0 || next.includes(source.id))
         .reduce((total, source) => total + source.questionCount, 0);
       setQuestionCount((current) => Math.min(current, count));
     }
@@ -221,11 +221,13 @@ function PracticePageContent() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-md p-8">
           <h1 className="text-3xl font-bold text-neutral-900 mb-2">
-            {formsExam ? `${formsExam.id} Practice Mode` : 'Practice Mode'}
+            {importedExam ? `${importedExam.id} Practice Mode` : 'Practice Mode'}
           </h1>
           <p className="text-neutral-600 mb-8">
-            {formsExam
-              ? 'Choose your question sets and practice with feedback from the original Forms answer keys.'
+            {importedExam
+              ? importedExam.sourceKind === 'markdown'
+                ? 'Choose your detailed practice sets and learn with the original explanations, tips, and documentation references.'
+                : 'Choose your question sets and practice with feedback from the original Forms answer keys.'
               : 'Choose your topics and practice at your own pace with instant feedback.'}
           </p>
 
@@ -233,7 +235,7 @@ function PracticePageContent() {
             objectives={objectives}
             onSelect={selectObjectives}
             selectedObjectives={selectedObjectives}
-            selectionName={formsExam ? 'question set' : 'topic'}
+            selectionName={importedExam ? 'question set' : 'topic'}
           />
 
           {/* Question Count Selector */}

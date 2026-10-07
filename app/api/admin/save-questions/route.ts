@@ -16,9 +16,9 @@ export async function POST(request: Request) {
   try {
     const { questions, examId } = await request.json();
 
-    if (examId === 'AB-730' || examId === 'AB-731') {
+    if (examId === 'AB-730' || examId === 'AB-731' || examId === 'GH-300') {
       return NextResponse.json(
-        { success: false, error: `${examId} is a generated Forms bank. Update it with scripts/import-${examId.toLowerCase().replace('-', '')}.mjs and verified source reviews.` },
+        { success: false, error: `${examId} is a generated source bank. Update it with scripts/import-${examId.toLowerCase().replace('-', '')}.mjs and verified source material.` },
         { status: 400 }
       );
     }

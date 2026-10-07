@@ -71,6 +71,26 @@ npm run test:forms
 
 Both wrappers use `scripts/import-forms-bank.mjs`, which validates source IDs, counts, original wording, option text, and revealed keys. Duplicate incorrect distractors are allowed, but an ambiguous correct-option mapping stops the import. The legacy admin import endpoint rejects both generated Forms banks. Pull-request builds run the data regressions for both exams without deploying production.
 
+### GH-300 GitHub Copilot
+- **255 detailed practice questions** imported from ten supplied Markdown files from [ElmentorProgram/gh-300](https://github.com/ElmentorProgram/gh-300), with user-confirmed reproduction permission.
+- Open `/gh-300`, `/practice?exam=GH-300`, or `/exam?exam=GH-300`. Select an individual detailed test with, for example, `/practice?exam=GH-300&set=Detailed-Test-01`.
+- **13 multiple-select questions**, including keys with more than two answers; scoring requires exactly the source's correct choices.
+- Original explanations, tips, important callouts, correct/wrong discussions where present, and official documentation references are retained.
+- Correct-choice bolding is stripped from displayed options. A safe text-only Markdown subset renders emphasis, inline code, paragraphs, headings, lists, and callouts through React nodes; raw HTML is never injected.
+- Timed practice samples **60 questions in 100 minutes**, matching the assessment duration listed on the official [GH-300 certification page](https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/). The sampled question count and practice percentage are not official exam scoring.
+- The detailed files contain **255**, not the source README's advertised 300 items: tests 07 and 08 have only **10 and 5** questions. Missing questions are not fabricated, and the raw files in the same folder are excluded to avoid duplicate imports.
+- Source commit, per-file SHA-256, original question numbering, and pinned source links are retained. The local source directory is never written to, and its absolute path is not published.
+- The source repository has no published license. Permission to import was confirmed by the user; this does not grant additional reuse rights or apply the application's code license to the question content.
+
+Regenerate from the authorized detailed directory:
+
+```bash
+node scripts/import-gh300.mjs <detailed-directory> YYYY-MM-DD <full-source-git-commit>
+npm run test:practice
+```
+
+The importer strictly validates question sections, sequential option IDs, explicit answer mappings, authored explanations, reference URLs, source counts, and duplicate question IDs before writing the generated bank. The legacy admin import endpoint rejects GH-300 writes. Shared imported-exam metadata, landing, seed conversion, and source-set filtering retain the existing AB-730 and AB-731 behavior.
+
 ## 🎯 Current Statistics
 
 - **737** Deduplicated practice questions
@@ -98,6 +118,7 @@ levelup-azure/
 │   ├── ai-103/           # Embedded full-fidelity AI-103 simulator
 │   ├── ab-731/           # Imported Forms practice sets and source attribution
 │   ├── ab-730/           # AI Business Professional Forms practice sets
+│   ├── gh-300/           # Detailed GitHub Copilot practice bank
 │   ├── sessions/         # Session history
 │   ├── about/            # About pages
 │   ├── auth/             # Authentication

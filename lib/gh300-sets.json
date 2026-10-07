@@ -1,0 +1,122 @@
+[
+  {
+    "id": "Detailed-Test-01",
+    "title": "Detailed practice test 01",
+    "originalTitle": "Detailed Practice Test 01 - Answer Sheet & Explanation",
+    "filename": "01-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/01-practice-test.detailed.md",
+    "questionCount": 30,
+    "multiSelectCount": 2,
+    "firstQuestionNumber": 1,
+    "lastQuestionNumber": 30,
+    "sha256": "4dbfa5215ef598809b5b2b2901b7581d789b3719bf11b3225af4af872e05700d"
+  },
+  {
+    "id": "Detailed-Test-02",
+    "title": "Detailed practice test 02",
+    "originalTitle": "Detailed Practice Test 02 - Answer Sheet & Explanation",
+    "filename": "02-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/02-practice-test.detailed.md",
+    "questionCount": 30,
+    "multiSelectCount": 6,
+    "firstQuestionNumber": 31,
+    "lastQuestionNumber": 60,
+    "sha256": "6d194eead71fa548729f2f02f312c03aa18d14df3e135acb707583df47c86ca4"
+  },
+  {
+    "id": "Detailed-Test-03",
+    "title": "Detailed practice test 03",
+    "originalTitle": "Detailed Practice Test 03 - Answer Sheet & Explanation",
+    "filename": "03-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/03-practice-test.detailed.md",
+    "questionCount": 30,
+    "multiSelectCount": 3,
+    "firstQuestionNumber": 61,
+    "lastQuestionNumber": 90,
+    "sha256": "e9b4b2639a5b5adc911aa8a303269c7604d3325ae2321b9fb48db71d6ef0a603"
+  },
+  {
+    "id": "Detailed-Test-04",
+    "title": "Detailed practice test 04",
+    "originalTitle": "Detailed Practice Test 04 - Answer Sheet & Explanation",
+    "filename": "04-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/04-practice-test.detailed.md",
+    "questionCount": 30,
+    "multiSelectCount": 0,
+    "firstQuestionNumber": 91,
+    "lastQuestionNumber": 120,
+    "sha256": "63681586390f956f402c4c6a45eb47fbfe5a6c3b005d6f84b1480fe445ad36e3"
+  },
+  {
+    "id": "Detailed-Test-05",
+    "title": "Detailed practice test 05",
+    "originalTitle": "Detailed Practice Test 05 - Answer Sheet & Explanation",
+    "filename": "05-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/05-practice-test.detailed.md",
+    "questionCount": 30,
+    "multiSelectCount": 0,
+    "firstQuestionNumber": 121,
+    "lastQuestionNumber": 150,
+    "sha256": "022c1c891efde466e1de162b0cd459fefb5f1446c5c54bc4994b6f4d08625caa"
+  },
+  {
+    "id": "Detailed-Test-06",
+    "title": "Detailed practice test 06",
+    "originalTitle": "Detailed Practice Test 06 - Answer Sheet & Explanation",
+    "filename": "06-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/06-practice-test.detailed.md",
+    "questionCount": 30,
+    "multiSelectCount": 1,
+    "firstQuestionNumber": 151,
+    "lastQuestionNumber": 180,
+    "sha256": "4b592e346660da21c70dcc467a37ffe11ed605b87983897e3602433774e6d550"
+  },
+  {
+    "id": "Detailed-Test-07",
+    "title": "Detailed practice test 07",
+    "originalTitle": "Detailed Practice Test 07 - Answer Sheet & Explanation",
+    "filename": "07-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/07-practice-test.detailed.md",
+    "questionCount": 10,
+    "multiSelectCount": 0,
+    "firstQuestionNumber": 181,
+    "lastQuestionNumber": 190,
+    "sha256": "d4e5f82722328175a7d9d11d0ac47d318b0485389075c7bf8b463df8913882cb"
+  },
+  {
+    "id": "Detailed-Test-08",
+    "title": "Detailed practice test 08",
+    "originalTitle": "Detailed Practice Test 08 - Answer Sheet & Explanation",
+    "filename": "08-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/08-practice-test.detailed.md",
+    "questionCount": 5,
+    "multiSelectCount": 0,
+    "firstQuestionNumber": 211,
+    "lastQuestionNumber": 215,
+    "sha256": "8928928990891fe291dfe459d0a13794d06168808961db337bb22b5db94dbbd9"
+  },
+  {
+    "id": "Detailed-Test-09",
+    "title": "Detailed practice test 09",
+    "originalTitle": "Detailed Practice Test 09 - Answer Sheet & Explanation",
+    "filename": "09-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/09-practice-test.detailed.md",
+    "questionCount": 30,
+    "multiSelectCount": 1,
+    "firstQuestionNumber": 241,
+    "lastQuestionNumber": 270,
+    "sha256": "583d36027fbf197e465dfe31e034398e81dbe12323bbfc4b1200b29e12e28524"
+  },
+  {
+    "id": "Detailed-Test-10",
+    "title": "Detailed practice test 10",
+    "originalTitle": "Detailed Practice Test 10 - Answer Sheet & Explanation",
+    "filename": "10-practice-test.detailed.md",
+    "url": "https://github.com/ElmentorProgram/gh-300/blob/b2f4a464812ab2acffeaf682a5ed3de0f543e88c/source/docs/practice/detailed/10-practice-test.detailed.md",
+    "questionCount": 30,
+    "multiSelectCount": 0,
+    "firstQuestionNumber": 271,
+    "lastQuestionNumber": 300,
+    "sha256": "5ca4c0f47f1a8f8b0b3efecbb02a6dd660bcb2f2dbede3799eed9edd7498074a"
+  }
+]

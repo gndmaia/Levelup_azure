@@ -7,12 +7,14 @@ import Timer from '@/components/Timer';
 import SummaryPanel from '@/components/SummaryPanel';
 import QuestionNavigator from '@/components/QuestionNavigator';
 import { Question, SessionSummary } from '@/types';
-import { getFormsPracticeExam } from '@/lib/forms-practice';
+import { getImportedPracticeExam } from '@/lib/imported-practice';
 
 function ExamPageContent() {
   const searchParams = useSearchParams();
   const examId = searchParams.get('exam') || 'AI-900';
-  const formsExam = getFormsPracticeExam(examId);
+  const importedExam = getImportedPracticeExam(examId);
+  const practiceTimeLimit = importedExam?.timeLimitSec ?? 2700;
+  const practiceQuestionCount = importedExam?.timedQuestionCount ?? 60;
   
   const [stage, setStage] = useState<'config' | 'exam' | 'summary'>('config');
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -21,7 +23,7 @@ function ExamPageContent() {
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [summary, setSummary] = useState<SessionSummary | null>(null);
   const [loading, setLoading] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(2700); // 45 minutes
+  const [timeRemaining, setTimeRemaining] = useState(practiceTimeLimit);
   const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set());
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -35,8 +37,8 @@ function ExamPageContent() {
         body: JSON.stringify({
           mode: 'exam',
           examId: examId,
-          questionCount: 60,
-          timeLimitSec: 2700, // 45 minutes
+          questionCount: practiceQuestionCount,
+          timeLimitSec: practiceTimeLimit,
         }),
       });
 
@@ -44,7 +46,7 @@ function ExamPageContent() {
       if (data.success) {
         setAnsweredQuestions(new Set());
         setSelectedAnswer([]);
-        setTimeRemaining(2700);
+        setTimeRemaining(practiceTimeLimit);
         setSessionId(data.session.id);
         setTotalQuestions(data.session.questionIds.length);
         setStage('exam');
@@ -193,7 +195,7 @@ function ExamPageContent() {
     setQuestionNumber(0);
     setTotalQuestions(0);
     setSummary(null);
-    setTimeRemaining(2700);
+    setTimeRemaining(practiceTimeLimit);
     setAnsweredQuestions(new Set());
     setSelectedAnswer([]);
     setCurrentQuestionIndex(0);
@@ -302,11 +304,11 @@ function ExamPageContent() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="bg-white rounded-lg shadow-md p-8">
         <h1 className="text-3xl font-bold text-neutral-900 mb-4">
-          {formsExam ? `${formsExam.id} Timed Practice Exam` : 'Exam Mode'}
+          {importedExam ? `${importedExam.id} Timed Practice Exam` : 'Exam Mode'}
         </h1>
         <p className="text-neutral-600 mb-8">
-          {formsExam
-            ? 'Practice with 60 sampled training questions in 45 minutes. This is not an official certification exam.'
+          {importedExam
+            ? `Practice with ${practiceQuestionCount} sampled training questions in ${practiceTimeLimit / 60} minutes. This is not an official certification exam.`
             : 'Simulate the real Azure AI-900 certification exam with a timed session and realistic exam conditions.'}
         </p>
 
@@ -322,10 +324,10 @@ function ExamPageContent() {
               </svg>
             </div>
             <div className="ml-3">
-              <h3 className="text-lg font-semibold text-neutral-900">60 Questions</h3>
+              <h3 className="text-lg font-semibold text-neutral-900">{practiceQuestionCount} Questions</h3>
               <p className="text-neutral-600">
-                {formsExam
-                  ? `Sampled from the four imported ${formsExam.id} training sets, including multiple-select questions`
+                {importedExam
+                  ? `Sampled from ${importedExam.sources.length} imported ${importedExam.id} training sets, including multiple-select questions`
                   : 'Balanced across all AI-900 topic areas with realistic difficulty distribution'}
               </p>
             </div>
@@ -342,10 +344,10 @@ function ExamPageContent() {
               </svg>
             </div>
             <div className="ml-3">
-              <h3 className="text-lg font-semibold text-neutral-900">45 Minutes</h3>
+              <h3 className="text-lg font-semibold text-neutral-900">{practiceTimeLimit / 60} Minutes</h3>
               <p className="text-neutral-600">
-                {formsExam
-                  ? `The ${formsExam.id} certification page lists a 45-minute assessment`
+                {importedExam
+                  ? `The ${importedExam.id} certification page lists a ${practiceTimeLimit / 60}-minute assessment`
                   : 'Same time limit as the actual Azure AI-900 certification exam'}
               </p>
             </div>
@@ -364,7 +366,7 @@ function ExamPageContent() {
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-neutral-900">No Feedback During Exam</h3>
               <p className="text-neutral-600">
-                {formsExam
+                {importedExam
                   ? 'Save answers and use the navigator to revisit questions. Use practice mode for source-answer feedback.'
                   : "You won't see correct answers until the end. Cannot go back to previous questions."}
               </p>
@@ -409,7 +411,7 @@ function ExamPageContent() {
 
         <div className="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-200">
           <p className="text-sm text-primary-900">
-            {formsExam
+            {importedExam
               ? 'Your result is an unweighted practice percentage, not a Microsoft scaled exam score. Multiple-select questions require every correct option and no incorrect options.'
               : <><strong>Tip:</strong> The passing score for Azure AI-900 is 700 out of 1000 (approximately 70%).</>}
             Make sure you're in a quiet environment before starting.

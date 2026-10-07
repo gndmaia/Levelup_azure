@@ -2,6 +2,7 @@
 
 import { Question } from '@/types';
 import { useState, useEffect } from 'react';
+import StudyMarkdown, { StudyInline } from './StudyMarkdown';
 
 interface QuestionCardProps {
   question: Question;
@@ -184,7 +185,9 @@ export default function QuestionCard({
 
       {/* Question Stem */}
       <div className="prose prose-lg max-w-none">
-        <p className={`text-neutral-900 text-lg font-medium${question.examId === 'AB-731' || question.examId === 'AB-730' ? ' whitespace-pre-line' : ''}`}>{cleanQuestionText}</p>
+        {question.textFormat === 'markdown'
+          ? <StudyMarkdown text={cleanQuestionText} />
+          : <p className={`text-neutral-900 text-lg font-medium${question.examId === 'AB-731' || question.examId === 'AB-730' ? ' whitespace-pre-line' : ''}`}>{cleanQuestionText}</p>}
       </div>
 
       {/* Display Images if present */}
@@ -232,7 +235,9 @@ export default function QuestionCard({
               </div>
               <div className="flex-1">
                 <span className="font-semibold text-neutral-700 mr-2">{option.id}.</span>
-                <span className="text-neutral-800">{option.text}</span>
+                <span className="text-neutral-800">
+                  {question.textFormat === 'markdown' ? <StudyInline text={option.text} /> : option.text}
+                </span>
               </div>
             </label>
           </div>
@@ -260,7 +265,9 @@ export default function QuestionCard({
               <p className="font-semibold text-lg mb-2">
                 {isCorrect ? 'Correct!' : 'Incorrect'}
               </p>
-              <p className="text-neutral-700 mb-3">{question.explanation}</p>
+              {question.textFormat === 'markdown'
+                ? <StudyMarkdown text={question.explanation} />
+                : <p className="text-neutral-700 mb-3">{question.explanation}</p>}
               {question.references.length > 0 && (
                 <div className="mt-3">
                   <p className="font-medium text-sm text-neutral-700 mb-2">Learn more:</p>

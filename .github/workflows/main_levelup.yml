@@ -11,6 +11,7 @@ on:
     branches:
       - main
       - feat/ab731-forms-practice
+      - feat/ab730-forms-practice
   workflow_dispatch:
 
 jobs:
@@ -30,7 +31,7 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm ci --include=dev
-          npm run test:forms
+          npm run test:practice
           npm run build
         env:
           NODE_ENV: production
