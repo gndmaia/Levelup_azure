@@ -1,0 +1,132 @@
+[
+  {
+    "id": "sdk-cli-part1",
+    "title": "sdk-cli-part1.json",
+    "originalTitle": "sdk-cli-part1.json",
+    "filename": "sdk-cli-part1.json",
+    "questionCount": 33,
+    "multiSelectCount": 0,
+    "sha256": "702a8dbb3921d6afb4b3c51d53727477220f92e9bd6f4c6d95cd50f2f7221b76",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "sdk-cli-part2",
+    "title": "sdk-cli-part2.json",
+    "originalTitle": "sdk-cli-part2.json",
+    "filename": "sdk-cli-part2.json",
+    "questionCount": 30,
+    "multiSelectCount": 0,
+    "sha256": "3062938b181b70cd613de5b2319d0a07e348adde8b27d971b27ab56e04b6a1a7",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "secure-monitor",
+    "title": "secure-monitor.json",
+    "originalTitle": "secure-monitor.json",
+    "filename": "secure-monitor.json",
+    "questionCount": 12,
+    "multiSelectCount": 0,
+    "sha256": "e1ae35498bf87f38277ed8ee43ee4397b931354bc4ba69162b90443d6b0a5592",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "secure-monitor-160",
+    "title": "secure-monitor-160.json",
+    "originalTitle": "secure-monitor-160.json",
+    "filename": "secure-monitor-160.json",
+    "questionCount": 24,
+    "multiSelectCount": 0,
+    "sha256": "d494e79fd998bba6cfc9487e04b5c8dba5ed315b64b58b517ecd862c52e71442",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "advanced-scenarios",
+    "title": "advanced-scenarios.json",
+    "originalTitle": "advanced-scenarios.json",
+    "filename": "advanced-scenarios.json",
+    "questionCount": 30,
+    "multiSelectCount": 0,
+    "sha256": "b8c68a08bcfa06269d362b355e1bb771e31cb7bdbf1be26e6df58ca50997a10c",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "ai200-practice-set",
+    "title": "ai200-practice-set.json",
+    "originalTitle": "ai200-practice-set.json",
+    "filename": "ai200-practice-set.json",
+    "questionCount": 60,
+    "multiSelectCount": 0,
+    "sha256": "f8c8a45c61a1cb7e67b78a11642ccdbcffcfa20263e41523af8604558b1b6904",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "azure-services-160",
+    "title": "azure-services-160.json",
+    "originalTitle": "azure-services-160.json",
+    "filename": "azure-services-160.json",
+    "questionCount": 24,
+    "multiSelectCount": 0,
+    "sha256": "5d2a075f6a3ac6c84a5e42c04627577593853162914df4eeb0e6f28827ccb2dd",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "containers",
+    "title": "containers.json",
+    "originalTitle": "containers.json",
+    "filename": "containers.json",
+    "questionCount": 13,
+    "multiSelectCount": 0,
+    "sha256": "696936c902b145e29e584b6e31c18fe07aecd9b0efd27acba803a1e5d65a4a45",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "containers-160",
+    "title": "containers-160.json",
+    "originalTitle": "containers-160.json",
+    "filename": "containers-160.json",
+    "questionCount": 22,
+    "multiSelectCount": 0,
+    "sha256": "773e6a5ecde89f222776bdaea2432373268f2fa471e52a1e4d421aec326c8fff",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "data-management",
+    "title": "data-management.json",
+    "originalTitle": "data-management.json",
+    "filename": "data-management.json",
+    "questionCount": 15,
+    "multiSelectCount": 0,
+    "sha256": "aa95098a69bba68ddb21479e934fa7b9511e9a7d869227c7487b77fd73625e17",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "data-management-160",
+    "title": "data-management-160.json",
+    "originalTitle": "data-management-160.json",
+    "filename": "data-management-160.json",
+    "questionCount": 27,
+    "multiSelectCount": 0,
+    "sha256": "cc635c3189d0b55cfec03eac6289e1ffe7d7e4d0bb515922da332967876e0a32",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "generated-azure-services",
+    "title": "generated-azure-services.json",
+    "originalTitle": "generated-azure-services.json",
+    "filename": "generated-azure-services.json",
+    "questionCount": 6,
+    "multiSelectCount": 1,
+    "sha256": "be7be41b7cc45ffd7f290febe8b39fe810cdb88e3005d94da6ff36baed1371a1",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  },
+  {
+    "id": "generated-containers",
+    "title": "generated-containers.json",
+    "originalTitle": "generated-containers.json",
+    "filename": "generated-containers.json",
+    "questionCount": 13,
+    "multiSelectCount": 3,
+    "sha256": "847133a082a10ce19435d0656c415e568505a0071fabf1e19c7fec58830dbb77",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+  }
+]

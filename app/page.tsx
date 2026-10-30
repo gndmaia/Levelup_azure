@@ -176,7 +176,7 @@ export default function HomePage() {
                       `${exam.questionCount} Imported Training Questions`,
                       'Practice & Exam Modes',
                       'Single-Choice & Multiple-Select Questions',
-                      exam.sourceKind === 'markdown' ? 'Detailed Explanations & Reference Links' : 'Source Answer Keys & Timed Practice',
+                      exam.sourceKind !== 'forms' ? 'Detailed Explanations & Reference Links' : 'Source Answer Keys & Timed Practice',
                     ].map((feature) => (
                       <div key={feature} className="flex items-center">
                         <svg className="w-5 h-5 text-success mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">

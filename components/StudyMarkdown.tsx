@@ -19,6 +19,13 @@ export default function StudyMarkdown({ text }: { text: string }) {
   return (
     <div className="space-y-3 text-neutral-700">
       {parseStudyMarkdown(text).map((block, index) => {
+        if (block.type === 'code') {
+          return (
+            <pre key={index} className="overflow-x-auto rounded-lg bg-neutral-100 p-4 text-sm">
+              <code className="font-mono" aria-label={block.language ? `${block.language} code example` : 'Code example'}>{block.text}</code>
+            </pre>
+          );
+        }
         if (block.type === 'list') {
           return (
             <ul key={index} className="list-disc space-y-1 pl-5">

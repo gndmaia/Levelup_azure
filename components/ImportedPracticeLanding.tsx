@@ -98,6 +98,9 @@ export default function ImportedPracticeLanding({ exam }: { exam: ImportedPracti
             Unofficial training questions. Scores are practice percentages, not official certification scores.
             Original source references remain available with answer feedback.
           </p>
+          {exam.id === 'AI-200' && exam.syllabusNotice && (
+            <p className="mt-3 text-sm text-neutral-600">{exam.syllabusNotice}</p>
+          )}
           <div className="mt-8 text-center">
             <a href={exam.certificationUrl} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 font-semibold">
               Learn more about {exam.id} &rarr;

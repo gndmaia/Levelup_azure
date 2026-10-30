@@ -5,6 +5,7 @@ export interface StudyInlineToken {
 
 export type StudyBlock =
   | { type: 'paragraph' | 'quote' | 'heading'; text: string }
+  | { type: 'code'; text: string; language: string }
   | { type: 'list'; items: string[] };
 
 export function tokenizeStudyInline(text: string): StudyInlineToken[];

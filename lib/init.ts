@@ -6,6 +6,7 @@ import { seedQuestionsAZ900 } from "./seed-data-az900";
 import { seedQuestionsAB731 } from "./seed-data-ab731";
 import { seedQuestionsAB730 } from "./seed-data-ab730";
 import { seedQuestionsGH300 } from "./seed-data-gh300";
+import { seedQuestionsAI200 } from "./seed-data-ai200";
 
 let initialized = false;
 
@@ -21,9 +22,10 @@ export function initializeData() {
   dataStore.addQuestions(seedQuestionsAB731);
   dataStore.addQuestions(seedQuestionsAB730);
   dataStore.addQuestions(seedQuestionsGH300);
+  dataStore.addQuestions(seedQuestionsAI200);
   
   initialized = true;
-  console.log(`[DataStore] Initialized with ${seedQuestions.length} AI-900 questions, ${seedQuestionsAZ900.length} AZ-900 questions, ${seedQuestionsAB731.length} AB-731 questions, ${seedQuestionsAB730.length} AB-730 questions, and ${seedQuestionsGH300.length} GH-300 questions`);
+  console.log(`[DataStore] Initialized with ${seedQuestions.length} AI-900 questions, ${seedQuestionsAZ900.length} AZ-900 questions, ${seedQuestionsAB731.length} AB-731 questions, ${seedQuestionsAB730.length} AB-730 questions, ${seedQuestionsGH300.length} GH-300 questions, and ${seedQuestionsAI200.length} AI-200 questions`);
 }
 
 // Auto-initialize on import
