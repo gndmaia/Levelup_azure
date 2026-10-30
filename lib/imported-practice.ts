@@ -1,8 +1,9 @@
 import ab730Sources from './ab730-sets.json';
 import ab731Sources from './ab731-sets.json';
 import gh300Sources from './gh300-sets.json';
+import ai200Sources from './ai200-sources.json';
 
-export type ImportedExamId = 'AB-730' | 'AB-731' | 'GH-300';
+export type ImportedExamId = 'AB-730' | 'AB-731' | 'GH-300' | 'AI-200';
 
 export interface ImportedSourceSet {
   id: string;
@@ -22,7 +23,7 @@ export interface ImportedPracticeExam {
   questionCount: number;
   multiSelectCount: number;
   syllabusNotice?: string;
-  sourceKind: 'forms' | 'markdown';
+  sourceKind: 'forms' | 'markdown' | 'json';
   timeLimitSec: number;
   timedQuestionCount: number;
 }
@@ -70,10 +71,21 @@ export const IMPORTED_PRACTICE_EXAMS = {
     timedQuestionCount: 60,
     syllabusNotice: 'The supplied detailed files contain 255 questions, not the 300 advertised in the source README. Tests 07 and 08 contain only 10 and 5 questions. Missing entries and raw-file duplicates are not added.',
   }),
+  'AI-200': defineExam({
+    id: 'AI-200',
+    title: 'Azure AI Cloud Developer Associate',
+    description: 'Practice Azure SDKs and CLI, containers, data management, messaging, security, monitoring, and troubleshooting',
+    certificationUrl: 'https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/',
+    sources: ai200Sources,
+    sourceKind: 'json',
+    timeLimitSec: 7200,
+    timedQuestionCount: 60,
+    syllabusNotice: 'Questions and explanations are imported from supplied practice material. The supplied answer keys are not independently certified or official exam content.',
+  }),
 };
 
 export function getImportedPracticeExam(examId: string): ImportedPracticeExam | undefined {
-  if (examId === 'AB-730' || examId === 'AB-731' || examId === 'GH-300') {
+  if (examId === 'AB-730' || examId === 'AB-731' || examId === 'GH-300' || examId === 'AI-200') {
     return IMPORTED_PRACTICE_EXAMS[examId];
   }
   return undefined;

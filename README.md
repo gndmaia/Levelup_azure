@@ -93,6 +93,24 @@ The importer strictly validates question sections, sequential option IDs, explic
 
 ## 🎯 Current Statistics
 
+### AI-200 Azure AI Cloud Developer Associate
+- **309 questions** imported from 13 user-supplied JSON attachments, with four multiple-select questions and no duplicate IDs or normalized question text.
+- Open `/ai-200` to choose **Practice** or **Exam**, then select **10, 30, 60, or all 309** questions from one combined bank. No file-specific tests or homework menus.
+- Timed mode defaults to 60 questions in **120 minutes**, the assessment duration listed on the [official certification page](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/). Practice count and percentage are not official exam scoring.
+- Original questions, choices, explicit answer keys, explanations, service/objective metadata, and source filenames/hashes are retained. The source keys are imported as supplied, not independently verified or official exam content.
+- Preserve supplied difficulty values; 61 questions without difficulty use the application's `medium` sampling default and carry an explicit `difficultyDefaulted` flag. This is a sampling default, not an assessment of those questions.
+- Fenced CLI/SDK, Python, Dockerfile, and Bicep examples render as literal, scrollable code blocks through React text nodes; no source code is executed or injected as HTML.
+- Source domains: SDK/CLI (63), security/monitoring (51), containers (72), data management (78), and Azure services (45). Original files are never modified, and local paths are not published.
+
+Regenerate from a directory containing the 13 authorized attachments:
+
+```bash
+node scripts/import-ai200.mjs <source-directory> YYYY-MM-DD
+npm run test:practice
+```
+
+The explicit import manifest avoids including unrelated files. Invalid indices, unknown formats, duplicate IDs/stems, missing explanations, and unsupported difficulty values stop the import rather than silently dropping items. The legacy admin text importer rejects AI-200 writes so this bank cannot accidentally modify another certification.
+
 - **737** Deduplicated practice questions
 - **10+** Topic areas covered
 - **100%** Free to use
@@ -119,6 +137,7 @@ levelup-azure/
 │   ├── ab-731/           # Imported Forms practice sets and source attribution
 │   ├── ab-730/           # AI Business Professional Forms practice sets
 │   ├── gh-300/           # Detailed GitHub Copilot practice bank
+│   ├── ai-200/           # Azure AI Cloud Developer practice from supplied JSON
 │   ├── sessions/         # Session history
 │   ├── about/            # About pages
 │   ├── auth/             # Authentication

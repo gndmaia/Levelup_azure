@@ -6,7 +6,7 @@ import { getQuestionCounts } from '../lib/question-counts.mjs';
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 
 test('each certification offers 10, 30, 60, and its complete bank in either mode', () => {
-  for (const [prefix, total] of [['ab731', 140], ['ab730', 160], ['gh300', 255]]) {
+  for (const [prefix, total] of [['ab731', 140], ['ab730', 160], ['gh300', 255], ['ai200', 309]]) {
     const bank = JSON.parse(read(`lib/${prefix}-question-bank.json`));
     assert.equal(bank.questions.length, total);
     assert.deepEqual(getQuestionCounts(bank.questions.length), [10, 30, 60, total]);
@@ -51,6 +51,7 @@ test('exam selections are submitted and source group names are absent from the e
   assert(!exam.includes('importedExam.sources'));
   const metadata = read('lib/imported-practice.ts');
   assert(metadata.includes('timeLimitSec: 6000'));
+  assert(metadata.includes('timeLimitSec: 7200'));
   assert.equal((metadata.match(/timeLimitSec: 2700/g) ?? []).length, 2);
 });
 
